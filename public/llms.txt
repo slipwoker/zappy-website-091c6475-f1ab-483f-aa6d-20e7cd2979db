@@ -1,0 +1,51 @@
+# Business — Generative Engine Optimization Map
+
+---
+
+## Pages
+
+### בית
+https://example.com
+אמנות צילום מינימליסטית שמביאה שקט, עומק ויופי לכל חלל. צילום אמנותי לבית שנוצר מתוך פילוסופיית וואבי-סאבי — גלו את הקולקציה.
+
+### קולקציות
+https://example.com/collections
+עיינו בקולקציות הצילום האמנותי של אופיר מסיקה — עיצוב קירות עם תמונות אמנות שמעוררות רגש, שקט ונוכחות עמוקה בכל סביבת מגורים או עבודה.
+
+### התאמה אישית
+https://example.com/custom-space-fit
+שירות התאמת אמנות לחלל האישי שלכם — מקליניקות ובתי קפה ועד בתים פרטיים. יצירה מותאמת אישית שמשלימה את הסביבה ומדברת ישירות אל הנפש.
+
+### אודות
+https://example.com/about
+היכירו את אופיר מסיקה — צלם אמנות ישראלי שיוצר מתוך שקט, כוונה ויופי של חוסר השלמות. גלו את הפילוסופיה שמאחורי כל יצירה ואת הדרך שהובילה לכאן.
+
+### צור קשר
+https://example.com/contact
+רוצים לשלב צילום אמנותי לבית, למשרד או לעסק שלכם? צרו קשר עם אופיר מסיקה לייעוץ אישי, שאלות על קולקציות או התאמה מיוחדת לחלל שלכם.
+
+## Legal & Policy
+
+### Privacy Policy
+https://example.com/privacy
+Information about how user data is collected, stored, and protected.
+
+### Terms & Conditions
+https://example.com/terms
+Legal terms describing service usage, rights, and policies.
+
+### Accessibility Statement
+https://example.com/accessibility
+Information about WCAG compliance and accessibility features.
+
+---
+
+# Business Context (for LLM understanding)
+
+## About Business
+---
+
+# Additional Resources
+
+- **Sitemap**: https://example.com/sitemap.xml
+- **Robots.txt**: https://example.com/robots.txt
