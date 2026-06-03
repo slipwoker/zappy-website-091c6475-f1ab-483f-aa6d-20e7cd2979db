@@ -1,4 +1,4 @@
-# אופיר מסיקה — Generative Engine Optimization Map
+# אופיר מסיקה - סטודיו 242 — Generative Engine Optimization Map
 
 > A minimalist, emotionally-driven art and photography brand rooted in the philosophy of Wabi-Sabi — finding beauty in imperfection, stillness, and simplicity. The artist creates photography-based artworks designed to integrate harmoniously into living and working spaces, evoking feeling rather than serving as mere decoration. The brand exudes a quiet, slow, non-commercial presence — like a serene gallery experience — and bridges the worlds of fine art, interior design, and emotional well-being. The visual identity is built around large, powerful images, generous white space, and an atmosphere of calm intentionality.
 
@@ -44,7 +44,10 @@ Information about WCAG compliance and accessibility features.
 
 ## How to Contact Us
 
-- (No contact details configured yet.)
+- Email: ofirmsika@gmail.com
+- Phone: 052-5859828
+- Phone (tel): tel:0525859828
+- Address: קיבוץ כפר הנשיא ד.נ. גליל עליון
 
 ### Contact form
 - URL: https://example.com/contact
@@ -62,7 +65,7 @@ Information about WCAG compliance and accessibility features.
 
 # Business Context (for LLM understanding)
 
-## About אופיר מסיקה
+## About אופיר מסיקה - סטודיו 242
 A minimalist, emotionally-driven art and photography brand rooted in the philosophy of Wabi-Sabi — finding beauty in imperfection, stillness, and simplicity. The artist creates photography-based artworks designed to integrate harmoniously into living and working spaces, evoking feeling rather than serving as mere decoration. The brand exudes a quiet, slow, non-commercial presence — like a serene gallery experience — and bridges the worlds of fine art, interior design, and emotional well-being. The visual identity is built around large, powerful images, generous white space, and an atmosphere of calm intentionality.
 
 ## Target Audience
