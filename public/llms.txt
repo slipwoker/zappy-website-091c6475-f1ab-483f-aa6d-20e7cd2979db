@@ -7,37 +7,37 @@
 ## Pages
 
 ### בית
-https://example.com
+https://ofir-masika-studio-242.zappy5.app
 אמנות צילום מינימליסטית שמביאה שקט, עומק ויופי לכל חלל. צילום אמנותי לבית שנוצר מתוך פילוסופיית וואבי-סאבי — גלו את הקולקציה.
 
 ### קולקציות
-https://example.com/collections
+https://ofir-masika-studio-242.zappy5.app/collections
 עיינו בקולקציות הצילום האמנותי של אופיר מסיקה — עיצוב קירות עם תמונות אמנות שמעוררות רגש, שקט ונוכחות עמוקה בכל סביבת מגורים או עבודה.
 
 ### התאמה אישית
-https://example.com/custom-space-fit
+https://ofir-masika-studio-242.zappy5.app/custom-space-fit
 שירות התאמת אמנות לחלל האישי שלכם — מקליניקות ובתי קפה ועד בתים פרטיים. יצירה מותאמת אישית שמשלימה את הסביבה ומדברת ישירות אל הנפש.
 
 ### אודות
-https://example.com/about
+https://ofir-masika-studio-242.zappy5.app/about
 היכירו את אופיר מסיקה — צלם אמנות ישראלי שיוצר מתוך שקט, כוונה ויופי של חוסר השלמות. גלו את הפילוסופיה שמאחורי כל יצירה ואת הדרך שהובילה לכאן.
 
 ### צור קשר
-https://example.com/contact
+https://ofir-masika-studio-242.zappy5.app/contact
 רוצים לשלב צילום אמנותי לבית, למשרד או לעסק שלכם? צרו קשר עם אופיר מסיקה לייעוץ אישי, שאלות על קולקציות או התאמה מיוחדת לחלל שלכם.
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://example.com/privacy
+https://ofir-masika-studio-242.zappy5.app/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://example.com/terms
+https://ofir-masika-studio-242.zappy5.app/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://example.com/accessibility
+https://ofir-masika-studio-242.zappy5.app/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
@@ -50,8 +50,8 @@ Information about WCAG compliance and accessibility features.
 - Address: קיבוץ כפר הנשיא ד.נ. גליל עליון
 
 ### Contact form
-- URL: https://example.com/contact
-- Endpoint: https://example.com/api/email/contact-form
+- URL: https://ofir-masika-studio-242.zappy5.app/contact
+- Endpoint: https://ofir-masika-studio-242.zappy5.app/api/email/contact-form
 - Method: POST
 - Content-Type: application/json
 - Fields:
@@ -78,6 +78,6 @@ A minimalist, emotionally-driven art and photography brand rooted in the philoso
 
 # Machine-readable feeds
 
-- Sitemap (XML): https://example.com/sitemap.xml
-- Robots: https://example.com/robots.txt
-- Flattened page text (for LLMs): https://example.com/llms-full.txt
+- Sitemap (XML): https://ofir-masika-studio-242.zappy5.app/sitemap.xml
+- Robots: https://ofir-masika-studio-242.zappy5.app/robots.txt
+- Flattened page text (for LLMs): https://ofir-masika-studio-242.zappy5.app/llms-full.txt

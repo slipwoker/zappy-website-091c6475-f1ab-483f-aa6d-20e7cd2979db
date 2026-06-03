@@ -2,13 +2,13 @@
 
 A minimalist, emotionally-driven art and photography brand rooted in the philosophy of Wabi-Sabi — finding beauty in imperfection, stillness, and simplicity. The artist creates photography-based artworks designed to integrate harmoniously into living and working spaces, evoking feeling rather than serving as mere decoration. The brand exudes a quiet, slow, non-commercial presence — like a serene gallery experience — and bridges the worlds of fine art, interior design, and emotional well-being. The visual identity is built around large, powerful images, generous white space, and an atmosphere of calm intentionality.
 
-Source: https://example.com
+Source: https://ofir-masika-studio-242.zappy5.app
 
 ---
 
 ## צילום אמנותי לבית שמרגיש — אופיר מסיקה
 
-URL: https://example.com
+URL: https://ofir-masika-studio-242.zappy5.app
 Description: אמנות צילום מינימליסטית שמביאה שקט, עומק ויופי לכל חלל. צילום אמנותי לבית שנוצר מתוך פילוסופיית וואבי-סאבי — גלו את הקולקציה.
 
 צילום אמנותי לבית שמרגיש — אופיר מסיקה - סטודיו 242
@@ -419,7 +419,7 @@ Description: אמנות צילום מינימליסטית שמביאה שקט, �
 
 ## קולקציות שמשנות את תחושת החלל — אופיר מסיקה
 
-URL: https://example.com/collections
+URL: https://ofir-masika-studio-242.zappy5.app/collections
 Description: עיינו בקולקציות הצילום האמנותי של אופיר מסיקה — עיצוב קירות עם תמונות אמנות שמעוררות רגש, שקט ונוכחות עמוקה בכל סביבת מגורים או עבודה.
 
 קולקציות שמשנות את תחושת החלל — אופיר מסיקה - סטודיו 242
@@ -769,7 +769,7 @@ Description: עיינו בקולקציות הצילום האמנותי של או
 
 ## אמנות שנולדה בדיוק בשבילך — אופיר מסיקה
 
-URL: https://example.com/custom-space-fit
+URL: https://ofir-masika-studio-242.zappy5.app/custom-space-fit
 Description: שירות התאמת אמנות לחלל האישי שלכם — מקליניקות ובתי קפה ועד בתים פרטיים. יצירה מותאמת אישית שמשלימה את הסביבה ומדברת ישירות אל הנפש.
 
 אמנות שנולדה בדיוק בשבילך — אופיר מסיקה - סטודיו 242
@@ -1198,7 +1198,7 @@ Description: שירות התאמת אמנות לחלל האישי שלכם — �
 
 ## האמן מאחורי הדממה והאור — אופיר מסיקה
 
-URL: https://example.com/about
+URL: https://ofir-masika-studio-242.zappy5.app/about
 Description: היכירו את אופיר מסיקה — צלם אמנות ישראלי שיוצר מתוך שקט, כוונה ויופי של חוסר השלמות. גלו את הפילוסופיה שמאחורי כל יצירה ואת הדרך שהובילה לכאן.
 
 האמן מאחורי הדממה והאור — אופיר מסיקה - סטודיו 242
@@ -1500,7 +1500,7 @@ Description: היכירו את אופיר מסיקה — צלם אמנות יש�
 
 ## מוכנים להכניס אמנות לחייכם — אופיר מסיקה
 
-URL: https://example.com/contact
+URL: https://ofir-masika-studio-242.zappy5.app/contact
 Description: רוצים לשלב צילום אמנותי לבית, למשרד או לעסק שלכם? צרו קשר עם אופיר מסיקה לייעוץ אישי, שאלות על קולקציות או התאמה מיוחדת לחלל שלכם.
 
 מוכנים להכניס אמנות לחייכם — אופיר מסיקה - סטודיו 242
@@ -1868,7 +1868,7 @@ ofirmsika@gmail.com
 
 ## מדיניות פרטיות
 
-URL: https://example.com/privacy
+URL: https://ofir-masika-studio-242.zappy5.app/privacy
 Description: מדיניות הפרטיות שלנו - כיצד אנו אוספים, משתמשים ומגנים על המידע שלכם
 
 מדיניות פרטיות
@@ -2127,7 +2127,7 @@ Description: מדיניות הפרטיות שלנו - כיצד אנו אוספי
 
 ## הצהרת נגישות
 
-URL: https://example.com/accessibility
+URL: https://ofir-masika-studio-242.zappy5.app/accessibility
 Description: הצהרת הנגישות שלנו - מחויבותנו לנגישות דיגיטלית
 
 הצהרת נגישות
@@ -2395,7 +2395,7 @@ Description: הצהרת הנגישות שלנו - מחויבותנו לנגיש�
 
 ## תנאי שימוש
 
-URL: https://example.com/terms
+URL: https://ofir-masika-studio-242.zappy5.app/terms
 Description: תנאי השימוש באתר - הזכויות והחובות של המשתמשים
 
 תנאי שימוש
