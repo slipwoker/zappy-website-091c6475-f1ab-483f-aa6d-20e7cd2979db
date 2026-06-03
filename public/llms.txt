@@ -7,37 +7,37 @@
 ## Pages
 
 ### בית
-https://ofir-masika-studio-242.zappy5.app
+https://studio-242.com
 אמנות צילום מינימליסטית שמביאה שקט, עומק ויופי לכל חלל. צילום אמנותי לבית שנוצר מתוך פילוסופיית וואבי-סאבי — גלו את הקולקציה.
 
 ### קולקציות
-https://ofir-masika-studio-242.zappy5.app/collections
+https://studio-242.com/collections
 עיינו בקולקציות הצילום האמנותי של אופיר מסיקה — עיצוב קירות עם תמונות אמנות שמעוררות רגש, שקט ונוכחות עמוקה בכל סביבת מגורים או עבודה.
 
 ### התאמה אישית
-https://ofir-masika-studio-242.zappy5.app/custom-space-fit
+https://studio-242.com/custom-space-fit
 שירות התאמת אמנות לחלל האישי שלכם — מקליניקות ובתי קפה ועד בתים פרטיים. יצירה מותאמת אישית שמשלימה את הסביבה ומדברת ישירות אל הנפש.
 
 ### אודות
-https://ofir-masika-studio-242.zappy5.app/about
+https://studio-242.com/about
 היכירו את אופיר מסיקה — צלם אמנות ישראלי שיוצר מתוך שקט, כוונה ויופי של חוסר השלמות. גלו את הפילוסופיה שמאחורי כל יצירה ואת הדרך שהובילה לכאן.
 
 ### צור קשר
-https://ofir-masika-studio-242.zappy5.app/contact
+https://studio-242.com/contact
 רוצים לשלב צילום אמנותי לבית, למשרד או לעסק שלכם? צרו קשר עם אופיר מסיקה לייעוץ אישי, שאלות על קולקציות או התאמה מיוחדת לחלל שלכם.
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://ofir-masika-studio-242.zappy5.app/privacy
+https://studio-242.com/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://ofir-masika-studio-242.zappy5.app/terms
+https://studio-242.com/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://ofir-masika-studio-242.zappy5.app/accessibility
+https://studio-242.com/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
@@ -50,8 +50,8 @@ Information about WCAG compliance and accessibility features.
 - Address: קיבוץ כפר הנשיא ד.נ. גליל עליון
 
 ### Contact form
-- URL: https://ofir-masika-studio-242.zappy5.app/contact
-- Endpoint: https://ofir-masika-studio-242.zappy5.app/api/email/contact-form
+- URL: https://studio-242.com/contact
+- Endpoint: https://studio-242.com/api/email/contact-form
 - Method: POST
 - Content-Type: application/json
 - Fields:
@@ -78,6 +78,6 @@ A minimalist, emotionally-driven art and photography brand rooted in the philoso
 
 # Machine-readable feeds
 
-- Sitemap (XML): https://ofir-masika-studio-242.zappy5.app/sitemap.xml
-- Robots: https://ofir-masika-studio-242.zappy5.app/robots.txt
-- Flattened page text (for LLMs): https://ofir-masika-studio-242.zappy5.app/llms-full.txt
+- Sitemap (XML): https://studio-242.com/sitemap.xml
+- Robots: https://studio-242.com/robots.txt
+- Flattened page text (for LLMs): https://studio-242.com/llms-full.txt
