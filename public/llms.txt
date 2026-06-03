@@ -1,4 +1,6 @@
-# Business — Generative Engine Optimization Map
+# אופיר מסיקה — Generative Engine Optimization Map
+
+> A minimalist, emotionally-driven art and photography brand rooted in the philosophy of Wabi-Sabi — finding beauty in imperfection, stillness, and simplicity. The artist creates photography-based artworks designed to integrate harmoniously into living and working spaces, evoking feeling rather than serving as mere decoration. The brand exudes a quiet, slow, non-commercial presence — like a serene gallery experience — and bridges the worlds of fine art, interior design, and emotional well-being. The visual identity is built around large, powerful images, generous white space, and an atmosphere of calm intentionality.
 
 ---
 
@@ -40,12 +42,39 @@ Information about WCAG compliance and accessibility features.
 
 ---
 
-# Business Context (for LLM understanding)
+## How to Contact Us
 
-## About Business
+- (No contact details configured yet.)
+
+### Contact form
+- URL: https://example.com/contact
+- Endpoint: https://example.com/api/email/contact-form
+- Method: POST
+- Content-Type: application/json
+- Fields:
+  - `name` (text, required)
+  - `email` (email, required)
+  - `phone` (tel)
+  - `message` (textarea, required)
+  - `privacy_consent` (checkbox, required)
+
 ---
 
-# Additional Resources
+# Business Context (for LLM understanding)
 
-- **Sitemap**: https://example.com/sitemap.xml
-- **Robots.txt**: https://example.com/robots.txt
+## About אופיר מסיקה
+A minimalist, emotionally-driven art and photography brand rooted in the philosophy of Wabi-Sabi — finding beauty in imperfection, stillness, and simplicity. The artist creates photography-based artworks designed to integrate harmoniously into living and working spaces, evoking feeling rather than serving as mere decoration. The brand exudes a quiet, slow, non-commercial presence — like a serene gallery experience — and bridges the worlds of fine art, interior design, and emotional well-being. The visual identity is built around large, powerful images, generous white space, and an atmosphere of calm intentionality.
+
+## Target Audience
+אנשים שאוהבים עיצוב פנים, אדריכלים ומעצבי פנים, בעלי עסקים קטנים (קליניקות, בתי קפה, חללים אינטימיים), אנשים המחפשים עומק ומשמעות בבית או בעסק
+
+## Industry
+אמנות וצילום
+
+---
+
+# Machine-readable feeds
+
+- Sitemap (XML): https://example.com/sitemap.xml
+- Robots: https://example.com/robots.txt
+- Flattened page text (for LLMs): https://example.com/llms-full.txt
