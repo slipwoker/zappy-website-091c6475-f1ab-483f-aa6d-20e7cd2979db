@@ -1090,6 +1090,10 @@ window.onload = function() {
     })(); // End of IIFE
     
 ;
+
+;
+
+;
 /* ==ZAPPY E-COMMERCE JS START== */
 // E-commerce functionality
 (function() {
