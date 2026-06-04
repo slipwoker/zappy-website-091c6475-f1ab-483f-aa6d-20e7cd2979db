@@ -26,6 +26,38 @@ https://studio-242.com/about
 https://studio-242.com/contact
 רוצים לשלב צילום אמנותי לבית, למשרד או לעסק שלכם? צרו קשר עם אופיר מסיקה לייעוץ אישי, שאלות על קולקציות או התאמה מיוחדת לחלל שלכם.
 
+### Products
+https://studio-242.com/products
+המוצרים שלנו - אופיר מסיקה - סטודיו 242
+
+### Cart
+https://studio-242.com/cart
+עגלת הקניות שלך
+
+### Checkout
+https://studio-242.com/checkout
+תשלום
+
+### Login
+https://studio-242.com/login
+התחברות לקוחות
+
+### Account
+https://studio-242.com/account
+החשבון שלי
+
+### Order Success
+https://studio-242.com/order-success
+תודה על ההזמנה
+
+### Product Detail
+https://studio-242.com/product/:slug
+פרטי המוצר - אופיר מסיקה - סטודיו 242
+
+### Category
+https://studio-242.com/category/:slug
+מוצרים - אופיר מסיקה - סטודיו 242
+
 ## Legal & Policy
 
 ### Privacy Policy
@@ -42,24 +74,9 @@ Information about WCAG compliance and accessibility features.
 
 ---
 
-## How to Contact Us
+## Products
 
-- Email: ofirmsika@gmail.com
-- Phone: 052-5859828
-- Phone (tel): tel:0525859828
-- Address: קיבוץ כפר הנשיא ד.נ. גליל עליון
-
-### Contact form
-- URL: https://studio-242.com/contact
-- Endpoint: https://studio-242.com/api/email/contact-form
-- Method: POST
-- Content-Type: application/json
-- Fields:
-  - `name` (text, required)
-  - `email` (email, required)
-  - `phone` (tel)
-  - `message` (textarea, required)
-  - `privacy_consent` (checkbox, required)
+_No products are currently configured._
 
 ---
 
@@ -81,3 +98,5 @@ A minimalist, emotionally-driven art and photography brand rooted in the philoso
 - Sitemap (XML): https://studio-242.com/sitemap.xml
 - Robots: https://studio-242.com/robots.txt
 - Flattened page text (for LLMs): https://studio-242.com/llms-full.txt
+- Products (JSON): https://studio-242.com/products.json
+- Products (Google Merchant RSS): https://studio-242.com/product-feed.xml
