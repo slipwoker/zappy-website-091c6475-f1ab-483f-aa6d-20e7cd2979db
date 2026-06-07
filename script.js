@@ -1096,6 +1096,14 @@ window.onload = function() {
 ;
 
 ;
+
+
+/* === NAVBAR SCROLL JS OVERRIDE START === */
+(function(){if(window._zappyNavScrollCleanup){window._zappyNavScrollCleanup();delete window._zappyNavScrollCleanup;}var nb=document.querySelector('nav.navbar,.navbar:not(.zappy-catalog-menu)');var cm=document.querySelector('.zappy-catalog-menu,#zappy-catalog-menu');function clr(){if(nb){nb.style.removeProperty('background');nb.style.removeProperty('background-color');nb.style.removeProperty('backdrop-filter');nb.style.removeProperty('-webkit-backdrop-filter');nb.style.removeProperty('box-shadow');nb.style.removeProperty('--frosted-text');nb.classList.remove('scrolled');}if(cm){cm.style.removeProperty('background');cm.style.removeProperty('background-color');cm.style.removeProperty('backdrop-filter');cm.style.removeProperty('-webkit-backdrop-filter');cm.classList.remove('scrolled');}}clr();window.addEventListener('scroll',clr,{passive:true});window._zappyNavScrollCleanup=function(){window.removeEventListener('scroll',clr);};})();
+/* === NAVBAR SCROLL JS OVERRIDE END === */
+
+
+;
 /* ==ZAPPY E-COMMERCE JS START== */
 // E-commerce functionality
 (function() {
@@ -10845,11 +10853,6 @@ async function loadRelatedProducts(currentProduct, t) {
 }
 /* ==ZAPPY E-COMMERCE JS END== */
 
-/* === NAVBAR SCROLL JS OVERRIDE START === */
-(function(){if(window._zappyNavScrollCleanup){window._zappyNavScrollCleanup();delete window._zappyNavScrollCleanup;}var nb=document.querySelector('nav.navbar,.navbar:not(.zappy-catalog-menu)');var cm=document.querySelector('.zappy-catalog-menu,#zappy-catalog-menu');function clr(){if(nb){nb.style.removeProperty('background');nb.style.removeProperty('background-color');nb.style.removeProperty('backdrop-filter');nb.style.removeProperty('-webkit-backdrop-filter');nb.style.removeProperty('box-shadow');nb.style.removeProperty('--frosted-text');nb.classList.remove('scrolled');}if(cm){cm.style.removeProperty('background');cm.style.removeProperty('background-color');cm.style.removeProperty('backdrop-filter');cm.style.removeProperty('-webkit-backdrop-filter');cm.classList.remove('scrolled');}}clr();window.addEventListener('scroll',clr,{passive:true});window._zappyNavScrollCleanup=function(){window.removeEventListener('scroll',clr);};})();
-/* === NAVBAR SCROLL JS OVERRIDE END === */
-
-
 
 /* ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
 (function(){
@@ -11769,6 +11772,26 @@ async function loadRelatedProducts(currentProduct, t) {
 
     var answerSel = '[class*="faq-answer"], [class*="faq-content"], [class*="faq-body"], [class*="faq-item__answer"], .accordion-content, .accordion-body';
 
+    // Pick the collapsible answer element for an item WITHOUT ever choosing a
+    // wrapper that contains the question/header toggle. Some AI-generated FAQs
+    // nest the clickable question INSIDE a .faq-content wrapper; collapsing that
+    // wrapper (max-height:0/opacity:0) would hide the question itself, leaving
+    // only the number visible and nothing to click to expand. Skipping any
+    // candidate that contains the toggle keeps the header visible and collapses
+    // only the real answer body.
+    function pickAnswer(item, question) {
+      var matches = item.querySelectorAll(answerSel);
+      for (var i = 0; i < matches.length; i++) {
+        var el = matches[i];
+        if (el === question) continue;
+        if (question && el.contains(question)) continue;
+        return el;
+      }
+      // No safe collapsible found (only wrappers that hold the toggle): leave
+      // the content expanded rather than hiding the question.
+      return null;
+    }
+
     function initFaqToggle() {
       var items = document.querySelectorAll('[class*="faq-item"], .accordion-item');
       if (!items.length) return;
@@ -11796,7 +11819,7 @@ async function loadRelatedProducts(currentProduct, t) {
                 sib.classList.remove('active');
                 var sibQ = sib.querySelector('[class*="faq-question"], [class*="faq-header"], [class*="faq-item__question"], [class*="faq-item__btn"], [class*="faq-btn"], .accordion-header');
                 if (sibQ) sibQ.setAttribute('aria-expanded', 'false');
-                var sibA = sib.querySelector(answerSel);
+                var sibA = pickAnswer(sib, sibQ);
                 if (sibA) {
                   sibA.style.maxHeight = '0';
                   sibA.style.overflow = 'hidden';
@@ -11811,7 +11834,7 @@ async function loadRelatedProducts(currentProduct, t) {
           var isActive = item.classList.toggle('active');
           question.setAttribute('aria-expanded', isActive ? 'true' : 'false');
 
-          var answer = item.querySelector(answerSel);
+          var answer = pickAnswer(item, question);
           if (answer) {
             if (isActive) {
               answer.style.display = '';
@@ -11856,7 +11879,8 @@ async function loadRelatedProducts(currentProduct, t) {
       items.forEach(function(item) {
         if (item.classList.contains('active')) return;
         if (item.closest(answerSel)) return;
-        var answer = item.querySelector(answerSel);
+        var question = item.querySelector('[class*="faq-question"], [class*="faq-header"], [class*="faq-item__question"], [class*="faq-item__btn"], [class*="faq-btn"], .accordion-header, .accordion-toggle');
+        var answer = pickAnswer(item, question);
         if (answer) {
           answer.style.maxHeight = '0';
           answer.style.overflow = 'hidden';
