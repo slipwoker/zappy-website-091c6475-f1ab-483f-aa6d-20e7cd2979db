@@ -161,26 +161,31 @@
       // Track button clicks (counted as actions)
       if (target.tagName === 'BUTTON' || target.closest('button')) {
         var button = target.tagName === 'BUTTON' ? target : target.closest('button');
-        trackEvent('click', {
+        var clickMeta = {
           element: 'button',
           text: button.textContent.trim().substring(0, 100),
           id: button.id || null,
           class: button.className || null
-        });
+        };
+        
+        trackEvent('click', clickMeta);
       }
       
       // Track link clicks (navigation - not counted as actions)
       else if (target.tagName === 'A' || target.closest('a')) {
         var link = target.tagName === 'A' ? target : target.closest('a');
-        trackEvent('navigation', {
+        var navMeta = {
           element: 'link',
           text: link.textContent.trim().substring(0, 100),
           href: link.href,
           external: link.hostname !== window.location.hostname
-        });
+        };
+        
+        trackEvent('navigation', navMeta);
       }
     }, true);
   }
+  
   
   // Track form submissions
   if (config.trackFormSubmissions) {
@@ -391,7 +396,7 @@
       <div class="search-results" id="mobile-search-results"></div>
     </div>
   
-<script>window.ZAPPY_WEBSITE_ID = "091c6475-f1ab-483f-aa6d-20e7cd2979db";window.ZAPPY_API_BASE = "https://api.zappy5.com";</script>
+<script>window.ZAPPY_WEBSITE_ID = "091c6475-f1ab-483f-aa6d-20e7cd2979db";window.ZAPPY_API_BASE = (window.location.pathname.includes('/preview') ? "https://api.zappy5.com" : "https://api.zappy5.com");</script>
   <nav class="navbar" dir="rtl">
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
     <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -1119,7 +1124,7 @@
         <div class="index-philosophy-image-wrapper">
           <div class="index-philosophy-backplate"></div>
           <figure class="index-philosophy-figure">
-            <div data-zappy-zoom-wrapper="true" data-element-id="img-1780480390519-6hulxzcd6" data-element-type="image" data-zappy-zoom-wrapper-width="520px" data-zappy-zoom-wrapper-height="389px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 520px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 389px !important; display: block !important; padding-bottom: 0px !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-card-slot-fill="1"><img data-placeholder="index-philosophy-image-1" data-context="Close-crop macro photograph of aged paper texture or rough plaster wall with soft raking light creating gentle shadows, wabi-sabi aesthetic, warm cream and taupe tones, minimalist art photography, quiet and contemplative mood" width="520" height="390" src="/assets/site-index-philosophy-image-1-1780732003348-dtl1q6.webp?v=1780732005440" alt="מרקם נייר ישן ואור רך — אסתטיקת וואבי סאבי" data-element-type="image" data-element-id="img-1780480390519-6hulxzcd6" style="display: block !important; object-fit: cover !important; object-position: 50% 50% !important; margin: 0px !important; left: -20.0035% !important; top: -1% !important; width: 140.007% !important; height: 102% !important; max-width: none !important; max-height: none !important; position: absolute !important;" data-zappy-zoom="1.02" data-zappy-original-width="520" data-zappy-original-height="388.5208435058594" data-zappy-object-position="50% 50%"></div>
+            <div data-zappy-zoom-wrapper="true" data-element-id="img-1780480390519-6hulxzcd6" data-element-type="image" data-zappy-zoom-wrapper-width="520px" data-zappy-zoom-wrapper-height="389px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 520px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 389px !important; display: block !important; padding-bottom: 0px !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-card-slot-fill="1"><img data-placeholder="index-philosophy-image-1" data-context="Close-crop macro photograph of aged paper texture or rough plaster wall with soft raking light creating gentle shadows, wabi-sabi aesthetic, warm cream and taupe tones, minimalist art photography, quiet and contemplative mood" width="520" height="390" src="/assets/site-index-philosophy-image-1-1780732003348-dtl1q6.webp?v=1780732005440" alt="מרקם נייר ישן ואור רך — אסתטיקת וואבי סאבי" data-element-type="image" data-element-id="img-1780480390519-6hulxzcd6" style="display: block !important; object-fit: cover !important; object-position: 50% 50% !important; margin: 0px !important; left: 0px !important; top: 0px !important; width: 100% !important; height: 100% !important; max-width: 100% !important; max-height: none !important; position: absolute !important;" data-zappy-zoom="1.02" data-zappy-original-width="520" data-zappy-original-height="388.5208435058594" data-zappy-object-position="50% 50%"></div>
           </figure>
         </div>
       </div>
@@ -1128,12 +1133,12 @@
       <div class="index-philosophy-end" data-grid-item-index="1">
         <div class="index-philosophy-reflection">
           <h3 class="index-philosophy-subheading" style="color: rgb(47, 41, 36) !important;">אמנות שמרגישה<br>כאילו תמיד הייתה שם</h3>
-          <p class="index-philosophy-reflection-text">חלל שמכיל יצירה אמיתית מרגיש שלם. לא בגלל שהיא מושלמת — אלא בגלל שהיא נוכחת. <strong>התאמת אמנות לחלל</strong> היא מעשה של הקשבה: לחלל, לאור שלו, לאנשים שחיים בו.</p>
+          <p class="index-philosophy-reflection-text" >חלל שמכיל יצירה או מלאכה מקורית מרגיש שלם. לא בגלל שהיא מושלמת — אלא בגלל שהיא נוכחת. <strong>התאמת פריטי אמנות לחלל</strong> היא מעשה של הקשבה: לחלל, לאור שלו, לאנשים שחיים בו.</p>
           <p class="index-philosophy-reflection-text">זו הסיבה שכל עבודה שאני יוצר מתחילה בשקט — לא בתוצאה.</p>
         </div>
 
         <figure class="index-philosophy-figure-secondary">
-          <div data-zappy-zoom-wrapper="true" data-element-id="img-1780480390519-nkd6a9u49" data-element-type="image" data-zappy-zoom-wrapper-width="380px" data-zappy-zoom-wrapper-height="508px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 380px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 508px !important; display: block !important; padding-bottom: 0px !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-card-slot-fill="1"><img data-placeholder="index-philosophy-image-2" data-context="Minimalist interior detail photograph showing a single framed artwork on a textured plaster wall, soft natural light from a window casting gentle shadows, calm and serene atmosphere, wabi-sabi inspired interior design, warm neutral tones" width="340" height="440" src="/assets/site-index-philosophy-image-2-1781421032029-r6tvrl.webp?v=1781421034105" alt="יצירת אמנות על קיר בחלל מינימליסטי" data-element-type="image" data-element-id="img-1780480390519-nkd6a9u49" style="object-position: 50% 50% !important; display: block; object-fit: cover !important; margin-top: 0px !important; margin-bottom: 0px !important; left: -0.131579% !important; top: 0% !important; width: 100.263% !important; height: 100% !important; max-width: none !important; max-height: none !important; position: absolute !important;" data-zappy-zoom="1" data-zappy-original-width="380" data-zappy-original-height="508.29168701171875" data-zappy-object-position="50% 50%"></div>
+          <div data-zappy-zoom-wrapper="true" data-element-id="img-1780480390519-nkd6a9u49" data-element-type="image" data-zappy-zoom-wrapper-width="380px" data-zappy-zoom-wrapper-height="508px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 380px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 508px !important; display: block !important; padding-bottom: 0px !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-card-slot-fill="1"><img data-placeholder="index-philosophy-image-2" data-context="Minimalist interior detail photograph showing a single framed artwork on a textured plaster wall, soft natural light from a window casting gentle shadows, calm and serene atmosphere, wabi-sabi inspired interior design, warm neutral tones" width="340" height="440" src="/assets/site-index-philosophy-image-2-1781421032029-r6tvrl.webp?v=1781421034105" alt="יצירת אמנות על קיר בחלל מינימליסטי" data-element-type="image" data-element-id="img-1780480390519-nkd6a9u49" style="display: block !important; object-position: 50% 50% !important; object-fit: cover !important; margin: 0px !important; left: 0px !important; top: 0px !important; width: 100% !important; height: 100% !important; max-width: 100% !important; max-height: none !important; position: absolute !important;" data-zappy-zoom="1" data-zappy-original-width="380" data-zappy-original-height="508.29168701171875" data-zappy-object-position="50% 50%"></div>
         </figure>
       </div>
 
