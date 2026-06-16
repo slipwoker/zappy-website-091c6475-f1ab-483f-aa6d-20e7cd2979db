@@ -1,10 +1,34 @@
 {
   "@context": "https://schema.org",
-  "generated_at": "2026-06-16T05:09:54.063Z",
+  "generated_at": "2026-06-16T14:26:13.144Z",
   "base_url": "https://studio-242.com",
   "currency": "ILS",
-  "count": 1,
+  "count": 2,
   "products": [
+    {
+      "id": "ad879379-7a6b-4c2d-af50-a9192371ca80",
+      "slug": "pynt-tba-mavtsbt-lbyt-vlask-9rluzn",
+      "name": "פינת טבע מעוצבת לבית ולעסק",
+      "name_translations": {},
+      "description": "<p><strong>פינת טבע – Mediterranean Blue</strong></p><p><strong>פינת עיצוב מוכנה לבית ולעסק, המשלבת מדף עץ טבעי, הדפס אומנותי ממוסגר וכד קרמי בגימור טבעי.</strong></p><p>הקומפוזיציה נוצרה ליצירת מראה רגוע, אלגנטי ועל־זמני, בהשראת סמטאות ים־תיכוניות, חומרים טבעיים ואהבה לטבע ולעיצוב נקי.</p><p><br></p><p><strong>מה כוללת הפינה?</strong></p><p>✔ מדף עץ טבעי בעובי <strong>4 ס\"מ</strong>, בגימור מלא, כולל <strong>איבזור לתלייה כמדף צף</strong></p><p>✔ הדפס אומנותי ממוסגר – <em>Mediterranean Blue</em></p><p>✔ כד קרמי דקורטיבי בגוון אבן טבעי</p><p>✔ הוראות העמדה וסטיילינג לקבלת המראה המלא</p><p>מידות לבחירה:</p><p><br></p><p>פינת טבע S</p><p>מתאימה למבואת כניסה, נישות קטנות ומשרדים.</p><ul><li>מדף עץ: <strong>80×25 ס\"מ</strong>, עובי 4 ס\"מ</li><li>הדפס ממוסגר: <strong>30×40 ס\"מ</strong></li><li>כד קרמי: <strong>גובה 25 ס\"מ</strong></li></ul><p><br></p><p>פינת טבע M</p><p>מתאימה לסלון, פינת אוכל וקליניקות.</p><ul><li>מדף עץ: <strong>120×30 ס\"מ</strong>, עובי 4 ס\"מ</li><li>הדפס ממוסגר: <strong>50×70 ס\"מ</strong></li><li>כד קרמי: <strong>גובה 35 ס\"מ</strong></li></ul><p><br></p><p>פינת טבע L</p><p>פינת הצהרה מרשימה לחללים גדולים, לובאים ומשרדים.</p><ul><li>מדף עץ: <strong>160×35 ס\"מ</strong>, עובי 4 ס\"מ</li><li>הדפס ממוסגר: <strong>70×100 ס\"מ</strong></li><li>כד קרמי: <strong>גובה 45 ס\"מ</strong></li></ul><p><br></p><p>חומרים</p><ul><li>עץ טבעי מלא בגימור ידני להגנה ולשמירה על הטקסטורה הייחודית של העץ</li><li>מסגרת אלומיניום שחורה עם פספרטו לבן</li><li>כד קרמי בגימור טבעי בגוון אבן.</li><li><br></li></ul><p><strong>כל פינה מגיעה כמוצר מוגמר ומוכן להתקנה – פתרון עיצוב שלם שמכניס טבע, חמימות ואומנות לכל בית או עסק.</strong> 🌿</p>",
+      "short_description": "ינת טבע – Mediterranean Blue\n\nקומפוזיציה מעוצבת הכוללת הדפס אומנותי בסגנון ים־תיכוני, מסגרת שחורה וכד קרמי בגימור טבעי, ליצירת פינת עיצוב שקטה, חמימה ועל־זמנית.\n\nהפינה מתאימה לסלון, פינת אוכל, משרד, קליניקה, חדר אירוח וחללי קבלה, ומשלבת בין אומנות, טקסטורות טבעיות ואסתטיקה מינימליסטית המשתלבת בקלות בכל סגנון עיצוב.",
+      "sku": null,
+      "brand": null,
+      "price": 1800,
+      "base_price": 1800,
+      "sale_price": null,
+      "currency": "ILS",
+      "images": [
+        "https://studio-242.com/assets/product-1781619810474-n8ctpt.webp",
+        "https://studio-242.com/assets/product-1781619818037-6ev9r.webp",
+        "https://studio-242.com/assets/product-1781619825498-5sqihp.webp"
+      ],
+      "in_stock": true,
+      "stock_status": "in_stock",
+      "url": "https://studio-242.com/product/pynt-tba-mavtsbt-lbyt-vlask-9rluzn",
+      "categories": [],
+      "updated_at": "2026-06-16T14:26:05.464Z"
+    },
     {
       "id": "fbfeb58e-603f-4a77-b1d9-5e2c95704257",
       "slug": "shkt-lbn-st-3-ytsyrvt-knbs-fine-art-gp5s1k",
