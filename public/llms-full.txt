@@ -5930,7 +5930,7 @@ Description: מוצרים - אופיר מסיקה - סטודיו 242
 ## Product Catalog
 
 ### פינת טבע מעוצבת לבית ולעסק
-URL: https://studio-242.com/product/pynt-tba-mavtsbt-lbyt-vlask-zci4dw
+URL: https://studio-242.com/product/pynt-tba-mavtsbt-lbyt-vlask-wf11ov
 Price: 1800.00 ILS
 Availability: In stock
 
