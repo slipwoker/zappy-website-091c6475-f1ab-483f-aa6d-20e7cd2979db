@@ -76,7 +76,15 @@ Information about WCAG compliance and accessibility features.
 
 ## Products
 
-**Total active products: 3**
+**Total active products: 4**
+
+### קיר עוגן מעוצב בהתאמה אישית
+https://studio-242.com/product/kyr-avgn-mavtsb-bhtamh-ayshyt-x3s1bq
+- Price: 5500.00 ILS
+- Availability: In stock
+- Category: קיר עוגן מעוצב
+- Description: יצירת מוקד עיצובי מרשים לבית ולעסק, המשלב אמנות, חומרים טבעיים וסטיילינג מוקפד בהתאמה מלאה לחלל.
+- Image: https://studio-242.com/assets/product-1781623146776-wtu9jp.webp
 
 ### סדרת אדמה ושקט | Earth & Silence
 https://studio-242.com/product/sdrt-admh-vshkt-earth-silence-oik4ph
