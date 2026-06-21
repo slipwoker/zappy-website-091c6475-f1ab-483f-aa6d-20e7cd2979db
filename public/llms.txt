@@ -76,7 +76,15 @@ Information about WCAG compliance and accessibility features.
 
 ## Products
 
-**Total active products: 8**
+**Total active products: 9**
+
+### William Morris | Botanical Collection
+https://studio-242.com/product/william-morris-botanical-collection-9wyctw
+- Price: 1790.00 ILS
+- Availability: In stock
+- Category: צילום אומנותי - סדרות
+- Description: סדרה בוטנית בהשראת יצירותיו של ויליאם מוריס | הדפס אמנות ממוסגר סדרת הדפסים בוטניים אלגנטית בהשראת שפת העיצוב של ויליאם מוריס – שילוב של טבע, דוגמאות צמחיות ויופי על-זמני. ההדפסים ממוסגרים במסגרת עץ בהירה עם פספרטו לבן, ומעניקים לחלל תחושה של רוגע, טבע ואסתטיקה אירופאית קלאסית.
+- Image: https://studio-242.com/assets/product-1782054857312-x2qo8.webp
 
 ### סדרת Nature in Focus | שלישיית הדפסי טבע אמנותיים – 100×70 ס"מ
 https://studio-242.com/product/sdrt-nature-in-focus-shlyshyyt-hdpsy-tba-amnvtyym-10070-sm-n3rz0j

@@ -1,10 +1,36 @@
 {
   "@context": "https://schema.org",
-  "generated_at": "2026-06-21T11:18:20.396Z",
+  "generated_at": "2026-06-21T15:17:49.296Z",
   "base_url": "https://studio-242.com",
   "currency": "ILS",
-  "count": 8,
+  "count": 9,
   "products": [
+    {
+      "id": "0c59d66e-1682-43e7-837e-cf60e9b1ab34",
+      "slug": "william-morris-botanical-collection-9wyctw",
+      "name": "William Morris | Botanical Collection",
+      "name_translations": {},
+      "description": "<p>Botanical Collection by William Morris</p><p>סדרה זו מוקדשת לשפת העיצוב הבוטנית של <strong>William Morris (1834–1896)</strong> – מעצב, אמן, משורר ואחד מהדמויות המשפיעות ביותר בתנועת האומנויות והמלאכות (Arts &amp; Crafts) באנגליה של המאה ה-19.</p><p>מוריס האמין כי הטבע הוא מקור בלתי נדלה ליופי, והרעיונות שלו ממשיכים להשפיע עד היום על עולם העיצוב, הטקסטיל ועיצוב הפנים. הדוגמאות הבוטניות המורכבות, העלים, הפרחים והקצב האורגני שביצירותיו הפכו לסמל של עיצוב על-זמני, המשלב בין אלגנטיות, חמימות וחיבור לטבע.</p><p>סדרת ההדפסים נבחרה בקפידה עבור חללים מודרניים, סקנדינביים, כפריים ו-Wabi-Sabi, והיא מתאימה במיוחד ליצירת <strong>קיר עוגן רגוע, טבעי ובעל נוכחות עיצובית</strong>.</p><p><br></p><p>מיסגור מומלץ</p><ul><li>מסגרת עץ אלון בהירה בגימור טבעי</li><li>פספרטו לבן-שמנת בעובי 4–6 ס\"מ</li><li>זכוכית איכותית להגנה על ההדפס</li><li>מתאים לתלייה כסט של 3 עבודות</li><li><br></li></ul><p>גדלים לבחירה</p><p><strong>50×70 ס\"מ</strong> – אידיאלי לחדרי שינה, פינות קריאה וקירות גלריה.</p><p><strong>70×100 ס\"מ</strong> – מתאים לסלון, פינת אוכל, משרד או חללים מסחריים, ליצירת נוכחות עיצובית מרשימה.</p><p><br></p><p><strong>Studio 242 | Nature • Art • Design</strong></p><p> הדפס אמנות ממוסגר בהשראת עולם הטבע והמורשת העיצובית של ויליאם מוריס, המכניס לחלל תחושה של שקט, עומק ואלגנטיות על-זמנית.</p><p><br></p>",
+      "short_description": "סדרה בוטנית בהשראת יצירותיו של ויליאם מוריס | הדפס אמנות ממוסגר\nסדרת הדפסים בוטניים אלגנטית בהשראת שפת העיצוב של ויליאם מוריס – שילוב של טבע, דוגמאות צמחיות ויופי על-זמני. ההדפסים ממוסגרים במסגרת עץ בהירה עם פספרטו לבן, ומעניקים לחלל תחושה של רוגע, טבע ואסתטיקה אירופאית קלאסית.",
+      "sku": null,
+      "brand": null,
+      "price": 1790,
+      "base_price": 1790,
+      "sale_price": null,
+      "currency": "ILS",
+      "images": [
+        "https://studio-242.com/assets/product-1782054857312-x2qo8.webp",
+        "https://studio-242.com/assets/product-1782054864067-kb8w4c.webp",
+        "https://studio-242.com/assets/product-1782054871525-7hqox.webp"
+      ],
+      "in_stock": true,
+      "stock_status": "in_stock",
+      "url": "https://studio-242.com/product/william-morris-botanical-collection-9wyctw",
+      "categories": [
+        "צילום אומנותי - סדרות"
+      ],
+      "updated_at": "2026-06-21T15:17:27.273Z"
+    },
     {
       "id": "ae20c93e-4b8c-4f42-8e97-4115d8efb8de",
       "slug": "sdrt-nature-in-focus-shlyshyyt-hdpsy-tba-amnvtyym-10070-sm-n3rz0j",
