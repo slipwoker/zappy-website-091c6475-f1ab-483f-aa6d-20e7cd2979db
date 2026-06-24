@@ -79,9 +79,10 @@ Information about WCAG compliance and accessibility features.
 **Total active products: 13**
 
 ### פיסת טבע מהגליל | מארז אווירה קטן
-https://studio-242.com/product/pyst-tba-mhglyl-marz-avvyrh-ktn-e0ik3w
+https://studio-242.com/product/pyst-tba-mhglyl-marz-avvyrh-ktn-sytzq1
 - Price: 0.00 ILS
 - Availability: In stock
+- Category: מארזים ומתנות מהטבע
 - Description: מארז מתנה מעוצב המשלב הדפס אמנותי מקורי מבית Studio 242, עץ שפע חי, כלי טרקוטה בעבודת סטודיו ונר טבעי בעבודת יד. אוסף פריטים שנבחרו ליצור פינה של שקט, השראה וחיבור לטבע הגלילי
 - Image: https://studio-242.com/assets/product-1782293400088-ixfkt.webp
 
