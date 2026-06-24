@@ -76,7 +76,14 @@ Information about WCAG compliance and accessibility features.
 
 ## Products
 
-**Total active products: 12**
+**Total active products: 13**
+
+### פיסת טבע מהגליל | מארז אווירה קטן
+https://studio-242.com/product/pyst-tba-mhglyl-marz-avvyrh-ktn-e0ik3w
+- Price: 0.00 ILS
+- Availability: In stock
+- Description: מארז מתנה מעוצב המשלב הדפס אמנותי מקורי מבית Studio 242, עץ שפע חי, כלי טרקוטה בעבודת סטודיו ונר טבעי בעבודת יד. אוסף פריטים שנבחרו ליצור פינה של שקט, השראה וחיבור לטבע הגלילי
+- Image: https://studio-242.com/assets/product-1782293400088-ixfkt.webp
 
 ### קיר עוגן ירוק | ספסל עץ אלון, מדפי עץ, אמנות בוטנית ועץ שתול
 https://studio-242.com/product/kyr-avgn-yrvk-spsl-ats-alvn-mdpy-ats-amnvt-bvtnyt-vats-shtvl-e4yxpg
