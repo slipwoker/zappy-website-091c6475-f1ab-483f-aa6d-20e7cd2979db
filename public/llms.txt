@@ -76,7 +76,15 @@ Information about WCAG compliance and accessibility features.
 
 ## Products
 
-**Total active products: 15**
+**Total active products: 16**
+
+### Between 02 - Quiet Growth  (Copy)
+https://studio-242.com/product/between-02-quiet-growth-copy-3fqkd4
+- Price: 1190.00 ILS
+- Availability: In stock
+- Category: Between  - nature reveals itself
+- Description: Quiet Growth היא חלק מקולקציית Between של Studio 242 – סדרת עבודות החוקרת את המרחב שבין הטבע לריק, בין חומר לאור ובין נוכחות להיעלמות. היצירה מבוססת על צילום מקורי שצולם בסטודיו ועבר תהליך עיבוד אמנותי מוקפד, המדגיש את הפשטות, הטקסטורה והאיזון שבצורות האורגניות. הענף אינו מוצג כאובייקט בוטני, אלא כצורה פיסולית כמעט, המתפתחת מתוך שכבות של אור וצל ומזמינה את הצופה להתבוננות שקטה. גווני האדמה, המרחב הנקי והקומפוזיציה האנכית הופכים את העבודה לבחירה טבעית עבור חללים מודרניים, מינימליסטיים וחמים – בין…
+- Image: https://studio-242.com/assets/product-1782636311651-dsi1fb.webp
 
 ### Between 01 - Stillness I
 https://studio-242.com/product/between-01-stillness-i-94omm2
@@ -86,8 +94,8 @@ https://studio-242.com/product/between-01-stillness-i-94omm2
 - Description: ענף טבעי החושף את יופיו מתוך שכבות של אור וצל, ביצירה מינימליסטית המשלבת צילום אמנותי עם עיבוד עכשווי. קומפוזיציה שקטה ובעלת נוכחות, המכניסה לחלל תחושת איזון, עומק וחיבור לטבע.
 - Image: https://studio-242.com/assets/product-1782637627432-ijp3c.webp
 
-### Quiet Growth
-https://studio-242.com/product/quiet-growth-k4xnws
+### Between 02 - Quiet Growth 
+https://studio-242.com/product/between-02-quiet-growth-l86bsq
 - Price: 1190.00 ILS
 - Availability: In stock
 - Category: Between  - nature reveals itself
