@@ -5910,7 +5910,7 @@ Description: מוצרים - אופיר מסיקה - סטודיו 242
 ## Product Catalog
 
 ### Between 03- Passage I
-URL: https://studio-242.com/product/between-03-passage-i-d5j6v5
+URL: https://studio-242.com/product/between-03-passage-i-r9ouii
 Price: 1190.00 ILS
 Availability: In stock
 
@@ -5919,7 +5919,7 @@ Passage I היא חלק מקולקציית Between של Studio 242 – סדרת 
 ---
 
 ### Between 01 - Stillness I
-URL: https://studio-242.com/product/between-01-stillness-i-94omm2
+URL: https://studio-242.com/product/between-01-stillness-i-cir62t
 Price: 1190.00 ILS
 Availability: In stock
 
