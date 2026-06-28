@@ -1,13 +1,13 @@
 {
   "@context": "https://schema.org",
-  "generated_at": "2026-06-28T08:52:01.868Z",
+  "generated_at": "2026-06-28T08:53:27.299Z",
   "base_url": "https://studio-242.com",
   "currency": "ILS",
   "count": 14,
   "products": [
     {
       "id": "68056f98-5871-4be5-8851-eb28dca39888",
-      "slug": "quiet-growth-dvjff6",
+      "slug": "quiet-growth-k4xnws",
       "name": "Quiet Growth",
       "name_translations": {},
       "description": "<p><br></p><p><strong>Quiet Growth</strong> היא חלק מקולקציית <strong>Between</strong> של Studio 242 – סדרת עבודות החוקרת את המרחב שבין הטבע לריק, בין חומר לאור ובין נוכחות להיעלמות.</p><p>היצירה מבוססת על צילום מקורי שצולם בסטודיו ועבר תהליך עיבוד אמנותי מוקפד, המדגיש את הפשטות, הטקסטורה והאיזון שבצורות האורגניות. הענף אינו מוצג כאובייקט בוטני, אלא כצורה פיסולית כמעט, המתפתחת מתוך שכבות של אור וצל ומזמינה את הצופה להתבוננות שקטה.</p><p>גווני האדמה, המרחב הנקי והקומפוזיציה האנכית הופכים את העבודה לבחירה טבעית עבור חללים מודרניים, מינימליסטיים וחמים – בין אם בסלון, בחדר שינה, במשרד או בחלל אירוח.</p><p>כל יצירה מודפסת בקפידה על נייר Fine Art איכותי וממוסגרת בגימור המתאים לשפה העיצובית של Studio 242.</p><p>אפשרויות רכישה</p><p><strong>Large</strong></p><p><strong>50 × 70 ס\"מ</strong></p><ul><li>הדפסת Fine Art ארכיונית באיכות מוזיאונית</li><li>מסגרת עץ בגוון אגוז טבעי</li><li>פספרטו לבן איכותי</li><li>זכוכית מט 2 מ\"מ להפחתת השתקפויות</li><li>מוכנה לתלייה</li></ul><p><strong>XLarge</strong></p><p><strong>70 × 100 ס\"מ</strong></p><ul><li>הדפסת Fine Art ארכיונית באיכות מוזיאונית</li><li>מסגרת עץ בגוון אגוז טבעי</li><li>פספרטו לבן איכותי</li><li>זכוכית מט 2 מ\"מ להפחתת השתקפויות</li><li>מוכנה לתלייה</li></ul><p>מידע נוסף</p><ul><li>צילום מקורי: <strong>Studio 242</strong></li><li>קולקציה: <strong>Between</strong></li><li>חתום ומיוצר בישראל</li><li>כל יצירה מיוצרת לפי הזמנה</li></ul>",
@@ -26,11 +26,12 @@
       ],
       "in_stock": true,
       "stock_status": "in_stock",
-      "url": "https://studio-242.com/product/quiet-growth-dvjff6",
+      "url": "https://studio-242.com/product/quiet-growth-k4xnws",
       "categories": [
-        "Between  - nature reveals itself."
+        "Between  - nature reveals itself.",
+        "צילום אומנותי - פיין ארט"
       ],
-      "updated_at": "2026-06-28T08:51:30.605Z"
+      "updated_at": "2026-06-28T08:52:46.142Z"
     },
     {
       "id": "080cae9e-8fc9-4f4a-aafe-8cdfd67c5fe1",
@@ -159,7 +160,7 @@
       "stock_status": "in_stock",
       "url": "https://studio-242.com/product/shkt-lbn-white-serenity-collection-apg3ta",
       "categories": [
-        "צילום אומנותי - סדרות"
+        "צילום אומנותי - פיין ארט"
       ],
       "updated_at": "2026-06-21T15:30:44.497Z"
     },
@@ -185,7 +186,7 @@
       "stock_status": "in_stock",
       "url": "https://studio-242.com/product/william-morris-botanical-collection-9wyctw",
       "categories": [
-        "צילום אומנותי - סדרות"
+        "צילום אומנותי - פיין ארט"
       ],
       "updated_at": "2026-06-21T15:17:27.273Z"
     },
@@ -210,7 +211,7 @@
       "stock_status": "in_stock",
       "url": "https://studio-242.com/product/sdrt-nature-in-focus-shlyshyyt-hdpsy-tba-amnvtyym-10070-sm-hzgtco",
       "categories": [
-        "צילום אומנותי - סדרות"
+        "צילום אומנותי - פיין ארט"
       ],
       "updated_at": "2026-06-21T15:33:14.828Z"
     },
@@ -337,7 +338,7 @@
       "stock_status": "in_stock",
       "url": "https://studio-242.com/product/sdrt-admh-vshkt-earth-silence-r4tsu3",
       "categories": [
-        "צילום אומנותי - סדרות"
+        "צילום אומנותי - פיין ארט"
       ],
       "updated_at": "2026-06-21T15:43:45.810Z"
     },
