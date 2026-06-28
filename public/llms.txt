@@ -76,7 +76,14 @@ Information about WCAG compliance and accessibility features.
 
 ## Products
 
-**Total active products: 13**
+**Total active products: 14**
+
+### Quiet Growth
+https://studio-242.com/product/quiet-growth-99yzk4
+- Price: 0.00 ILS
+- Availability: In stock
+- Description: ענף עדין המתגלה מתוך שכבות של אור וצל, ביצירה מינימליסטית המשלבת צילום אמנותי עם עיבוד עכשווי. עבודה שקטה, אלגנטית ועל־זמנית, המוסיפה עומק ורוגע לחלל.
+- Image: https://studio-242.com/assets/product-1782636311651-dsi1fb.webp
 
 ### פיסת טבע מהגליל | מארז אווירה 
 https://studio-242.com/product/pyst-tba-mhglyl-marz-avvyrh-g99hog
