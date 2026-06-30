@@ -268,6 +268,443 @@
 </script>
 <!-- ZAPPY_INTEGRATION_END analytics:add_facebook_pixel -->
   
+          <style id="zappy-cta-mobile-style">
+            /* Hide CTA list item on desktop (tablets and up) */
+            @media (min-width: 769px) {
+              .nav-cta-item-mobile {
+                display: none !important;
+              }
+            }
+            /* Show CTA list item on mobile */
+            @media (max-width: 768px) {
+              .nav-cta-item-mobile {
+                display: list-item !important;
+              }
+            }
+          </style>
+        
+          <style id="zappy-nested-menu-style">
+            /* Desktop only: vertically center nav items */
+            @media (min-width: 769px) {
+              .nav-menu,
+              #navMenu {
+                align-items: center !important;
+              }
+            }
+            
+            /* Menu Group styling (non-clickable parent) - TOP LEVEL ONLY with ultra-specific selector */
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
+              display: inline-block !important;
+              padding: 0.5rem 1rem !important;
+              color: var(--nav-color) !important;
+              font-weight: 500 !important;
+              line-height: 1.7 !important;
+              cursor: default !important;
+              user-select: none !important;
+              vertical-align: middle !important;
+              text-decoration: none !important;
+              margin: 0 !important;
+              transition: color 0.3s ease !important;
+            }
+            
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
+              color: var(--nav-hover-color) !important;
+            }
+            
+            /* Desktop: show submenu on Menu Group hover */
+            li:has(.menu-group-title):hover > .sub-menu {
+              opacity: 1 !important;
+              visibility: visible !important;
+              transform: translateY(0) !important;
+              pointer-events: auto !important; /* Enable interaction when hovering */
+            }
+            
+            /* Hide menu items marked as hidden (overrides hover states) */
+            .zappy-hidden-menu-item,
+            li:has(.menu-group-title):hover > .sub-menu .zappy-hidden-menu-item {
+              display: none !important;
+              opacity: 0 !important;
+              visibility: hidden !important;
+              pointer-events: none !important;
+            }
+            
+            /* Keep submenu visible when hovering over the submenu itself */
+            .sub-menu:hover {
+              opacity: 1 !important;
+              visibility: visible !important;
+              pointer-events: auto !important;
+            }
+            
+            /* Nested dropdown menu styles - using more specific selectors */
+            .nav-menu .sub-menu,
+            nav .sub-menu,
+            .navbar .sub-menu {
+              display: block !important; /* Ensure submenu is in the DOM */
+              position: absolute !important;
+              top: 100%;
+              left: 0;
+              right: auto;
+              min-width: 200px;
+              background: white;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+              border-radius: 8px;
+              padding: 8px 0;
+              margin-top: 0px; /* Remove gap to prevent hover loss */
+              opacity: 0 !important;
+              visibility: hidden !important;
+              transform: translateY(-10px);
+              transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+              z-index: 1000;
+              list-style: none;
+              pointer-events: none; /* Prevent interaction when hidden */
+            }
+            
+            /* RTL (Hebrew/Arabic) submenu positioning - align to right instead of left */
+            [dir="rtl"] .nav-menu .sub-menu,
+            [dir="rtl"] nav .sub-menu,
+            [dir="rtl"] .navbar .sub-menu,
+            html[lang="he"] .nav-menu .sub-menu,
+            html[lang="he"] nav .sub-menu,
+            html[lang="he"] .navbar .sub-menu,
+            html[lang="ar"] .nav-menu .sub-menu,
+            html[lang="ar"] nav .sub-menu,
+            html[lang="ar"] .navbar .sub-menu {
+              left: auto;
+              right: 0;
+            }
+            
+            /* Show submenu on parent hover - more specific selectors */
+            .nav-menu li:hover > .sub-menu,
+            nav li:hover > .sub-menu,
+            .navbar li:hover > .sub-menu {
+              opacity: 1 !important;
+              visibility: visible !important;
+              transform: translateY(0) !important;
+              pointer-events: auto !important; /* Enable interaction when visible */
+            }
+            
+            /* Parent item must be relatively positioned */
+            .nav-menu li:has(.sub-menu),
+            nav li:has(.sub-menu),
+            .navbar li:has(.sub-menu) {
+              position: relative;
+            }
+            
+            /* Style for submenu items */
+            .sub-menu li {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+            }
+            
+            .sub-menu a,
+            .sub-menu .menu-group-title {
+              display: block !important;
+              padding: 10px 12px !important;
+              color: #333 !important;
+              font-weight: 600 !important;
+              text-decoration: none;
+              transition: background-color 0.2s;
+              white-space: nowrap;
+              cursor: default;
+            }
+            
+            .sub-menu a:hover {
+              background-color: #f5f5f5;
+            }
+            
+            /* CRITICAL: Override submenu styles for TOP-LEVEL Menu Groups only - must come AFTER submenu styles */
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
+              display: inline-block !important;
+              padding: 0.5rem 1rem !important;
+              color: var(--nav-color) !important;
+              font-weight: 500 !important;
+              line-height: 1.7 !important;
+              cursor: default !important;
+              user-select: none !important;
+              vertical-align: middle !important;
+              text-decoration: none !important;
+              margin: 0 !important;
+              transition: color 0.3s ease !important;
+            }
+            
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
+              color: var(--nav-hover-color) !important;
+              background-color: transparent !important;
+            }
+            
+            /* On mobile, show nested menus as expandable accordion */
+            @media (max-width: 768px) {
+              /* Mobile submenu styling */
+              .nav-menu .sub-menu,
+              nav .sub-menu,
+              .navbar .sub-menu {
+                position: static !important;
+                transform: none !important;
+                box-shadow: none !important;
+                background: transparent !important;
+                margin-top: 0 !important;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                visibility: hidden;
+                transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease, padding 0.3s ease;
+                padding: 0 !important;
+                border-radius: 0 !important;
+              }
+              
+              /* Expanded state — no internal scroll; parent navMenu scrolls */
+              .sub-menu.mobile-expanded {
+                max-height: none !important;
+                overflow-y: visible !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                padding: 8px 0 8px 16px !important;
+              }
+              
+              /* RTL padding adjustment */
+              [dir="rtl"] .sub-menu.mobile-expanded,
+              html[lang="he"] .sub-menu.mobile-expanded,
+              html[lang="ar"] .sub-menu.mobile-expanded {
+                padding: 8px 16px 8px 0 !important;
+              }
+              
+              /* Disable hover behavior on mobile */
+              .nav-menu li:hover > .sub-menu,
+              nav li:hover > .sub-menu,
+              .navbar li:hover > .sub-menu {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+              }
+              
+              /* Enable visibility for expanded submenus */
+              .nav-menu li > .sub-menu.mobile-expanded,
+              nav li > .sub-menu.mobile-expanded,
+              .navbar li > .sub-menu.mobile-expanded {
+                opacity: 1 !important;
+                visibility: visible !important;
+                pointer-events: auto !important;
+              }
+              
+              .sub-menu a {
+                padding: 10px 0 !important;
+                display: block !important;
+                font-size: 14px !important;
+                white-space: normal !important;
+              }
+              
+              .sub-menu a:hover {
+                background-color: transparent !important;
+              }
+              
+              /* Parent item wrapper - flex layout with relative positioning for absolute toggle */
+              .nav-menu li:has(.sub-menu),
+              nav li:has(.sub-menu),
+              .navbar li:has(.sub-menu) {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                align-items: center !important;
+                position: relative !important;
+                min-height: 44px !important;
+              }
+              
+              /* Parent link - takes full width since toggle is absolute (not a flex child) */
+              .nav-menu li:has(.sub-menu) > a,
+              nav li:has(.sub-menu) > a,
+              .navbar li:has(.sub-menu) > a,
+              .nav-menu > li > .menu-group-title,
+              #navMenu > li > .menu-group-title {
+                flex: 1 !important;
+                min-width: 0 !important;
+              }
+              
+              /* Normalize menu-group-title in mobile nav to match link alignment */
+              .nav-menu > li > .menu-group-title,
+              #navMenu > li > .menu-group-title {
+                padding: 0 !important;
+                line-height: inherit !important;
+              }
+              
+              /* Submenu takes full width below parent */
+              .nav-menu li:has(.sub-menu) > .sub-menu,
+              nav li:has(.sub-menu) > .sub-menu,
+              .navbar li:has(.sub-menu) > .sub-menu {
+                flex-basis: 100% !important;
+                width: 100% !important;
+              }
+              
+              /* HIDE EXISTING CHEVRONS/ARROWS from cloned sites to prevent duplicates */
+              .nav-menu li:has(.sub-menu) > a .fa-chevron-down,
+              .nav-menu li:has(.sub-menu) > a .fa-angle-down,
+              .nav-menu li:has(.sub-menu) > a [class*="chevron"],
+              .nav-menu li:has(.sub-menu) > a [class*="arrow"],
+              nav li:has(.sub-menu) > a [class*="chevron"],
+              nav li:has(.sub-menu) > a [class*="arrow"],
+              #navMenu li:has(.sub-menu) > a [class*="chevron"],
+              #navMenu li:has(.sub-menu) > a [class*="arrow"] {
+                display: none !important;
+                visibility: hidden !important;
+              }
+              
+              /* Toggle arrow button - flex child that stretches to match nav-link height */
+              .mobile-submenu-toggle {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: 44px !important;
+                height: auto !important;
+                background: transparent !important;
+                border: none !important;
+                cursor: pointer !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                position: static !important;
+                flex-shrink: 0 !important;
+                align-self: stretch !important;
+                z-index: 2 !important;
+                -webkit-tap-highlight-color: transparent;
+              }
+              
+              .mobile-submenu-toggle::after {
+                content: '' !important;
+                display: block !important;
+                width: 0 !important;
+                height: 0 !important;
+                border-left: 6px solid transparent !important;
+                border-right: 6px solid transparent !important;
+                border-top: 7px solid currentColor !important;
+                transition: transform 0.3s ease !important;
+              }
+              
+              /* Rotate arrow when expanded */
+              .mobile-submenu-toggle.expanded::after {
+                transform: rotate(180deg) !important;
+              }
+            }
+            
+            /* Hide toggle button on desktop */
+            @media (min-width: 769px) {
+              .mobile-submenu-toggle {
+                display: none !important;
+              }
+            }
+          </style>
+          
+          <script id="zappy-mobile-menu-script">
+            // Mobile menu toggle for nested submenus (including Menu Groups)
+            // Uses separate toggle button - link navigates, arrow toggles submenu
+            (function() {
+              function initMobileMenuToggles() {
+                // Only run on mobile
+                if (window.innerWidth > 768) {
+                  // Remove any toggle buttons on desktop
+                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn => btn.remove());
+                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu => {
+                    menu.classList.remove('mobile-expanded');
+                  });
+                  console.log('[MOBILE MENU] Desktop mode - cleanup done');
+                  return;
+                }
+                
+                console.log('[MOBILE MENU] Initializing mobile menu toggles...');
+                
+                // Find all parent menu items (items with .sub-menu)
+                const menuItemsWithSubmenus = document.querySelectorAll(
+                  '.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)'
+                );
+                
+                console.log('[MOBILE MENU] Found', menuItemsWithSubmenus.length, 'items with submenus');
+                
+                menuItemsWithSubmenus.forEach(function(li) {
+                  // Skip if already has toggle button
+                  if (li.querySelector('.mobile-submenu-toggle')) {
+                    return;
+                  }
+                  
+                  const submenu = li.querySelector('.sub-menu');
+                  const parentLink = li.querySelector(':scope > a') || li.querySelector(':scope > .menu-group-title');
+                  
+                  if (!submenu || !parentLink) return;
+                  
+                  // Create toggle button
+                  const toggleBtn = document.createElement('button');
+                  toggleBtn.className = 'mobile-submenu-toggle';
+                  toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+                  toggleBtn.setAttribute('type', 'button');
+
+                  // Insert toggle button after the link
+                  parentLink.insertAdjacentElement('afterend', toggleBtn);
+                  
+                  console.log('[MOBILE MENU] Created toggle button for:', parentLink.textContent?.trim());
+                  
+                  // Handle toggle button click - only toggles submenu
+                  toggleBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const isExpanded = submenu.classList.contains('mobile-expanded');
+                    
+                    // Close all other submenus first
+                    document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
+                      if (menu !== submenu) {
+                        menu.classList.remove('mobile-expanded');
+                        const otherToggle = menu.parentElement.querySelector('.mobile-submenu-toggle');
+                        if (otherToggle) otherToggle.classList.remove('expanded');
+                      }
+                    });
+                    
+                    // Toggle this submenu
+                    submenu.classList.toggle('mobile-expanded');
+                    toggleBtn.classList.toggle('expanded');
+                    
+                    console.log('[MOBILE MENU] Toggled submenu:', !isExpanded ? 'expanded' : 'collapsed');
+                  });
+                  
+                  // Parent link navigates normally - no preventDefault
+                });
+              }
+              
+              // Initialize on DOM load
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMobileMenuToggles);
+              } else {
+                initMobileMenuToggles();
+              }
+              
+              // Re-initialize on window resize (but use debounce to avoid too many calls)
+              let resizeTimer;
+              window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(initMobileMenuToggles, 250);
+              });
+              
+              // Also initialize when mobile menu becomes visible
+              // This handles cases where the mobile menu is hidden initially
+              const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                  if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                    const target = mutation.target;
+                    if (target.classList.contains('active') || target.style.display !== 'none') {
+                      console.log('[MOBILE MENU] Mobile menu became visible, re-initializing...');
+                      setTimeout(initMobileMenuToggles, 100);
+                    }
+                  }
+                });
+              });
+              
+              // Observe mobile menu containers
+              const mobileMenus = document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu');
+              mobileMenus.forEach(function(menu) {
+                observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
+              });
+            })();
+          </script>
+        
     <style id="zappy-announcement-bar-styles">
     /* Announcement Bar Styles */
     .zappy-announcement-bar {
@@ -305,56 +742,6 @@
     }
     </style>
     <link rel="stylesheet" href="/styles.css">
-
-    <style id="zappy-dropdown-submenu-styles">
-      /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
-      /* Base styles for dropdown submenus - parent must be positioned */
-      .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { position: relative; }
-      /* Submenu base - hidden by default */
-      .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { display: block !important; position: absolute !important; top: 100%; left: 0; min-width: 220px; background: white; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 1000; list-style: none; pointer-events: none; }
-      /* CRITICAL: Desktop hover styles to show dropdown */
-      .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
-      /* Submenu item styling */
-      .sub-menu li { list-style: none; margin: 0; padding: 0; }
-      .sub-menu a { display: block !important; padding: 10px 16px !important; color: var(--text-dark, #333) !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
-      .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
-      [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 10px !important; padding-right: 28px !important; }
-      .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
-      .sub-menu a:hover { background-color: #f5f5f5; }
-      /* RTL (Hebrew/Arabic) dropdown positioning */
-      [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
-      /* Hide empty dropdown menus (exclude catalog sub-menus that use <a> children instead of <li>) */
-      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))):not(:has(> a)), .sub-menu:not(:has(li)):not(:has(> a)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
-      /* Desktop: show submenu on Menu Group hover */
-      li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
-      /* Menu Group title styling */
-      .nav-menu > li > .menu-group-title, #navMenu > li > .menu-group-title { display: inline-block; padding: 0.5rem 1rem; cursor: default; user-select: none; }
-      
-      /* ========== MOBILE SUBMENU STYLES ========== */
-      @media (max-width: 768px) {
-        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
-        .navbar .sub-menu.mobile-expanded, .nav-menu .sub-menu.mobile-expanded, #navMenu .sub-menu.mobile-expanded { max-height: none !important; overflow-y: visible !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
-        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
-        /* Disable hover behavior on mobile */
-        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
-        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
-        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { display: flex !important; flex-wrap: wrap !important; align-items: center !important; position: relative !important; min-height: 44px !important; }
-        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a { flex: 1 !important; min-width: 0 !important; }
-        .nav-menu li:has(.sub-menu) > .menu-group-title, nav li:has(.sub-menu) > .menu-group-title, .navbar li:has(.sub-menu) > .menu-group-title, #navMenu li:has(.sub-menu) > .menu-group-title { flex: 1 !important; min-width: 0 !important; padding: 0 !important; line-height: inherit !important; }
-        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu, .navbar li:has(.sub-menu) > .sub-menu, #navMenu li:has(.sub-menu) > .sub-menu { flex-basis: 100% !important; width: 100% !important; }
-        .nav-menu li:has(.sub-menu) > a [class*="chevron"], .nav-menu li:has(.sub-menu) > a [class*="arrow"], .nav-menu li:has(.sub-menu) > a .fa-chevron-down, .nav-menu li:has(.sub-menu) > a .fa-angle-down, nav li:has(.sub-menu) > a [class*="chevron"], nav li:has(.sub-menu) > a [class*="arrow"], #navMenu li:has(.sub-menu) > a [class*="chevron"], #navMenu li:has(.sub-menu) > a [class*="arrow"] { display: none !important; visibility: hidden !important; }
-        .mobile-submenu-toggle { display: flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: auto !important; background: transparent !important; border: none !important; cursor: pointer !important; color: var(--text-dark) !important; position: static !important; flex-shrink: 0 !important; align-self: stretch !important; z-index: 2 !important; padding: 0 !important; margin: 0 !important; }
-        .mobile-submenu-toggle::after { content: '' !important; width: 0 !important; height: 0 !important; border-left: 6px solid transparent !important; border-right: 6px solid transparent !important; border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important; }
-        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
-        .sub-menu a { padding: 10px 0 !important; display: block !important; color: var(--text-dark) !important; white-space: normal !important; }
-        .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
-        [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 0 !important; padding-right: 28px !important; }
-        .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
-        .nav-menu.active, #navMenu.active { max-width: 100vw !important; overflow-x: hidden !important; box-sizing: border-box !important; }
-        .navbar .sub-menu li a, nav.navbar .sub-menu li a, .zappy-products-dropdown .sub-menu a { color: var(--text-dark) !important; }
-      }
-      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
-    </style>
 
     <style id="zappy-widget-visibility">
       html[dir="rtl"] .whatsapp-float { right: 20px !important; left: auto !important; }
@@ -402,10 +789,10 @@
       <div class="search-wrapper">
         <input type="text" id="mobile-search-input" placeholder="חיפוש מוצרים..." autocomplete="off">
         <button class="search-submit" id="mobile-search-submit" title="חיפוש">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
         </button>
         <button class="close-search" id="close-mobile-search">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
       <div class="search-results" id="mobile-search-results"></div>
@@ -415,16 +802,16 @@
   <nav class="navbar" dir="rtl">
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
     <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
     </svg>
     <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
-      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
     </svg>
   </button>
 
   <button class="phone-header-btn" data-phone="0525859828" aria-label="Call">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
     </svg>
   </button>
 
@@ -433,41 +820,13 @@
       <a href="/" class="logo-link">
         <img src="/assets/242-logo-1782040387254-z9etz1.webp?v=1782040388511-dahk9a" alt="סטודיו 242 - אומנות ועיצוב הבית" class="logo">
       </a>
-    </div><ul class="nav-menu" id="navMenu">
-
-    <li class="menu-item-has-children zappy-products-dropdown">
-      <a href="/gallery">
-        מוצרים
-        <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M6 9l6 6 6-6"></path>
-        </svg>
-      </a>
-      <ul class="sub-menu" id="zappy-nav-category-links">
-        <li><a href="/gallery" data-i18n="ecom_products">מוצרים</a></li>
-        <!-- Categories will be loaded dynamically -->
-      </ul>
-    </li>
-  
-
-    
-  
-
-    
-  
-
-    
-  
-
-    
-  
-    
-  <li><a href="/the-studio">הסטודיו</a></li><li><a href="/about">אודות</a></li><li><a href="/contact">צור קשר</a></li></ul><div class="nav-ecommerce-icons nav-icons-left"><a href="/login" class="login-link nav-login" title="התחברות"><svg class="login-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a><a href="#cart" class="cart-link nav-cart" id="cart-drawer-toggle" title="עגלת קניות"><svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span class="cart-count">0</span></a><div class="nav-search-box">
+    </div><ul class="nav-menu" id="navMenu"><li><a href="/collections">הקולקציות</a><ul class="sub-menu"><li><a href="/the-studio">הסטודיו</a></li></ul></li><li><a href="/about">אודות</a></li><li><a href="/products">מוצרים</a></li><li><a href="/contact">צור קשר</a></li></ul><div class="nav-ecommerce-icons nav-icons-left"><a href="/login" class="login-link nav-login" title="התחברות"><svg class="login-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a><a href="#cart" class="cart-link nav-cart" id="cart-drawer-toggle" title="עגלת קניות"><svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cart-count">0</span></a><div class="nav-search-box">
     <input type="text" class="nav-search-input" id="nav-search-input" placeholder="חיפוש מוצרים..." autocomplete="off">
     <button class="nav-search-btn" id="nav-search-btn" title="חיפוש">
-      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
     </button>
     <div class="nav-search-results" id="nav-search-results"></div>
-  </div></div><div class="nav-ecommerce-icons nav-icons-right"><button class="nav-search-toggle" id="mobile-search-toggle" title="חיפוש"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg></button></div></div>
+  </div></div><div class="nav-ecommerce-icons nav-icons-right"><button class="nav-search-toggle" id="mobile-search-toggle" title="חיפוש"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button></div></div>
 
     
 
@@ -914,7 +1273,7 @@
 </script>
   
   <main>
-    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim" id="index-hero-section" style="position: relative; overflow: hidden; " data-zappy-bg-color="" data-zappy-bg-overlay-color="#1e160f" data-zappy-bg-overlay-opacity="41" data-zappy-bg-video-type="" data-zappy-bg-video-url="" data-element-id="zappy-hero-bg-index-hero-section" data-element-type="background-image" data-zappy-bg-position="54% 69%" data-zappy-bg-zoom="1">
+    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim" id="index-hero-section" style="position: relative; overflow: hidden; " data-zappy-bg-color data-zappy-bg-overlay-color="#1e160f" data-zappy-bg-overlay-opacity="41" data-zappy-bg-video-type data-zappy-bg-video-url data-element-id="zappy-hero-bg-index-hero-section" data-element-type="background-image" data-zappy-bg-position="54% 69%" data-zappy-bg-zoom="1">
   <!-- Background Image -->
   <div class="index-hero-bg">
     <img data-hero-bg="true" data-placeholder="index-hero-image-1" data-context="A serene, cinematic interior scene featuring a warm living room or intimate professional space with a large photographic artwork hung on a textured plaster wall. Natural daylight streams in softly from the side, casting gentle shadows. The color palette is warm neutrals — cream, linen, sand, and espresso. The space feels curated, unhurried, and deeply livable. Wabi-sabi aesthetic: imperfect textures, quiet beauty, no clutter. The large artwork on the wall is abstract or nature-based photography in muted tones. Shot from a slight angle to show depth and spatial harmony." width="1400" height="900" src="/assets/business-general-hero-upload-1781679988459-coc357.webp?v=1781679990979" alt="חלל פנים שקט עם יצירת אמנות צילומית גדולה על קיר מרקמי בתאורה טבעית חמה" data-hero-background="true" data-element-type="image" data-element-id="img-1780479063049-g1o5lls7l" style="object-fit: cover; object-position: 54% 69%; width: 100%; height: 100%;">
@@ -927,13 +1286,13 @@
   <div class="zappy-hero-overlay" style="position:absolute;inset:0;z-index:1;background:rgba(30, 22, 15, 0.41);pointer-events:none;"></div><div class="index-hero-content-wrapper" style="position: relative; z-index: 2">
     <div class="index-hero-card">
       <!-- Eyebrow Label -->
-      <p ><span class="index-hero-eyebrow" style="color: rgb(47, 41, 36) !important;">שדרוג חללים באמצעות טבע אומנות וחומר</span>
+      <p style><span class="index-hero-eyebrow" style="color: rgb(47, 41, 36) !important;">שדרוג חללים באמצעות טבע אומנות וחומר</span>
 
       
       </p><!-- H1 -->
 
       <!-- Subtitle -->
-      <h3 class="index-hero-subtitle" ></h3><h1 style="text-align: center;"></h1><h1 >הקיר שלכם יכול להיראות אחרת לגמרי<br></h1><p >שלחו לנו תמונה של הקיר בבית או בעסק וקבלו הדמיה <br>ראשונית ללא עלות.&nbsp;</p>
+      <h3 class="index-hero-subtitle" style></h3><h1 style="text-align: center;"></h1><h1 style>הקיר שלכם יכול להיראות אחרת לגמרי<br></h1><p style>שלחו לנו תמונה של הקיר בבית או בעסק וקבלו הדמיה <br>ראשונית ללא עלות.&nbsp;</p>
 
       <!-- CTA Buttons -->
       <div class="index-hero-ctas">
@@ -946,7 +1305,7 @@
   <!-- Bottom Divider -->
   <div class="index-hero-divider-wrapper" style="position: relative; z-index: 2">
     <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1400 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,90 L0,52 Q80,44 160,50 T320,46 Q400,52 480,44 T640,48 Q720,44 800,50 T960,46 Q1040,52 1120,44 T1280,48 Q1340,52 1400,46 L1400,90 Z" fill="#F7F2EA"></path>
+      <path d="M0,90 L0,52 Q80,44 160,50 T320,46 Q400,52 480,44 T640,48 Q720,44 800,50 T960,46 Q1040,52 1120,44 T1280,48 Q1340,52 1400,46 L1400,90 Z" fill="#F7F2EA"/>
     </svg>
   </div>
 </section>
@@ -964,16 +1323,16 @@
       <article class="benefit-card" data-grid-item-index="0">
         <div class="benefit-icon-wrapper" aria-hidden="true">
           <svg class="benefit-checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-element-type="icon" data-element-id="icon-1781697179112-mtcady7sh" data-icon-type="svg">
-            <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <div class="benefit-content">
-          <h3 class="benefit-title" >
+          <h3 class="benefit-title" style>
 
 אמנות מקורית והדפסים בלעדיים
 
 </h3>
-          <p class="benefit-text" >
+          <p class="benefit-text" style>
 
 צילומים ויצירות בעלי אופי ייחודי ושפה עיצובית אחידה.
 
@@ -982,7 +1341,7 @@
       </article><article class="benefit-card" style="background-color: rgb(255, 255, 255) !important; padding: 28px 24px 24px !important; box-sizing: border-box; grid-area: auto !important;" data-grid-item-index="1">
         <div class="benefit-icon-wrapper" aria-hidden="true">
           <svg class="benefit-checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-element-type="icon" data-element-id="icon-1781697179112-x6crwt83u-add-1782056380424-rnmytn" data-icon-type="svg">
-            <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <div class="benefit-content">
@@ -1000,16 +1359,16 @@
       </article><article class="benefit-card" data-grid-item-index="2">
         <div class="benefit-icon-wrapper" aria-hidden="true">
           <svg class="benefit-checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-element-type="icon" data-element-id="icon-1781697179112-cjl6e9op6" data-icon-type="svg">
-            <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <div class="benefit-content">
-          <h3 class="benefit-title" >
+          <h3 class="benefit-title" style>
 
 עיצוב ביופילי בהשראת הטבע
 
 </h3>
-          <p class="benefit-text" >
+          <p class="benefit-text" style>
 
 חללים רגועים ומאוזנים באמצעות צמחייה, חומרים טבעיים ואמנות.
 
@@ -1024,16 +1383,16 @@
       <article class="benefit-card" data-grid-item-index="3">
         <div class="benefit-icon-wrapper" aria-hidden="true">
           <svg class="benefit-checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-element-type="icon" data-element-id="icon-1781697179112-39d33sh76" data-icon-type="svg">
-            <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <div class="benefit-content">
-          <h3 class="benefit-title" >
+          <h3 class="benefit-title" style>
 
 פינות עוגן מוכנות בהתאמה אישית
 
 </h3>
-          <p class="benefit-text" >
+          <p class="benefit-text" style>
 
 שילוב מדויק של אמנות, מדפים, עציצים ואקססוריז.
 
@@ -1042,16 +1401,16 @@
       </article><article class="benefit-card" data-grid-item-index="4">
         <div class="benefit-icon-wrapper" aria-hidden="true">
           <svg class="benefit-checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-element-type="icon" data-element-id="icon-1781697179112-x6crwt83u" data-icon-type="svg">
-            <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <div class="benefit-content">
-          <h3 class="benefit-title" >
+          <h3 class="benefit-title" style>
 
 חומרים טבעיים ועל-זמניים
 
 </h3>
-          <p class="benefit-text" >
+          <p class="benefit-text" style>
 
 עץ, אבן וטרקוטה לעיצוב חם, נינוח ועל-זמני.
 
@@ -1060,16 +1419,16 @@
       </article><article class="benefit-card" data-grid-item-index="5">
         <div class="benefit-icon-wrapper" aria-hidden="true">
           <svg class="benefit-checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-element-type="icon" data-element-id="icon-1781697179112-he8ciq99m" data-icon-type="svg">
-            <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <div class="benefit-content">
-          <h3 class="benefit-title" >
+          <h3 class="benefit-title" style>
 
 ליווי מלא עד ההעמדה בחלל
 
 </h3>
-          <p class="benefit-text" >
+          <p class="benefit-text" style>
 
 מתכנון וקונספט ועד התקנה והלבשת החלל.
 
@@ -1095,8 +1454,8 @@
 
     <section class="featured-products-section" id="featured-products" data-zappy-dynamic="true">
       <div class="container">
-        <h2 class="section-title" >ההמלצה&nbsp;<span style="font-size: 2rem;">שלנו</span></h2>
-        <div class="product-grid featured-grid" id="zappy-featured-products"><div class="product-card standard" data-product-id="ae20c93e-4b8c-4f42-8e97-4115d8efb8de"><div class="product-card-inner"><div class="product-card-media"><a href="/product/sdrt-nature-in-focus-shlyshyyt-hdpsy-tba-amnvtyym-10070-sm-n3rz0j" class="product-card-image-link"><img src="/assets/product-1781693359525-owmu8e.webp" alt="סדרת Nature in Focus | שלישיית הדפסי טבע אמנותיים – 100×70 ס" מ"=""></a><div class="product-tags"><span class="product-tag tag-new">new</span></div><div class="product-card-actions"><button type="button" class="card-favorite-btn" data-product-id="ae20c93e-4b8c-4f42-8e97-4115d8efb8de" onclick="event.preventDefault(); event.stopPropagation(); toggleCardFavorite(this, 'ae20c93e-4b8c-4f42-8e97-4115d8efb8de')" title="שמור למועדפים" aria-pressed="false"><svg class="heart-outline" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3" fill="none"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0ZM10 17.2442C5.71583 14.1317 0.833333 9.185 0.833333 5.20833C0.833333 2.79583 2.79583 0.833333 5.20833 0.833333C7.49833 0.833333 9.58333 3.21667 9.58333 5.83333H10.4167C10.4167 3.21667 12.5017 0.833333 14.7917 0.833333C17.2042 0.833333 19.1667 2.79583 19.1667 5.20833C19.1667 9.185 14.2842 14.1317 10 17.2442Z" fill="currentColor"></path></svg><svg class="heart-filled" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0Z" fill="#e74c3c"></path></svg></button><button type="button" class="card-quickview-btn" data-card-quickview="" data-product-id="ae20c93e-4b8c-4f42-8e97-4115d8efb8de" title="תצוגה מהירה" aria-label="תצוגה מהירה"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M0.833008 9.99967C0.833008 9.99967 4.16634 3.33301 9.99967 3.33301C15.833 3.33301 19.1663 9.99967 19.1663 9.99967C19.1663 9.99967 15.833 16.6663 9.99967 16.6663C4.16634 16.6663 0.833008 9.99967 0.833008 9.99967Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div><div class="product-card-body"><p class="zappy-editable"><a href="/product/sdrt-nature-in-focus-shlyshyyt-hdpsy-tba-amnvtyym-10070-sm-n3rz0j" class="product-card-body-link"></a></p><div class="card-content"><h3><a href="/product/sdrt-nature-in-focus-shlyshyyt-hdpsy-tba-amnvtyym-10070-sm-n3rz0j" class="product-card-body-link">סדרת Nature in Focus | שלישיית הדפסי טבע אמנותיים – 100×70 ס"מ</a></h3><p class="card-desc"><a href="/product/sdrt-nature-in-focus-shlyshyyt-hdpsy-tba-amnvtyym-10070-sm-n3rz0j" class="product-card-body-link">Nature in Focus היא סדרת צילומי טבע אמנותיים שנולדה מתוך התבוננות בפרטים הקטנים ביותר של העולם הטבעי – מרקמים, אור, פריחות וצבעים שנגלים לרגע קצר והופכים ליצירה על-זמנית. הסדרה משלבת שלושה צילומים מקוריים של סטודיו 242, שנבחרו בקפידה כדי ליצור קומפוזיציה מאוזנת, רגועה ומלאת נוכחות. יחד הם מספרים סיפור של טבע, שקט וחיבור לחומריות אורגנית, ומתאימים במיוחד לחללים המעוצבים בקו מינימליסטי, טבעי ואלגנטי. כל יצירה מודפסת באיכות גבוהה על נייר אמנותי, ממוסגרת במסגרת עץ בהירה הכוללת פספרטו לבן רחב, היוצר תחושת עומק ומדגיש את הפרטים העדינים של הצילום. התוצאה היא פריט עיצובי בעל נוכחות מרשימה, המשתלב באופן טבעי בסלון, פינת אוכל, חדר שינה, משרד, קליניקה או חלל אירוח. הסדרה מיועדת לאנשים המבקשים להכניס אל הבית או העסק לא רק תמונה לקיר, אלא יצירה בעלת אופי – כזו שמוסיפה רוגע, טקסטורה וחיבור לטבע באופן עדין ומדויק. פרטי המוצר גודל כל יצירה: 100×70 ס"מ סוג הדפס: הדפס אמנותי איכותי (Fine Art Print) מסגרת: עץ בהיר טבעי פספרטו: לבן, איכותי ומוכן לתלייה סגנון: טבע, ביופיליה, מינימליזם חם, Wabi-Sabi התקנה: מגיע מוכן לתלייה סטודיו 242 – יוצרים אמנות שמכניסה את הטבע הביתה.</a></p></div><p></p><div class="product-card-footer"><div class="price">₪2990.00</div><button type="button" class="card-cart-btn" data-card-cart="" data-product-id="ae20c93e-4b8c-4f42-8e97-4115d8efb8de" aria-label="הוסף לעגלה"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M19.5275 4.09583C19.13 3.61083 18.5425 3.33333 17.9158 3.33333H3.74167L3.52833 1.7975C3.38667 0.773333 2.5 0 1.465 0H0.416667C0.186667 0 0 0.186667 0 0.416667C0 0.646667 0.186667 0.833333 0.416667 0.833333H1.46583C2.08667 0.833333 2.61833 1.29667 2.70333 1.91167L4.1875 12.5992C4.44417 14.4425 6.04167 15.8333 7.90167 15.8333H16.25C16.48 15.8333 16.6667 15.6467 16.6667 15.4167C16.6667 15.1867 16.48 15 16.25 15H7.90167C6.46 15 5.22333 13.9258 5.01667 12.5H15.55C17.3317 12.5 18.8775 11.2325 19.2267 9.48583L19.9592 5.825C20.0817 5.21 19.9242 4.58 19.5267 4.09583H19.5275ZM19.1425 5.66167L18.41 9.3225C18.1383 10.6808 16.935 11.6667 15.55 11.6667H4.89917L3.8575 4.16667H17.9158C18.2917 4.16667 18.6442 4.33333 18.8825 4.62417C19.1208 4.915 19.215 5.29333 19.1425 5.66167ZM5.83333 16.6667C4.91417 16.6667 4.16667 17.4142 4.16667 18.3333C4.16667 19.2525 4.91417 20 5.83333 20C6.7525 20 7.5 19.2525 7.5 18.3333C7.5 17.4142 6.7525 16.6667 5.83333 16.6667ZM5.83333 19.1667C5.37333 19.1667 5 18.7925 5 18.3333C5 17.8742 5.37333 17.5 5.83333 17.5C6.29333 17.5 6.66667 17.8742 6.66667 18.3333C6.66667 18.7925 6.29333 19.1667 5.83333 19.1667ZM14.1667 16.6667C13.2475 16.6667 12.5 17.4142 12.5 18.3333C12.5 19.2525 13.2475 20 14.1667 20C15.0858 20 15.8333 19.2525 15.8333 18.3333C15.8333 17.4142 15.0858 16.6667 14.1667 16.6667ZM14.1667 19.1667C13.7067 19.1667 13.3333 18.7925 13.3333 18.3333C13.3333 17.8742 13.7067 17.5 14.1667 17.5C14.6267 17.5 15 17.8742 15 18.3333C15 18.7925 14.6267 19.1667 14.1667 19.1667Z" fill="currentColor"></path></svg></button></div></div></div></div><div class="product-card standard" data-product-id="a9eec1dd-fbb4-4465-a38e-3e936c65137b"><div class="product-card-inner"><div class="product-card-media"><a href="/product/mdp-ats-alvn-mla-tsp-live-edge-rvchb-30-sm-avby-k-4-sm-120-140-180-sm-ng2vr1" class="product-card-image-link"><img 120="" 140="" 180="" src="/assets/product-1781691147794-7p69x.webp" alt="מדף עץ אלון מלא צף | Live Edge | רוחב 30 ס" מ="" |="" עובי="" כ-4="" ס"מ="" ס"מ"=""></a><div class="product-card-actions"><button type="button" class="card-favorite-btn" data-product-id="a9eec1dd-fbb4-4465-a38e-3e936c65137b" onclick="event.preventDefault(); event.stopPropagation(); toggleCardFavorite(this, 'a9eec1dd-fbb4-4465-a38e-3e936c65137b')" title="שמור למועדפים" aria-pressed="false"><svg class="heart-outline" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3" fill="none"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0ZM10 17.2442C5.71583 14.1317 0.833333 9.185 0.833333 5.20833C0.833333 2.79583 2.79583 0.833333 5.20833 0.833333C7.49833 0.833333 9.58333 3.21667 9.58333 5.83333H10.4167C10.4167 3.21667 12.5017 0.833333 14.7917 0.833333C17.2042 0.833333 19.1667 2.79583 19.1667 5.20833C19.1667 9.185 14.2842 14.1317 10 17.2442Z" fill="currentColor"></path></svg><svg class="heart-filled" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0Z" fill="#e74c3c"></path></svg></button><button type="button" class="card-quickview-btn" data-card-quickview="" data-product-id="a9eec1dd-fbb4-4465-a38e-3e936c65137b" title="תצוגה מהירה" aria-label="תצוגה מהירה"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M0.833008 9.99967C0.833008 9.99967 4.16634 3.33301 9.99967 3.33301C15.833 3.33301 19.1663 9.99967 19.1663 9.99967C19.1663 9.99967 15.833 16.6663 9.99967 16.6663C4.16634 16.6663 0.833008 9.99967 0.833008 9.99967Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div><div class="product-card-size-overlay"><div class="zc-size-strip" data-card-sizes=""><div class="zc-size-track"><button type="button" class="zc-size" data-size="M">M</button><button type="button" class="zc-size" data-size="L">L</button><button type="button" class="zc-size" data-size="XL">XL</button></div></div></div></div><div class="product-card-body"><p class="zappy-editable"><a href="/product/mdp-ats-alvn-mla-tsp-live-edge-rvchb-30-sm-avby-k-4-sm-120-140-180-sm-ng2vr1" class="product-card-body-link"></a></p><div class="card-content"><h3><a href="/product/mdp-ats-alvn-mla-tsp-live-edge-rvchb-30-sm-avby-k-4-sm-120-140-180-sm-ng2vr1" class="product-card-body-link">מדף עץ אלון מלא צף | Live Edge | רוחב 30 ס"מ | עובי כ-4 ס"מ | 120 / 140 / 180 ס"מ</a></h3><p class="card-desc"><a href="/product/mdp-ats-alvn-mla-tsp-live-edge-rvchb-30-sm-avby-k-4-sm-120-140-180-sm-ng2vr1" class="product-card-body-link">ישנם פריטים שמוסיפים אחסון, וישנם פריטים שמעצבים את האווירה כולה. מדף עץ האלון הצף שלנו נועד להיות הרבה יותר ממדף – הוא אלמנט עיצובי המכניס לחלל חמימות, חומריות טבעית ונוכחות שקטה. המדף מיוצר מעץ אלון מלא, הנחשב לאחד מחומרי הגלם האהובים בעולם העיצוב בזכות עמידותו, אופיו הטבעי והטקסטורה העשירה שלו. גידי העץ הייחודיים, מעברי הגוון והקצה האורגני מעניקים לכל מדף מראה חד-פעמי, שאינו ניתן לשכפול. עוביו המרשים של המדף, כ-4 ס"מ, יחד עם רוחב של כ-30 ס"מ, יוצרים נוכחות חזקה ותחושת איכות ויוקרה, תוך שמירה על מראה טבעי ונקי. המדף מגיע עם מערכת תלייה נסתרת ופירזול צף המותקן מתחת למדף, כך שלאחר ההתקנה מתקבל מראה מרחף ואלגנטי, ללא זוויות או תמיכות גלויות. מערכת החיבור תוכננה להתקנה פשוטה יחסית, יציבה ובטוחה לשימוש יומיומי. מתאים במיוחד עבור: קירות עוגן מעוצבים בסלון פינות טבע וביופיליה כניסה לבית ומסדרונות חדרי שינה ופינות קריאה מטבחים ופינות קפה קליניקות, משרדים, לובאים ובתי עסק שילוב עם כדים, צמחייה, ספרים, הדפסים וחפצי אמנות מידות לבחירה 120 ס"מ אורך × 30 ס"מ רוחב × כ-4 ס"מ עובי 140 ס"מ אורך × 30 ס"מ רוחב × כ-4 ס"מ עובי 180 ס"מ אורך × 30 ס"מ רוחב × כ-4 ס"מ עובי פרטי המוצר חומר: עץ אלון מלא רוחב: כ-30 ס"מ עובי: כ-4 ס"מ קצה: Live Edge טבעי גימור: ליטוש וגימור מלא להגנה ושמירה על מראה העץ התקנה: פירזול צף נסתר המותקן מתחת למדף סגנון: Natural | Wabi-Sabi | Biophilic Design | Rustic Modern ייחודיות מאחר שמדובר בעץ מלא טבעי, כל מדף הוא פריט חד-פעמי. דוגמת הגידים, מעברי הצבע, העיניים, הסדקים הטבעיים והקצוות האורגניים משתנים באופן טבעי מלוח ללוח. לכן, כל מדף שתקבלו יהיה דומה ברוחו לדגם המוצג, אך בעל אופי, חומריות וסיפור ייחודיים משלו. הבדלים קלים בגוון, בטקסטורה ובמבנה העץ אינם פגם – אלא חלק מהאותנטיות, היופי והייחוד של עץ אלון טבעי אמיתי. פריט עיצובי שמכניס את הטבע אל תוך הבית – שילוב של חומר גלם אצילי, עבודת יד ומראה מרחף, נקי ועל-זמני.</a></p></div><p></p><div class="product-card-footer"><div class="price">החל מ ₪990.00</div><button type="button" class="card-cart-btn" data-card-cart="" data-product-id="a9eec1dd-fbb4-4465-a38e-3e936c65137b" aria-label="הוסף לעגלה"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M19.5275 4.09583C19.13 3.61083 18.5425 3.33333 17.9158 3.33333H3.74167L3.52833 1.7975C3.38667 0.773333 2.5 0 1.465 0H0.416667C0.186667 0 0 0.186667 0 0.416667C0 0.646667 0.186667 0.833333 0.416667 0.833333H1.46583C2.08667 0.833333 2.61833 1.29667 2.70333 1.91167L4.1875 12.5992C4.44417 14.4425 6.04167 15.8333 7.90167 15.8333H16.25C16.48 15.8333 16.6667 15.6467 16.6667 15.4167C16.6667 15.1867 16.48 15 16.25 15H7.90167C6.46 15 5.22333 13.9258 5.01667 12.5H15.55C17.3317 12.5 18.8775 11.2325 19.2267 9.48583L19.9592 5.825C20.0817 5.21 19.9242 4.58 19.5267 4.09583H19.5275ZM19.1425 5.66167L18.41 9.3225C18.1383 10.6808 16.935 11.6667 15.55 11.6667H4.89917L3.8575 4.16667H17.9158C18.2917 4.16667 18.6442 4.33333 18.8825 4.62417C19.1208 4.915 19.215 5.29333 19.1425 5.66167ZM5.83333 16.6667C4.91417 16.6667 4.16667 17.4142 4.16667 18.3333C4.16667 19.2525 4.91417 20 5.83333 20C6.7525 20 7.5 19.2525 7.5 18.3333C7.5 17.4142 6.7525 16.6667 5.83333 16.6667ZM5.83333 19.1667C5.37333 19.1667 5 18.7925 5 18.3333C5 17.8742 5.37333 17.5 5.83333 17.5C6.29333 17.5 6.66667 17.8742 6.66667 18.3333C6.66667 18.7925 6.29333 19.1667 5.83333 19.1667ZM14.1667 16.6667C13.2475 16.6667 12.5 17.4142 12.5 18.3333C12.5 19.2525 13.2475 20 14.1667 20C15.0858 20 15.8333 19.2525 15.8333 18.3333C15.8333 17.4142 15.0858 16.6667 14.1667 16.6667ZM14.1667 19.1667C13.7067 19.1667 13.3333 18.7925 13.3333 18.3333C13.3333 17.8742 13.7067 17.5 14.1667 17.5C14.6267 17.5 15 17.8742 15 18.3333C15 18.7925 14.6267 19.1667 14.1667 19.1667Z" fill="currentColor"></path></svg></button></div></div></div></div><div class="product-card standard" data-product-id="2d514084-d63d-4f73-acaf-dfdb3b6d1ad3"><div class="product-card-inner"><div class="product-card-media"><a href="/product/spsl-ats-mla-tbay-live-edge-15032-sm-spsl-mavtsb-lbyt-vlask-b9obmu" class="product-card-image-link"><img src="/assets/product-1781687337132-u24cq4b.webp" alt="ספסל עץ מלא טבעי Live Edge | 150×32 ס" מ="" |="" ספסל="" מעוצב="" לבית="" ולעסק"=""></a><div class="product-card-actions"><button type="button" class="card-favorite-btn" data-product-id="2d514084-d63d-4f73-acaf-dfdb3b6d1ad3" onclick="event.preventDefault(); event.stopPropagation(); toggleCardFavorite(this, '2d514084-d63d-4f73-acaf-dfdb3b6d1ad3')" title="שמור למועדפים" aria-pressed="false"><svg class="heart-outline" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3" fill="none"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0ZM10 17.2442C5.71583 14.1317 0.833333 9.185 0.833333 5.20833C0.833333 2.79583 2.79583 0.833333 5.20833 0.833333C7.49833 0.833333 9.58333 3.21667 9.58333 5.83333H10.4167C10.4167 3.21667 12.5017 0.833333 14.7917 0.833333C17.2042 0.833333 19.1667 2.79583 19.1667 5.20833C19.1667 9.185 14.2842 14.1317 10 17.2442Z" fill="currentColor"></path></svg><svg class="heart-filled" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0Z" fill="#e74c3c"></path></svg></button><button type="button" class="card-quickview-btn" data-card-quickview="" data-product-id="2d514084-d63d-4f73-acaf-dfdb3b6d1ad3" title="תצוגה מהירה" aria-label="תצוגה מהירה"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M0.833008 9.99967C0.833008 9.99967 4.16634 3.33301 9.99967 3.33301C15.833 3.33301 19.1663 9.99967 19.1663 9.99967C19.1663 9.99967 15.833 16.6663 9.99967 16.6663C4.16634 16.6663 0.833008 9.99967 0.833008 9.99967Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div><div class="product-card-body"><p class="zappy-editable"><a href="/product/spsl-ats-mla-tbay-live-edge-15032-sm-spsl-mavtsb-lbyt-vlask-b9obmu" class="product-card-body-link"></a></p><div class="card-content"><h3><a href="/product/spsl-ats-mla-tbay-live-edge-15032-sm-spsl-mavtsb-lbyt-vlask-b9obmu" class="product-card-body-link">ספסל עץ מלא טבעי Live Edge | 150×32 ס"מ | ספסל מעוצב לבית ולעסק</a></h3><p class="card-desc"><a href="/product/spsl-ats-mla-tbay-live-edge-15032-sm-spsl-mavtsb-lbyt-vlask-b9obmu" class="product-card-body-link">ישנם פריטים שאינם רק רהיט – הם יוצרים אווירה. ספסל העץ הטבעי שלנו נוצר מתוך אהבה לחומר הגלם האותנטי וליופיו הבלתי מושלם של הטבע. הספסל עשוי מעץ מלא טבעי, הנבחר בקפידה בזכות המרקם האורגני, תנועת הגידים והאופי הייחודי של כל פלטה. בהתאם לזמינות חומרי הגלם, הספסלים עשויים להיות מיוצרים מסוגי עץ שונים, ביניהם עצים בגוון טבעי בהיר או בעלי מראה טרופי עשיר, תוך שמירה על אותה שפה עיצובית טבעית, חמימה ועל איכות גבוהה. אורכו של הספסל, כ-150 ס"מ ורוחבו כ-32 ס"מ, מעניקים לו נוכחות מרשימה אך מאוזנת, והוא מתאים הן כפריט פונקציונלי והן כאובייקט עיצובי בפני עצמו. השילוב בין העץ המלא לבין רגלי הברזל השחורות יוצר מראה עכשווי המשלב בין טבע, מינימליזם ואסתטיקת Wabi-Sabi. הספסל מתאים לשימוש במגוון חללים: כניסה לבית וקיר עוגן מעוצב סלון ופינת טבע ביופילית חדר שינה, מסדרון או חלל אירוח לובאים, קליניקות, בתי מלון ועסקים מעוצבים בסיס לסטיילינג עם כדים, צמחייה, ספרים וחפצי אמנות פרטי המוצר חומר: עץ מלא טבעי מידות: כ-150 ס"מ אורך × 32 ס"מ רוחב רגליים: ברזל שחור מינימליסטי סגנון: Natural | Wabi-Sabi | Biophilic Design | Rustic Modern שימוש: ספסל ישיבה, קונסולה נמוכה, פריט סטיילינג ועיצוב ייחודיות מאחר שמדובר בעץ טבעי, כל ספסל הוא פריט חד-פעמי. דוגמת הגידים, מעברי הצבע, העיניים, הטקסטורות והקצוות האורגניים משתנים באופן טבעי מפלטה לפלטה. לכן, כל ספסל שתקבלו יהיה דומה ברוחו לדגם המוצג, אך בעל אופי, חומריות וסיפור ייחודיים משלו. הבדלים קלים בגוון, במרקם ובדוגמת העץ אינם פגם – אלא חלק מהאותנטיות והקסם של עץ מלא טבעי.</a></p></div><p></p><div class="product-card-footer"><div class="price">₪1800.00</div><button type="button" class="card-cart-btn" data-card-cart="" data-product-id="2d514084-d63d-4f73-acaf-dfdb3b6d1ad3" aria-label="הוסף לעגלה"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M19.5275 4.09583C19.13 3.61083 18.5425 3.33333 17.9158 3.33333H3.74167L3.52833 1.7975C3.38667 0.773333 2.5 0 1.465 0H0.416667C0.186667 0 0 0.186667 0 0.416667C0 0.646667 0.186667 0.833333 0.416667 0.833333H1.46583C2.08667 0.833333 2.61833 1.29667 2.70333 1.91167L4.1875 12.5992C4.44417 14.4425 6.04167 15.8333 7.90167 15.8333H16.25C16.48 15.8333 16.6667 15.6467 16.6667 15.4167C16.6667 15.1867 16.48 15 16.25 15H7.90167C6.46 15 5.22333 13.9258 5.01667 12.5H15.55C17.3317 12.5 18.8775 11.2325 19.2267 9.48583L19.9592 5.825C20.0817 5.21 19.9242 4.58 19.5267 4.09583H19.5275ZM19.1425 5.66167L18.41 9.3225C18.1383 10.6808 16.935 11.6667 15.55 11.6667H4.89917L3.8575 4.16667H17.9158C18.2917 4.16667 18.6442 4.33333 18.8825 4.62417C19.1208 4.915 19.215 5.29333 19.1425 5.66167ZM5.83333 16.6667C4.91417 16.6667 4.16667 17.4142 4.16667 18.3333C4.16667 19.2525 4.91417 20 5.83333 20C6.7525 20 7.5 19.2525 7.5 18.3333C7.5 17.4142 6.7525 16.6667 5.83333 16.6667ZM5.83333 19.1667C5.37333 19.1667 5 18.7925 5 18.3333C5 17.8742 5.37333 17.5 5.83333 17.5C6.29333 17.5 6.66667 17.8742 6.66667 18.3333C6.66667 18.7925 6.29333 19.1667 5.83333 19.1667ZM14.1667 16.6667C13.2475 16.6667 12.5 17.4142 12.5 18.3333C12.5 19.2525 13.2475 20 14.1667 20C15.0858 20 15.8333 19.2525 15.8333 18.3333C15.8333 17.4142 15.0858 16.6667 14.1667 16.6667ZM14.1667 19.1667C13.7067 19.1667 13.3333 18.7925 13.3333 18.3333C13.3333 17.8742 13.7067 17.5 14.1667 17.5C14.6267 17.5 15 17.8742 15 18.3333C15 18.7925 14.6267 19.1667 14.1667 19.1667Z" fill="currentColor"></path></svg></button></div></div></div></div><div class="product-card standard" data-product-id="258563a3-a389-4f6e-a013-e1420bf1ede2"><div class="product-card-inner"><div class="product-card-media"><a href="/product/kd-chrs-mavtsb-bgymvr-tbay-rustic-white-vase-gvbh-30-sm-r02uen" class="product-card-image-link"><img src="/assets/product-1781686463911-7o94wl.webp" alt="כד חרס מעוצב בגימור טבעי | Rustic White Vase | גובה 30 ס" מ"=""></a><div class="product-card-actions"><button type="button" class="card-favorite-btn" data-product-id="258563a3-a389-4f6e-a013-e1420bf1ede2" onclick="event.preventDefault(); event.stopPropagation(); toggleCardFavorite(this, '258563a3-a389-4f6e-a013-e1420bf1ede2')" title="שמור למועדפים" aria-pressed="false"><svg class="heart-outline" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3" fill="none"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0ZM10 17.2442C5.71583 14.1317 0.833333 9.185 0.833333 5.20833C0.833333 2.79583 2.79583 0.833333 5.20833 0.833333C7.49833 0.833333 9.58333 3.21667 9.58333 5.83333H10.4167C10.4167 3.21667 12.5017 0.833333 14.7917 0.833333C17.2042 0.833333 19.1667 2.79583 19.1667 5.20833C19.1667 9.185 14.2842 14.1317 10 17.2442Z" fill="currentColor"></path></svg><svg class="heart-filled" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0Z" fill="#e74c3c"></path></svg></button><button type="button" class="card-quickview-btn" data-card-quickview="" data-product-id="258563a3-a389-4f6e-a013-e1420bf1ede2" title="תצוגה מהירה" aria-label="תצוגה מהירה"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M0.833008 9.99967C0.833008 9.99967 4.16634 3.33301 9.99967 3.33301C15.833 3.33301 19.1663 9.99967 19.1663 9.99967C19.1663 9.99967 15.833 16.6663 9.99967 16.6663C4.16634 16.6663 0.833008 9.99967 0.833008 9.99967Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div><div class="product-card-body"><p class="zappy-editable"><a href="/product/kd-chrs-mavtsb-bgymvr-tbay-rustic-white-vase-gvbh-30-sm-r02uen" class="product-card-body-link"></a></p><div class="card-content"><h3><a href="/product/kd-chrs-mavtsb-bgymvr-tbay-rustic-white-vase-gvbh-30-sm-r02uen" class="product-card-body-link">כד חרס מעוצב בגימור טבעי | Rustic White Vase | גובה 30 ס"מ</a></h3><p class="card-desc"><a href="/product/kd-chrs-mavtsb-bgymvr-tbay-rustic-white-vase-gvbh-30-sm-r02uen" class="product-card-body-link">הכד עוצב בהשראת חומריות טבעית ואסתטיקת Wabi-Sabi, המוקירה יופי לא מושלם, טקסטורות רכות וגוונים ארציים. גימורו המיושן, המשלב לבן-אבן עם נגיעות עדינות של צבע, מעניק לו אופי ייחודי ומראה שנראה כאילו נאסף ממסע בכפר ים-תיכוני. גובהו כ-30 ס"מ – פרופורציה אידיאלית ליצירת נקודת עניין על מדף, קונסולה, מזנון או שולחן צד, מבלי להעמיס על החלל. סרט היוטה הטבעי מוסיף חמימות וטאץ' אורגני המשתלב באופן מושלם עם עץ, צמחייה, פשתן וחומרים טבעיים. הכד מתאים לעיצוב: סלון בסגנון טבעי, כפרי או מודרני-מינימליסטי קונסולות כניסה ומדפי עיצוב חללי אירוח, לובאים, קליניקות ועסקים מעוצבים שילוב עם ענפי זית, אקליפטוס, עשב פמפס או כפריט פיסולי בפני עצמו פרטי המוצר: חומר: קרמיקה בגימור מיושן צבע: לבן-אבן עם טקסטורה טבעית גובה: כ-30 ס"מ סגנון: Wabi-Sabi | טבעי | בוהו מודרני | ים-תיכוני שימוש: פריט דקורטיבי לשילוב עם ענפים יבשים או כפריט עיצוב עצמאי כל כד נושא אופי וטקסטורה ייחודיים, המעניקים לו תחושה אותנטית וחד-פעמית.</a></p></div><p></p><div class="product-card-footer"><div class="price">₪349.00</div><button type="button" class="card-cart-btn" data-card-cart="" data-product-id="258563a3-a389-4f6e-a013-e1420bf1ede2" aria-label="הוסף לעגלה"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M19.5275 4.09583C19.13 3.61083 18.5425 3.33333 17.9158 3.33333H3.74167L3.52833 1.7975C3.38667 0.773333 2.5 0 1.465 0H0.416667C0.186667 0 0 0.186667 0 0.416667C0 0.646667 0.186667 0.833333 0.416667 0.833333H1.46583C2.08667 0.833333 2.61833 1.29667 2.70333 1.91167L4.1875 12.5992C4.44417 14.4425 6.04167 15.8333 7.90167 15.8333H16.25C16.48 15.8333 16.6667 15.6467 16.6667 15.4167C16.6667 15.1867 16.48 15 16.25 15H7.90167C6.46 15 5.22333 13.9258 5.01667 12.5H15.55C17.3317 12.5 18.8775 11.2325 19.2267 9.48583L19.9592 5.825C20.0817 5.21 19.9242 4.58 19.5267 4.09583H19.5275ZM19.1425 5.66167L18.41 9.3225C18.1383 10.6808 16.935 11.6667 15.55 11.6667H4.89917L3.8575 4.16667H17.9158C18.2917 4.16667 18.6442 4.33333 18.8825 4.62417C19.1208 4.915 19.215 5.29333 19.1425 5.66167ZM5.83333 16.6667C4.91417 16.6667 4.16667 17.4142 4.16667 18.3333C4.16667 19.2525 4.91417 20 5.83333 20C6.7525 20 7.5 19.2525 7.5 18.3333C7.5 17.4142 6.7525 16.6667 5.83333 16.6667ZM5.83333 19.1667C5.37333 19.1667 5 18.7925 5 18.3333C5 17.8742 5.37333 17.5 5.83333 17.5C6.29333 17.5 6.66667 17.8742 6.66667 18.3333C6.66667 18.7925 6.29333 19.1667 5.83333 19.1667ZM14.1667 16.6667C13.2475 16.6667 12.5 17.4142 12.5 18.3333C12.5 19.2525 13.2475 20 14.1667 20C15.0858 20 15.8333 19.2525 15.8333 18.3333C15.8333 17.4142 15.0858 16.6667 14.1667 16.6667ZM14.1667 19.1667C13.7067 19.1667 13.3333 18.7925 13.3333 18.3333C13.3333 17.8742 13.7067 17.5 14.1667 17.5C14.6267 17.5 15 17.8742 15 18.3333C15 18.7925 14.6267 19.1667 14.1667 19.1667Z" fill="currentColor"></path></svg></button></div></div></div></div><div class="product-card standard" data-product-id="bdb99b98-512d-4841-bd9a-026ad3adbb31"><div class="product-card-inner"><div class="product-card-media"><a href="/product/sdrt-admh-vshkt-earth-silence-oik4ph" class="product-card-image-link"><img src="/assets/product-1781622239395-khafl.webp" alt="סדרת אדמה ושקט | Earth &amp; Silence"></a><div class="product-tags"><span class="product-tag tag-new">new</span><span class="product-tag">limited</span></div><div class="product-card-actions"><button type="button" class="card-favorite-btn" data-product-id="bdb99b98-512d-4841-bd9a-026ad3adbb31" onclick="event.preventDefault(); event.stopPropagation(); toggleCardFavorite(this, 'bdb99b98-512d-4841-bd9a-026ad3adbb31')" title="שמור למועדפים" aria-pressed="false"><svg class="heart-outline" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3" fill="none"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0ZM10 17.2442C5.71583 14.1317 0.833333 9.185 0.833333 5.20833C0.833333 2.79583 2.79583 0.833333 5.20833 0.833333C7.49833 0.833333 9.58333 3.21667 9.58333 5.83333H10.4167C10.4167 3.21667 12.5017 0.833333 14.7917 0.833333C17.2042 0.833333 19.1667 2.79583 19.1667 5.20833C19.1667 9.185 14.2842 14.1317 10 17.2442Z" fill="currentColor"></path></svg><svg class="heart-filled" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0Z" fill="#e74c3c"></path></svg></button><button type="button" class="card-quickview-btn" data-card-quickview="" data-product-id="bdb99b98-512d-4841-bd9a-026ad3adbb31" title="תצוגה מהירה" aria-label="תצוגה מהירה"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M0.833008 9.99967C0.833008 9.99967 4.16634 3.33301 9.99967 3.33301C15.833 3.33301 19.1663 9.99967 19.1663 9.99967C19.1663 9.99967 15.833 16.6663 9.99967 16.6663C4.16634 16.6663 0.833008 9.99967 0.833008 9.99967Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div><div class="product-card-size-overlay"><div class="zc-size-strip" data-card-sizes=""><div class="zc-size-track"><button type="button" class="zc-size" data-size="XL">XL</button><button type="button" class="zc-size" data-size="L">L</button></div></div></div></div><div class="product-card-body"><p class="zappy-editable"><a href="/product/sdrt-admh-vshkt-earth-silence-oik4ph" class="product-card-body-link"></a></p><div class="card-content"><h3><a href="/product/sdrt-admh-vshkt-earth-silence-oik4ph" class="product-card-body-link">סדרת אדמה ושקט | Earth &amp; Silence</a></h3><p class="card-desc"><a href="/product/sdrt-admh-vshkt-earth-silence-oik4ph" class="product-card-body-link">טריפטיך אומנותי המורכב משלושה הדפסים מקוריים בהשראת אור, טבע וחומר. סדרה בגווני אדמה חמימים, שנועדה להכניס לחלל תחושת רוגע, עומק ונוכחות שקטה. משחקי האור והצל, הטקסטורות הטבעיות והקומפוזיציה המינימליסטית יוצרים יצירת אמנות על־זמנית המתאימה לבית ולעסק. הסדרה מתאימה לסלון, פינת אוכל, חדר שינה, משרד, קליניקה וחללי אירוח, ומשתלבת באופן טבעי בעיצוב מודרני, יפני, סקנדינבי וים־תיכוני. מה כוללת הסדרה? ✔ 3 הדפסים אומנותיים מקוריים – סדרת "אדמה ושקט" ✔ מסגרות שחורות איכותיות עם פספרטו לבן ✔ מוכנה לתלייה כסט תלת־חלקי מידות לבחירה Medium גודל כל תמונה: 50×70 ס"מ גודל אידיאלי לקיר ברוחב: 180–250 ס"מ מתאים לסלון, פינת אוכל ומשרדים. Large גודל כל תמונה: 70×100 ס"מ גודל אידיאלי לקיר ברוחב: 250–350 ס"מ מתאים לחללים גדולים, לובאים, קליניקות וחללי אירוח. חומרים הדפס Fine Art איכותי על נייר אומנותי מובחר מסגרת שחורה בגימור מט פספרטו לבן המדגיש את עומק היצירה ואת משחקי האור והצל סגנון מינימליסטי | טבעי | יפני־סקנדינבי | על־זמני "אדמה ושקט" היא סדרת אמנות שנועדה להאט את הקצב, להכניס חמימות טבעית לחלל וליצור מוקד עיצובי מרשים, שקט ומלא נוכחות.</a></p></div><p></p><div class="product-card-footer"><div class="price">החל מ ₪1650.00</div><button type="button" class="card-cart-btn" data-card-cart="" data-product-id="bdb99b98-512d-4841-bd9a-026ad3adbb31" aria-label="הוסף לעגלה"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M19.5275 4.09583C19.13 3.61083 18.5425 3.33333 17.9158 3.33333H3.74167L3.52833 1.7975C3.38667 0.773333 2.5 0 1.465 0H0.416667C0.186667 0 0 0.186667 0 0.416667C0 0.646667 0.186667 0.833333 0.416667 0.833333H1.46583C2.08667 0.833333 2.61833 1.29667 2.70333 1.91167L4.1875 12.5992C4.44417 14.4425 6.04167 15.8333 7.90167 15.8333H16.25C16.48 15.8333 16.6667 15.6467 16.6667 15.4167C16.6667 15.1867 16.48 15 16.25 15H7.90167C6.46 15 5.22333 13.9258 5.01667 12.5H15.55C17.3317 12.5 18.8775 11.2325 19.2267 9.48583L19.9592 5.825C20.0817 5.21 19.9242 4.58 19.5267 4.09583H19.5275ZM19.1425 5.66167L18.41 9.3225C18.1383 10.6808 16.935 11.6667 15.55 11.6667H4.89917L3.8575 4.16667H17.9158C18.2917 4.16667 18.6442 4.33333 18.8825 4.62417C19.1208 4.915 19.215 5.29333 19.1425 5.66167ZM5.83333 16.6667C4.91417 16.6667 4.16667 17.4142 4.16667 18.3333C4.16667 19.2525 4.91417 20 5.83333 20C6.7525 20 7.5 19.2525 7.5 18.3333C7.5 17.4142 6.7525 16.6667 5.83333 16.6667ZM5.83333 19.1667C5.37333 19.1667 5 18.7925 5 18.3333C5 17.8742 5.37333 17.5 5.83333 17.5C6.29333 17.5 6.66667 17.8742 6.66667 18.3333C6.66667 18.7925 6.29333 19.1667 5.83333 19.1667ZM14.1667 16.6667C13.2475 16.6667 12.5 17.4142 12.5 18.3333C12.5 19.2525 13.2475 20 14.1667 20C15.0858 20 15.8333 19.2525 15.8333 18.3333C15.8333 17.4142 15.0858 16.6667 14.1667 16.6667ZM14.1667 19.1667C13.7067 19.1667 13.3333 18.7925 13.3333 18.3333C13.3333 17.8742 13.7067 17.5 14.1667 17.5C14.6267 17.5 15 17.8742 15 18.3333C15 18.7925 14.6267 19.1667 14.1667 19.1667Z" fill="currentColor"></path></svg></button></div></div></div></div><div class="product-card standard" data-product-id="ad879379-7a6b-4c2d-af50-a9192371ca80"><div class="product-card-inner"><div class="product-card-media"><a href="/product/pynt-tba-mavtsbt-lbyt-vlask-yiporg" class="product-card-image-link"><img src="/assets/product-1781619825498-5sqihp.webp" alt="פינת טבע מעוצבת לבית ולעסק"></a><div class="product-card-actions"><button type="button" class="card-favorite-btn" data-product-id="ad879379-7a6b-4c2d-af50-a9192371ca80" onclick="event.preventDefault(); event.stopPropagation(); toggleCardFavorite(this, 'ad879379-7a6b-4c2d-af50-a9192371ca80')" title="שמור למועדפים" aria-pressed="false"><svg class="heart-outline" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3" fill="none"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0ZM10 17.2442C5.71583 14.1317 0.833333 9.185 0.833333 5.20833C0.833333 2.79583 2.79583 0.833333 5.20833 0.833333C7.49833 0.833333 9.58333 3.21667 9.58333 5.83333H10.4167C10.4167 3.21667 12.5017 0.833333 14.7917 0.833333C17.2042 0.833333 19.1667 2.79583 19.1667 5.20833C19.1667 9.185 14.2842 14.1317 10 17.2442Z" fill="currentColor"></path></svg><svg class="heart-filled" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0Z" fill="#e74c3c"></path></svg></button><button type="button" class="card-quickview-btn" data-card-quickview="" data-product-id="ad879379-7a6b-4c2d-af50-a9192371ca80" title="תצוגה מהירה" aria-label="תצוגה מהירה"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M0.833008 9.99967C0.833008 9.99967 4.16634 3.33301 9.99967 3.33301C15.833 3.33301 19.1663 9.99967 19.1663 9.99967C19.1663 9.99967 15.833 16.6663 9.99967 16.6663C4.16634 16.6663 0.833008 9.99967 0.833008 9.99967Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div><div class="product-card-size-overlay"><div class="zc-size-strip" data-card-sizes=""><div class="zc-size-track"><button type="button" class="zc-size" data-size="L">L</button><button type="button" class="zc-size" data-size="M">M</button><button type="button" class="zc-size" data-size="S">S</button></div></div></div></div><div class="product-card-body"><p class="zappy-editable"><a href="/product/pynt-tba-mavtsbt-lbyt-vlask-yiporg" class="product-card-body-link"></a></p><div class="card-content"><h3><a href="/product/pynt-tba-mavtsbt-lbyt-vlask-yiporg" class="product-card-body-link">פינת טבע מעוצבת לבית ולעסק</a></h3><p class="card-desc"><a href="/product/pynt-tba-mavtsbt-lbyt-vlask-yiporg" class="product-card-body-link">פינת טבע – Earth &amp; Silence פינת עיצוב מוכנה לבית ולעסק, המשלבת מדף עץ טבעי, הדפס אומנותי ממוסגר וכד קרמי בגימור טבעי. הקומפוזיציה נוצרה ליצירת מראה רגוע, אלגנטי ועל־זמני, בהשראת סמטאות ים־תיכוניות, חומרים טבעיים ואהבה לטבע ולעיצוב נקי. מה כוללת הפינה? ✔ מדף עץ טבעי בעובי 4 ס"מ, בגימור מלא, כולל איבזור לתלייה כמדף צף ✔ הדפס אומנותי ממוסגר מתוך הסדרה – Earth &amp; Silence ✔ כד קרמי דקורטיבי בגוון אבן טבעי ✔ הוראות העמדה וסטיילינג לקבלת המראה המלא מידות לבחירה: פינת טבע S מתאימה למבואת כניסה, נישות קטנות ומשרדים. מדף עץ: 80×25 ס"מ, עובי 4 ס"מ הדפס ממוסגר: 30×40 ס"מ כד קרמי: גובה 25 ס"מ פינת טבע M מתאימה לסלון, פינת אוכל וקליניקות. מדף עץ: 120×30 ס"מ, עובי 4 ס"מ הדפס ממוסגר: 50×70 ס"מ כד קרמי: גובה 35 ס"מ פינת טבע L פינת הצהרה מרשימה לחללים גדולים, לובאים ומשרדים. מדף עץ: 160×35 ס"מ, עובי 4 ס"מ הדפס ממוסגר: 70×100 ס"מ כד קרמי: גובה 45 ס"מ חומרים עץ טבעי מלא בגימור ידני להגנה ולשמירה על הטקסטורה הייחודית של העץ מסגרת אלומיניום שחורה עם פספרטו לבן כד קרמי בגימור טבעי בגוון אבן. כל פינה מגיעה כמוצר מוגמר ומוכן להתקנה – פתרון עיצוב שלם שמכניס טבע, חמימות ואומנות לכל בית או עסק. 🌿</a></p></div><p></p><div class="product-card-footer"><div class="price">החל מ ₪1800.00</div><button type="button" class="card-cart-btn" data-card-cart="" data-product-id="ad879379-7a6b-4c2d-af50-a9192371ca80" aria-label="הוסף לעגלה"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M19.5275 4.09583C19.13 3.61083 18.5425 3.33333 17.9158 3.33333H3.74167L3.52833 1.7975C3.38667 0.773333 2.5 0 1.465 0H0.416667C0.186667 0 0 0.186667 0 0.416667C0 0.646667 0.186667 0.833333 0.416667 0.833333H1.46583C2.08667 0.833333 2.61833 1.29667 2.70333 1.91167L4.1875 12.5992C4.44417 14.4425 6.04167 15.8333 7.90167 15.8333H16.25C16.48 15.8333 16.6667 15.6467 16.6667 15.4167C16.6667 15.1867 16.48 15 16.25 15H7.90167C6.46 15 5.22333 13.9258 5.01667 12.5H15.55C17.3317 12.5 18.8775 11.2325 19.2267 9.48583L19.9592 5.825C20.0817 5.21 19.9242 4.58 19.5267 4.09583H19.5275ZM19.1425 5.66167L18.41 9.3225C18.1383 10.6808 16.935 11.6667 15.55 11.6667H4.89917L3.8575 4.16667H17.9158C18.2917 4.16667 18.6442 4.33333 18.8825 4.62417C19.1208 4.915 19.215 5.29333 19.1425 5.66167ZM5.83333 16.6667C4.91417 16.6667 4.16667 17.4142 4.16667 18.3333C4.16667 19.2525 4.91417 20 5.83333 20C6.7525 20 7.5 19.2525 7.5 18.3333C7.5 17.4142 6.7525 16.6667 5.83333 16.6667ZM5.83333 19.1667C5.37333 19.1667 5 18.7925 5 18.3333C5 17.8742 5.37333 17.5 5.83333 17.5C6.29333 17.5 6.66667 17.8742 6.66667 18.3333C6.66667 18.7925 6.29333 19.1667 5.83333 19.1667ZM14.1667 16.6667C13.2475 16.6667 12.5 17.4142 12.5 18.3333C12.5 19.2525 13.2475 20 14.1667 20C15.0858 20 15.8333 19.2525 15.8333 18.3333C15.8333 17.4142 15.0858 16.6667 14.1667 16.6667ZM14.1667 19.1667C13.7067 19.1667 13.3333 18.7925 13.3333 18.3333C13.3333 17.8742 13.7067 17.5 14.1667 17.5C14.6267 17.5 15 17.8742 15 18.3333C15 18.7925 14.6267 19.1667 14.1667 19.1667Z" fill="currentColor"></path></svg></button></div></div></div></div></div>
+        <h2 class="section-title" style>ההמלצה&nbsp;<span style="font-size: 2rem;">שלנו</span></h2>
+        <div class="product-grid featured-grid" id="zappy-featured-products"><div class="product-card standard" data-product-id="ae20c93e-4b8c-4f42-8e97-4115d8efb8de"><div class="product-card-inner"><div class="product-card-media"><a href="/product/sdrt-nature-in-focus-shlyshyyt-hdpsy-tba-amnvtyym-10070-sm-n3rz0j" class="product-card-image-link"><img src="/assets/product-1781693359525-owmu8e.webp" alt="סדרת Nature in Focus | שלישיית הדפסי טבע אמנותיים – 100×70 ס" מ"></a><div class="product-tags"><span class="product-tag tag-new">new</span></div><div class="product-card-actions"><button type="button" class="card-favorite-btn" data-product-id="ae20c93e-4b8c-4f42-8e97-4115d8efb8de" onclick="event.preventDefault(); event.stopPropagation(); toggleCardFavorite(this, 'ae20c93e-4b8c-4f42-8e97-4115d8efb8de')" title="שמור למועדפים" aria-pressed="false"><svg class="heart-outline" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3" fill="none"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0ZM10 17.2442C5.71583 14.1317 0.833333 9.185 0.833333 5.20833C0.833333 2.79583 2.79583 0.833333 5.20833 0.833333C7.49833 0.833333 9.58333 3.21667 9.58333 5.83333H10.4167C10.4167 3.21667 12.5017 0.833333 14.7917 0.833333C17.2042 0.833333 19.1667 2.79583 19.1667 5.20833C19.1667 9.185 14.2842 14.1317 10 17.2442Z" fill="currentColor"/></svg><svg class="heart-filled" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0Z" fill="#e74c3c"/></svg></button><button type="button" class="card-quickview-btn" data-card-quickview data-product-id="ae20c93e-4b8c-4f42-8e97-4115d8efb8de" title="תצוגה מהירה" aria-label="תצוגה מהירה"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M0.833008 9.99967C0.833008 9.99967 4.16634 3.33301 9.99967 3.33301C15.833 3.33301 19.1663 9.99967 19.1663 9.99967C19.1663 9.99967 15.833 16.6663 9.99967 16.6663C4.16634 16.6663 0.833008 9.99967 0.833008 9.99967Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div><div class="product-card-body"><p class="zappy-editable"><a href="/product/sdrt-nature-in-focus-shlyshyyt-hdpsy-tba-amnvtyym-10070-sm-n3rz0j" class="product-card-body-link"></a></p><div class="card-content"><h3><a href="/product/sdrt-nature-in-focus-shlyshyyt-hdpsy-tba-amnvtyym-10070-sm-n3rz0j" class="product-card-body-link">סדרת Nature in Focus | שלישיית הדפסי טבע אמנותיים – 100×70 ס"מ</a></h3><p class="card-desc"><a href="/product/sdrt-nature-in-focus-shlyshyyt-hdpsy-tba-amnvtyym-10070-sm-n3rz0j" class="product-card-body-link">Nature in Focus היא סדרת צילומי טבע אמנותיים שנולדה מתוך התבוננות בפרטים הקטנים ביותר של העולם הטבעי – מרקמים, אור, פריחות וצבעים שנגלים לרגע קצר והופכים ליצירה על-זמנית. הסדרה משלבת שלושה צילומים מקוריים של סטודיו 242, שנבחרו בקפידה כדי ליצור קומפוזיציה מאוזנת, רגועה ומלאת נוכחות. יחד הם מספרים סיפור של טבע, שקט וחיבור לחומריות אורגנית, ומתאימים במיוחד לחללים המעוצבים בקו מינימליסטי, טבעי ואלגנטי. כל יצירה מודפסת באיכות גבוהה על נייר אמנותי, ממוסגרת במסגרת עץ בהירה הכוללת פספרטו לבן רחב, היוצר תחושת עומק ומדגיש את הפרטים העדינים של הצילום. התוצאה היא פריט עיצובי בעל נוכחות מרשימה, המשתלב באופן טבעי בסלון, פינת אוכל, חדר שינה, משרד, קליניקה או חלל אירוח. הסדרה מיועדת לאנשים המבקשים להכניס אל הבית או העסק לא רק תמונה לקיר, אלא יצירה בעלת אופי – כזו שמוסיפה רוגע, טקסטורה וחיבור לטבע באופן עדין ומדויק. פרטי המוצר גודל כל יצירה: 100×70 ס"מ סוג הדפס: הדפס אמנותי איכותי (Fine Art Print) מסגרת: עץ בהיר טבעי פספרטו: לבן, איכותי ומוכן לתלייה סגנון: טבע, ביופיליה, מינימליזם חם, Wabi-Sabi התקנה: מגיע מוכן לתלייה סטודיו 242 – יוצרים אמנות שמכניסה את הטבע הביתה.</a></p></div><p></p><div class="product-card-footer"><div class="price">₪2990.00</div><button type="button" class="card-cart-btn" data-card-cart data-product-id="ae20c93e-4b8c-4f42-8e97-4115d8efb8de" aria-label="הוסף לעגלה"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M19.5275 4.09583C19.13 3.61083 18.5425 3.33333 17.9158 3.33333H3.74167L3.52833 1.7975C3.38667 0.773333 2.5 0 1.465 0H0.416667C0.186667 0 0 0.186667 0 0.416667C0 0.646667 0.186667 0.833333 0.416667 0.833333H1.46583C2.08667 0.833333 2.61833 1.29667 2.70333 1.91167L4.1875 12.5992C4.44417 14.4425 6.04167 15.8333 7.90167 15.8333H16.25C16.48 15.8333 16.6667 15.6467 16.6667 15.4167C16.6667 15.1867 16.48 15 16.25 15H7.90167C6.46 15 5.22333 13.9258 5.01667 12.5H15.55C17.3317 12.5 18.8775 11.2325 19.2267 9.48583L19.9592 5.825C20.0817 5.21 19.9242 4.58 19.5267 4.09583H19.5275ZM19.1425 5.66167L18.41 9.3225C18.1383 10.6808 16.935 11.6667 15.55 11.6667H4.89917L3.8575 4.16667H17.9158C18.2917 4.16667 18.6442 4.33333 18.8825 4.62417C19.1208 4.915 19.215 5.29333 19.1425 5.66167ZM5.83333 16.6667C4.91417 16.6667 4.16667 17.4142 4.16667 18.3333C4.16667 19.2525 4.91417 20 5.83333 20C6.7525 20 7.5 19.2525 7.5 18.3333C7.5 17.4142 6.7525 16.6667 5.83333 16.6667ZM5.83333 19.1667C5.37333 19.1667 5 18.7925 5 18.3333C5 17.8742 5.37333 17.5 5.83333 17.5C6.29333 17.5 6.66667 17.8742 6.66667 18.3333C6.66667 18.7925 6.29333 19.1667 5.83333 19.1667ZM14.1667 16.6667C13.2475 16.6667 12.5 17.4142 12.5 18.3333C12.5 19.2525 13.2475 20 14.1667 20C15.0858 20 15.8333 19.2525 15.8333 18.3333C15.8333 17.4142 15.0858 16.6667 14.1667 16.6667ZM14.1667 19.1667C13.7067 19.1667 13.3333 18.7925 13.3333 18.3333C13.3333 17.8742 13.7067 17.5 14.1667 17.5C14.6267 17.5 15 17.8742 15 18.3333C15 18.7925 14.6267 19.1667 14.1667 19.1667Z" fill="currentColor"/></svg></button></div></div></div></div><div class="product-card standard" data-product-id="a9eec1dd-fbb4-4465-a38e-3e936c65137b"><div class="product-card-inner"><div class="product-card-media"><a href="/product/mdp-ats-alvn-mla-tsp-live-edge-rvchb-30-sm-avby-k-4-sm-120-140-180-sm-ng2vr1" class="product-card-image-link"><img 120 140 180 src="/assets/product-1781691147794-7p69x.webp" alt="מדף עץ אלון מלא צף | Live Edge | רוחב 30 ס" מ | עובי כ-4 ס"מ ס"מ"></a><div class="product-card-actions"><button type="button" class="card-favorite-btn" data-product-id="a9eec1dd-fbb4-4465-a38e-3e936c65137b" onclick="event.preventDefault(); event.stopPropagation(); toggleCardFavorite(this, 'a9eec1dd-fbb4-4465-a38e-3e936c65137b')" title="שמור למועדפים" aria-pressed="false"><svg class="heart-outline" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3" fill="none"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0ZM10 17.2442C5.71583 14.1317 0.833333 9.185 0.833333 5.20833C0.833333 2.79583 2.79583 0.833333 5.20833 0.833333C7.49833 0.833333 9.58333 3.21667 9.58333 5.83333H10.4167C10.4167 3.21667 12.5017 0.833333 14.7917 0.833333C17.2042 0.833333 19.1667 2.79583 19.1667 5.20833C19.1667 9.185 14.2842 14.1317 10 17.2442Z" fill="currentColor"/></svg><svg class="heart-filled" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0Z" fill="#e74c3c"/></svg></button><button type="button" class="card-quickview-btn" data-card-quickview data-product-id="a9eec1dd-fbb4-4465-a38e-3e936c65137b" title="תצוגה מהירה" aria-label="תצוגה מהירה"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M0.833008 9.99967C0.833008 9.99967 4.16634 3.33301 9.99967 3.33301C15.833 3.33301 19.1663 9.99967 19.1663 9.99967C19.1663 9.99967 15.833 16.6663 9.99967 16.6663C4.16634 16.6663 0.833008 9.99967 0.833008 9.99967Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="product-card-size-overlay"><div class="zc-size-strip" data-card-sizes><div class="zc-size-track"><button type="button" class="zc-size" data-size="M">M</button><button type="button" class="zc-size" data-size="L">L</button><button type="button" class="zc-size" data-size="XL">XL</button></div></div></div></div><div class="product-card-body"><p class="zappy-editable"><a href="/product/mdp-ats-alvn-mla-tsp-live-edge-rvchb-30-sm-avby-k-4-sm-120-140-180-sm-ng2vr1" class="product-card-body-link"></a></p><div class="card-content"><h3><a href="/product/mdp-ats-alvn-mla-tsp-live-edge-rvchb-30-sm-avby-k-4-sm-120-140-180-sm-ng2vr1" class="product-card-body-link">מדף עץ אלון מלא צף | Live Edge | רוחב 30 ס"מ | עובי כ-4 ס"מ | 120 / 140 / 180 ס"מ</a></h3><p class="card-desc"><a href="/product/mdp-ats-alvn-mla-tsp-live-edge-rvchb-30-sm-avby-k-4-sm-120-140-180-sm-ng2vr1" class="product-card-body-link">ישנם פריטים שמוסיפים אחסון, וישנם פריטים שמעצבים את האווירה כולה. מדף עץ האלון הצף שלנו נועד להיות הרבה יותר ממדף – הוא אלמנט עיצובי המכניס לחלל חמימות, חומריות טבעית ונוכחות שקטה. המדף מיוצר מעץ אלון מלא, הנחשב לאחד מחומרי הגלם האהובים בעולם העיצוב בזכות עמידותו, אופיו הטבעי והטקסטורה העשירה שלו. גידי העץ הייחודיים, מעברי הגוון והקצה האורגני מעניקים לכל מדף מראה חד-פעמי, שאינו ניתן לשכפול. עוביו המרשים של המדף, כ-4 ס"מ, יחד עם רוחב של כ-30 ס"מ, יוצרים נוכחות חזקה ותחושת איכות ויוקרה, תוך שמירה על מראה טבעי ונקי. המדף מגיע עם מערכת תלייה נסתרת ופירזול צף המותקן מתחת למדף, כך שלאחר ההתקנה מתקבל מראה מרחף ואלגנטי, ללא זוויות או תמיכות גלויות. מערכת החיבור תוכננה להתקנה פשוטה יחסית, יציבה ובטוחה לשימוש יומיומי. מתאים במיוחד עבור: קירות עוגן מעוצבים בסלון פינות טבע וביופיליה כניסה לבית ומסדרונות חדרי שינה ופינות קריאה מטבחים ופינות קפה קליניקות, משרדים, לובאים ובתי עסק שילוב עם כדים, צמחייה, ספרים, הדפסים וחפצי אמנות מידות לבחירה 120 ס"מ אורך × 30 ס"מ רוחב × כ-4 ס"מ עובי 140 ס"מ אורך × 30 ס"מ רוחב × כ-4 ס"מ עובי 180 ס"מ אורך × 30 ס"מ רוחב × כ-4 ס"מ עובי פרטי המוצר חומר: עץ אלון מלא רוחב: כ-30 ס"מ עובי: כ-4 ס"מ קצה: Live Edge טבעי גימור: ליטוש וגימור מלא להגנה ושמירה על מראה העץ התקנה: פירזול צף נסתר המותקן מתחת למדף סגנון: Natural | Wabi-Sabi | Biophilic Design | Rustic Modern ייחודיות מאחר שמדובר בעץ מלא טבעי, כל מדף הוא פריט חד-פעמי. דוגמת הגידים, מעברי הצבע, העיניים, הסדקים הטבעיים והקצוות האורגניים משתנים באופן טבעי מלוח ללוח. לכן, כל מדף שתקבלו יהיה דומה ברוחו לדגם המוצג, אך בעל אופי, חומריות וסיפור ייחודיים משלו. הבדלים קלים בגוון, בטקסטורה ובמבנה העץ אינם פגם – אלא חלק מהאותנטיות, היופי והייחוד של עץ אלון טבעי אמיתי. פריט עיצובי שמכניס את הטבע אל תוך הבית – שילוב של חומר גלם אצילי, עבודת יד ומראה מרחף, נקי ועל-זמני.</a></p></div><p></p><div class="product-card-footer"><div class="price">החל מ ₪990.00</div><button type="button" class="card-cart-btn" data-card-cart data-product-id="a9eec1dd-fbb4-4465-a38e-3e936c65137b" aria-label="הוסף לעגלה"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M19.5275 4.09583C19.13 3.61083 18.5425 3.33333 17.9158 3.33333H3.74167L3.52833 1.7975C3.38667 0.773333 2.5 0 1.465 0H0.416667C0.186667 0 0 0.186667 0 0.416667C0 0.646667 0.186667 0.833333 0.416667 0.833333H1.46583C2.08667 0.833333 2.61833 1.29667 2.70333 1.91167L4.1875 12.5992C4.44417 14.4425 6.04167 15.8333 7.90167 15.8333H16.25C16.48 15.8333 16.6667 15.6467 16.6667 15.4167C16.6667 15.1867 16.48 15 16.25 15H7.90167C6.46 15 5.22333 13.9258 5.01667 12.5H15.55C17.3317 12.5 18.8775 11.2325 19.2267 9.48583L19.9592 5.825C20.0817 5.21 19.9242 4.58 19.5267 4.09583H19.5275ZM19.1425 5.66167L18.41 9.3225C18.1383 10.6808 16.935 11.6667 15.55 11.6667H4.89917L3.8575 4.16667H17.9158C18.2917 4.16667 18.6442 4.33333 18.8825 4.62417C19.1208 4.915 19.215 5.29333 19.1425 5.66167ZM5.83333 16.6667C4.91417 16.6667 4.16667 17.4142 4.16667 18.3333C4.16667 19.2525 4.91417 20 5.83333 20C6.7525 20 7.5 19.2525 7.5 18.3333C7.5 17.4142 6.7525 16.6667 5.83333 16.6667ZM5.83333 19.1667C5.37333 19.1667 5 18.7925 5 18.3333C5 17.8742 5.37333 17.5 5.83333 17.5C6.29333 17.5 6.66667 17.8742 6.66667 18.3333C6.66667 18.7925 6.29333 19.1667 5.83333 19.1667ZM14.1667 16.6667C13.2475 16.6667 12.5 17.4142 12.5 18.3333C12.5 19.2525 13.2475 20 14.1667 20C15.0858 20 15.8333 19.2525 15.8333 18.3333C15.8333 17.4142 15.0858 16.6667 14.1667 16.6667ZM14.1667 19.1667C13.7067 19.1667 13.3333 18.7925 13.3333 18.3333C13.3333 17.8742 13.7067 17.5 14.1667 17.5C14.6267 17.5 15 17.8742 15 18.3333C15 18.7925 14.6267 19.1667 14.1667 19.1667Z" fill="currentColor"/></svg></button></div></div></div></div><div class="product-card standard" data-product-id="2d514084-d63d-4f73-acaf-dfdb3b6d1ad3"><div class="product-card-inner"><div class="product-card-media"><a href="/product/spsl-ats-mla-tbay-live-edge-15032-sm-spsl-mavtsb-lbyt-vlask-b9obmu" class="product-card-image-link"><img src="/assets/product-1781687337132-u24cq4b.webp" alt="ספסל עץ מלא טבעי Live Edge | 150×32 ס" מ | ספסל מעוצב לבית ולעסק"></a><div class="product-card-actions"><button type="button" class="card-favorite-btn" data-product-id="2d514084-d63d-4f73-acaf-dfdb3b6d1ad3" onclick="event.preventDefault(); event.stopPropagation(); toggleCardFavorite(this, '2d514084-d63d-4f73-acaf-dfdb3b6d1ad3')" title="שמור למועדפים" aria-pressed="false"><svg class="heart-outline" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3" fill="none"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0ZM10 17.2442C5.71583 14.1317 0.833333 9.185 0.833333 5.20833C0.833333 2.79583 2.79583 0.833333 5.20833 0.833333C7.49833 0.833333 9.58333 3.21667 9.58333 5.83333H10.4167C10.4167 3.21667 12.5017 0.833333 14.7917 0.833333C17.2042 0.833333 19.1667 2.79583 19.1667 5.20833C19.1667 9.185 14.2842 14.1317 10 17.2442Z" fill="currentColor"/></svg><svg class="heart-filled" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0Z" fill="#e74c3c"/></svg></button><button type="button" class="card-quickview-btn" data-card-quickview data-product-id="2d514084-d63d-4f73-acaf-dfdb3b6d1ad3" title="תצוגה מהירה" aria-label="תצוגה מהירה"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M0.833008 9.99967C0.833008 9.99967 4.16634 3.33301 9.99967 3.33301C15.833 3.33301 19.1663 9.99967 19.1663 9.99967C19.1663 9.99967 15.833 16.6663 9.99967 16.6663C4.16634 16.6663 0.833008 9.99967 0.833008 9.99967Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div><div class="product-card-body"><p class="zappy-editable"><a href="/product/spsl-ats-mla-tbay-live-edge-15032-sm-spsl-mavtsb-lbyt-vlask-b9obmu" class="product-card-body-link"></a></p><div class="card-content"><h3><a href="/product/spsl-ats-mla-tbay-live-edge-15032-sm-spsl-mavtsb-lbyt-vlask-b9obmu" class="product-card-body-link">ספסל עץ מלא טבעי Live Edge | 150×32 ס"מ | ספסל מעוצב לבית ולעסק</a></h3><p class="card-desc"><a href="/product/spsl-ats-mla-tbay-live-edge-15032-sm-spsl-mavtsb-lbyt-vlask-b9obmu" class="product-card-body-link">ישנם פריטים שאינם רק רהיט – הם יוצרים אווירה. ספסל העץ הטבעי שלנו נוצר מתוך אהבה לחומר הגלם האותנטי וליופיו הבלתי מושלם של הטבע. הספסל עשוי מעץ מלא טבעי, הנבחר בקפידה בזכות המרקם האורגני, תנועת הגידים והאופי הייחודי של כל פלטה. בהתאם לזמינות חומרי הגלם, הספסלים עשויים להיות מיוצרים מסוגי עץ שונים, ביניהם עצים בגוון טבעי בהיר או בעלי מראה טרופי עשיר, תוך שמירה על אותה שפה עיצובית טבעית, חמימה ועל איכות גבוהה. אורכו של הספסל, כ-150 ס"מ ורוחבו כ-32 ס"מ, מעניקים לו נוכחות מרשימה אך מאוזנת, והוא מתאים הן כפריט פונקציונלי והן כאובייקט עיצובי בפני עצמו. השילוב בין העץ המלא לבין רגלי הברזל השחורות יוצר מראה עכשווי המשלב בין טבע, מינימליזם ואסתטיקת Wabi-Sabi. הספסל מתאים לשימוש במגוון חללים: כניסה לבית וקיר עוגן מעוצב סלון ופינת טבע ביופילית חדר שינה, מסדרון או חלל אירוח לובאים, קליניקות, בתי מלון ועסקים מעוצבים בסיס לסטיילינג עם כדים, צמחייה, ספרים וחפצי אמנות פרטי המוצר חומר: עץ מלא טבעי מידות: כ-150 ס"מ אורך × 32 ס"מ רוחב רגליים: ברזל שחור מינימליסטי סגנון: Natural | Wabi-Sabi | Biophilic Design | Rustic Modern שימוש: ספסל ישיבה, קונסולה נמוכה, פריט סטיילינג ועיצוב ייחודיות מאחר שמדובר בעץ טבעי, כל ספסל הוא פריט חד-פעמי. דוגמת הגידים, מעברי הצבע, העיניים, הטקסטורות והקצוות האורגניים משתנים באופן טבעי מפלטה לפלטה. לכן, כל ספסל שתקבלו יהיה דומה ברוחו לדגם המוצג, אך בעל אופי, חומריות וסיפור ייחודיים משלו. הבדלים קלים בגוון, במרקם ובדוגמת העץ אינם פגם – אלא חלק מהאותנטיות והקסם של עץ מלא טבעי.</a></p></div><p></p><div class="product-card-footer"><div class="price">₪1800.00</div><button type="button" class="card-cart-btn" data-card-cart data-product-id="2d514084-d63d-4f73-acaf-dfdb3b6d1ad3" aria-label="הוסף לעגלה"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M19.5275 4.09583C19.13 3.61083 18.5425 3.33333 17.9158 3.33333H3.74167L3.52833 1.7975C3.38667 0.773333 2.5 0 1.465 0H0.416667C0.186667 0 0 0.186667 0 0.416667C0 0.646667 0.186667 0.833333 0.416667 0.833333H1.46583C2.08667 0.833333 2.61833 1.29667 2.70333 1.91167L4.1875 12.5992C4.44417 14.4425 6.04167 15.8333 7.90167 15.8333H16.25C16.48 15.8333 16.6667 15.6467 16.6667 15.4167C16.6667 15.1867 16.48 15 16.25 15H7.90167C6.46 15 5.22333 13.9258 5.01667 12.5H15.55C17.3317 12.5 18.8775 11.2325 19.2267 9.48583L19.9592 5.825C20.0817 5.21 19.9242 4.58 19.5267 4.09583H19.5275ZM19.1425 5.66167L18.41 9.3225C18.1383 10.6808 16.935 11.6667 15.55 11.6667H4.89917L3.8575 4.16667H17.9158C18.2917 4.16667 18.6442 4.33333 18.8825 4.62417C19.1208 4.915 19.215 5.29333 19.1425 5.66167ZM5.83333 16.6667C4.91417 16.6667 4.16667 17.4142 4.16667 18.3333C4.16667 19.2525 4.91417 20 5.83333 20C6.7525 20 7.5 19.2525 7.5 18.3333C7.5 17.4142 6.7525 16.6667 5.83333 16.6667ZM5.83333 19.1667C5.37333 19.1667 5 18.7925 5 18.3333C5 17.8742 5.37333 17.5 5.83333 17.5C6.29333 17.5 6.66667 17.8742 6.66667 18.3333C6.66667 18.7925 6.29333 19.1667 5.83333 19.1667ZM14.1667 16.6667C13.2475 16.6667 12.5 17.4142 12.5 18.3333C12.5 19.2525 13.2475 20 14.1667 20C15.0858 20 15.8333 19.2525 15.8333 18.3333C15.8333 17.4142 15.0858 16.6667 14.1667 16.6667ZM14.1667 19.1667C13.7067 19.1667 13.3333 18.7925 13.3333 18.3333C13.3333 17.8742 13.7067 17.5 14.1667 17.5C14.6267 17.5 15 17.8742 15 18.3333C15 18.7925 14.6267 19.1667 14.1667 19.1667Z" fill="currentColor"/></svg></button></div></div></div></div><div class="product-card standard" data-product-id="258563a3-a389-4f6e-a013-e1420bf1ede2"><div class="product-card-inner"><div class="product-card-media"><a href="/product/kd-chrs-mavtsb-bgymvr-tbay-rustic-white-vase-gvbh-30-sm-r02uen" class="product-card-image-link"><img src="/assets/product-1781686463911-7o94wl.webp" alt="כד חרס מעוצב בגימור טבעי | Rustic White Vase | גובה 30 ס" מ"></a><div class="product-card-actions"><button type="button" class="card-favorite-btn" data-product-id="258563a3-a389-4f6e-a013-e1420bf1ede2" onclick="event.preventDefault(); event.stopPropagation(); toggleCardFavorite(this, '258563a3-a389-4f6e-a013-e1420bf1ede2')" title="שמור למועדפים" aria-pressed="false"><svg class="heart-outline" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3" fill="none"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0ZM10 17.2442C5.71583 14.1317 0.833333 9.185 0.833333 5.20833C0.833333 2.79583 2.79583 0.833333 5.20833 0.833333C7.49833 0.833333 9.58333 3.21667 9.58333 5.83333H10.4167C10.4167 3.21667 12.5017 0.833333 14.7917 0.833333C17.2042 0.833333 19.1667 2.79583 19.1667 5.20833C19.1667 9.185 14.2842 14.1317 10 17.2442Z" fill="currentColor"/></svg><svg class="heart-filled" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0Z" fill="#e74c3c"/></svg></button><button type="button" class="card-quickview-btn" data-card-quickview data-product-id="258563a3-a389-4f6e-a013-e1420bf1ede2" title="תצוגה מהירה" aria-label="תצוגה מהירה"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M0.833008 9.99967C0.833008 9.99967 4.16634 3.33301 9.99967 3.33301C15.833 3.33301 19.1663 9.99967 19.1663 9.99967C19.1663 9.99967 15.833 16.6663 9.99967 16.6663C4.16634 16.6663 0.833008 9.99967 0.833008 9.99967Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div><div class="product-card-body"><p class="zappy-editable"><a href="/product/kd-chrs-mavtsb-bgymvr-tbay-rustic-white-vase-gvbh-30-sm-r02uen" class="product-card-body-link"></a></p><div class="card-content"><h3><a href="/product/kd-chrs-mavtsb-bgymvr-tbay-rustic-white-vase-gvbh-30-sm-r02uen" class="product-card-body-link">כד חרס מעוצב בגימור טבעי | Rustic White Vase | גובה 30 ס"מ</a></h3><p class="card-desc"><a href="/product/kd-chrs-mavtsb-bgymvr-tbay-rustic-white-vase-gvbh-30-sm-r02uen" class="product-card-body-link">הכד עוצב בהשראת חומריות טבעית ואסתטיקת Wabi-Sabi, המוקירה יופי לא מושלם, טקסטורות רכות וגוונים ארציים. גימורו המיושן, המשלב לבן-אבן עם נגיעות עדינות של צבע, מעניק לו אופי ייחודי ומראה שנראה כאילו נאסף ממסע בכפר ים-תיכוני. גובהו כ-30 ס"מ – פרופורציה אידיאלית ליצירת נקודת עניין על מדף, קונסולה, מזנון או שולחן צד, מבלי להעמיס על החלל. סרט היוטה הטבעי מוסיף חמימות וטאץ' אורגני המשתלב באופן מושלם עם עץ, צמחייה, פשתן וחומרים טבעיים. הכד מתאים לעיצוב: סלון בסגנון טבעי, כפרי או מודרני-מינימליסטי קונסולות כניסה ומדפי עיצוב חללי אירוח, לובאים, קליניקות ועסקים מעוצבים שילוב עם ענפי זית, אקליפטוס, עשב פמפס או כפריט פיסולי בפני עצמו פרטי המוצר: חומר: קרמיקה בגימור מיושן צבע: לבן-אבן עם טקסטורה טבעית גובה: כ-30 ס"מ סגנון: Wabi-Sabi | טבעי | בוהו מודרני | ים-תיכוני שימוש: פריט דקורטיבי לשילוב עם ענפים יבשים או כפריט עיצוב עצמאי כל כד נושא אופי וטקסטורה ייחודיים, המעניקים לו תחושה אותנטית וחד-פעמית.</a></p></div><p></p><div class="product-card-footer"><div class="price">₪349.00</div><button type="button" class="card-cart-btn" data-card-cart data-product-id="258563a3-a389-4f6e-a013-e1420bf1ede2" aria-label="הוסף לעגלה"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M19.5275 4.09583C19.13 3.61083 18.5425 3.33333 17.9158 3.33333H3.74167L3.52833 1.7975C3.38667 0.773333 2.5 0 1.465 0H0.416667C0.186667 0 0 0.186667 0 0.416667C0 0.646667 0.186667 0.833333 0.416667 0.833333H1.46583C2.08667 0.833333 2.61833 1.29667 2.70333 1.91167L4.1875 12.5992C4.44417 14.4425 6.04167 15.8333 7.90167 15.8333H16.25C16.48 15.8333 16.6667 15.6467 16.6667 15.4167C16.6667 15.1867 16.48 15 16.25 15H7.90167C6.46 15 5.22333 13.9258 5.01667 12.5H15.55C17.3317 12.5 18.8775 11.2325 19.2267 9.48583L19.9592 5.825C20.0817 5.21 19.9242 4.58 19.5267 4.09583H19.5275ZM19.1425 5.66167L18.41 9.3225C18.1383 10.6808 16.935 11.6667 15.55 11.6667H4.89917L3.8575 4.16667H17.9158C18.2917 4.16667 18.6442 4.33333 18.8825 4.62417C19.1208 4.915 19.215 5.29333 19.1425 5.66167ZM5.83333 16.6667C4.91417 16.6667 4.16667 17.4142 4.16667 18.3333C4.16667 19.2525 4.91417 20 5.83333 20C6.7525 20 7.5 19.2525 7.5 18.3333C7.5 17.4142 6.7525 16.6667 5.83333 16.6667ZM5.83333 19.1667C5.37333 19.1667 5 18.7925 5 18.3333C5 17.8742 5.37333 17.5 5.83333 17.5C6.29333 17.5 6.66667 17.8742 6.66667 18.3333C6.66667 18.7925 6.29333 19.1667 5.83333 19.1667ZM14.1667 16.6667C13.2475 16.6667 12.5 17.4142 12.5 18.3333C12.5 19.2525 13.2475 20 14.1667 20C15.0858 20 15.8333 19.2525 15.8333 18.3333C15.8333 17.4142 15.0858 16.6667 14.1667 16.6667ZM14.1667 19.1667C13.7067 19.1667 13.3333 18.7925 13.3333 18.3333C13.3333 17.8742 13.7067 17.5 14.1667 17.5C14.6267 17.5 15 17.8742 15 18.3333C15 18.7925 14.6267 19.1667 14.1667 19.1667Z" fill="currentColor"/></svg></button></div></div></div></div><div class="product-card standard" data-product-id="bdb99b98-512d-4841-bd9a-026ad3adbb31"><div class="product-card-inner"><div class="product-card-media"><a href="/product/sdrt-admh-vshkt-earth-silence-oik4ph" class="product-card-image-link"><img src="/assets/product-1781622239395-khafl.webp" alt="סדרת אדמה ושקט | Earth &amp; Silence"></a><div class="product-tags"><span class="product-tag tag-new">new</span><span class="product-tag">limited</span></div><div class="product-card-actions"><button type="button" class="card-favorite-btn" data-product-id="bdb99b98-512d-4841-bd9a-026ad3adbb31" onclick="event.preventDefault(); event.stopPropagation(); toggleCardFavorite(this, 'bdb99b98-512d-4841-bd9a-026ad3adbb31')" title="שמור למועדפים" aria-pressed="false"><svg class="heart-outline" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3" fill="none"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0ZM10 17.2442C5.71583 14.1317 0.833333 9.185 0.833333 5.20833C0.833333 2.79583 2.79583 0.833333 5.20833 0.833333C7.49833 0.833333 9.58333 3.21667 9.58333 5.83333H10.4167C10.4167 3.21667 12.5017 0.833333 14.7917 0.833333C17.2042 0.833333 19.1667 2.79583 19.1667 5.20833C19.1667 9.185 14.2842 14.1317 10 17.2442Z" fill="currentColor"/></svg><svg class="heart-filled" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0Z" fill="#e74c3c"/></svg></button><button type="button" class="card-quickview-btn" data-card-quickview data-product-id="bdb99b98-512d-4841-bd9a-026ad3adbb31" title="תצוגה מהירה" aria-label="תצוגה מהירה"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M0.833008 9.99967C0.833008 9.99967 4.16634 3.33301 9.99967 3.33301C15.833 3.33301 19.1663 9.99967 19.1663 9.99967C19.1663 9.99967 15.833 16.6663 9.99967 16.6663C4.16634 16.6663 0.833008 9.99967 0.833008 9.99967Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="product-card-size-overlay"><div class="zc-size-strip" data-card-sizes><div class="zc-size-track"><button type="button" class="zc-size" data-size="XL">XL</button><button type="button" class="zc-size" data-size="L">L</button></div></div></div></div><div class="product-card-body"><p class="zappy-editable"><a href="/product/sdrt-admh-vshkt-earth-silence-oik4ph" class="product-card-body-link"></a></p><div class="card-content"><h3><a href="/product/sdrt-admh-vshkt-earth-silence-oik4ph" class="product-card-body-link">סדרת אדמה ושקט | Earth &amp; Silence</a></h3><p class="card-desc"><a href="/product/sdrt-admh-vshkt-earth-silence-oik4ph" class="product-card-body-link">טריפטיך אומנותי המורכב משלושה הדפסים מקוריים בהשראת אור, טבע וחומר. סדרה בגווני אדמה חמימים, שנועדה להכניס לחלל תחושת רוגע, עומק ונוכחות שקטה. משחקי האור והצל, הטקסטורות הטבעיות והקומפוזיציה המינימליסטית יוצרים יצירת אמנות על־זמנית המתאימה לבית ולעסק. הסדרה מתאימה לסלון, פינת אוכל, חדר שינה, משרד, קליניקה וחללי אירוח, ומשתלבת באופן טבעי בעיצוב מודרני, יפני, סקנדינבי וים־תיכוני. מה כוללת הסדרה? ✔ 3 הדפסים אומנותיים מקוריים – סדרת "אדמה ושקט" ✔ מסגרות שחורות איכותיות עם פספרטו לבן ✔ מוכנה לתלייה כסט תלת־חלקי מידות לבחירה Medium גודל כל תמונה: 50×70 ס"מ גודל אידיאלי לקיר ברוחב: 180–250 ס"מ מתאים לסלון, פינת אוכל ומשרדים. Large גודל כל תמונה: 70×100 ס"מ גודל אידיאלי לקיר ברוחב: 250–350 ס"מ מתאים לחללים גדולים, לובאים, קליניקות וחללי אירוח. חומרים הדפס Fine Art איכותי על נייר אומנותי מובחר מסגרת שחורה בגימור מט פספרטו לבן המדגיש את עומק היצירה ואת משחקי האור והצל סגנון מינימליסטי | טבעי | יפני־סקנדינבי | על־זמני "אדמה ושקט" היא סדרת אמנות שנועדה להאט את הקצב, להכניס חמימות טבעית לחלל וליצור מוקד עיצובי מרשים, שקט ומלא נוכחות.</a></p></div><p></p><div class="product-card-footer"><div class="price">החל מ ₪1650.00</div><button type="button" class="card-cart-btn" data-card-cart data-product-id="bdb99b98-512d-4841-bd9a-026ad3adbb31" aria-label="הוסף לעגלה"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M19.5275 4.09583C19.13 3.61083 18.5425 3.33333 17.9158 3.33333H3.74167L3.52833 1.7975C3.38667 0.773333 2.5 0 1.465 0H0.416667C0.186667 0 0 0.186667 0 0.416667C0 0.646667 0.186667 0.833333 0.416667 0.833333H1.46583C2.08667 0.833333 2.61833 1.29667 2.70333 1.91167L4.1875 12.5992C4.44417 14.4425 6.04167 15.8333 7.90167 15.8333H16.25C16.48 15.8333 16.6667 15.6467 16.6667 15.4167C16.6667 15.1867 16.48 15 16.25 15H7.90167C6.46 15 5.22333 13.9258 5.01667 12.5H15.55C17.3317 12.5 18.8775 11.2325 19.2267 9.48583L19.9592 5.825C20.0817 5.21 19.9242 4.58 19.5267 4.09583H19.5275ZM19.1425 5.66167L18.41 9.3225C18.1383 10.6808 16.935 11.6667 15.55 11.6667H4.89917L3.8575 4.16667H17.9158C18.2917 4.16667 18.6442 4.33333 18.8825 4.62417C19.1208 4.915 19.215 5.29333 19.1425 5.66167ZM5.83333 16.6667C4.91417 16.6667 4.16667 17.4142 4.16667 18.3333C4.16667 19.2525 4.91417 20 5.83333 20C6.7525 20 7.5 19.2525 7.5 18.3333C7.5 17.4142 6.7525 16.6667 5.83333 16.6667ZM5.83333 19.1667C5.37333 19.1667 5 18.7925 5 18.3333C5 17.8742 5.37333 17.5 5.83333 17.5C6.29333 17.5 6.66667 17.8742 6.66667 18.3333C6.66667 18.7925 6.29333 19.1667 5.83333 19.1667ZM14.1667 16.6667C13.2475 16.6667 12.5 17.4142 12.5 18.3333C12.5 19.2525 13.2475 20 14.1667 20C15.0858 20 15.8333 19.2525 15.8333 18.3333C15.8333 17.4142 15.0858 16.6667 14.1667 16.6667ZM14.1667 19.1667C13.7067 19.1667 13.3333 18.7925 13.3333 18.3333C13.3333 17.8742 13.7067 17.5 14.1667 17.5C14.6267 17.5 15 17.8742 15 18.3333C15 18.7925 14.6267 19.1667 14.1667 19.1667Z" fill="currentColor"/></svg></button></div></div></div></div><div class="product-card standard" data-product-id="ad879379-7a6b-4c2d-af50-a9192371ca80"><div class="product-card-inner"><div class="product-card-media"><a href="/product/pynt-tba-mavtsbt-lbyt-vlask-yiporg" class="product-card-image-link"><img src="/assets/product-1781619825498-5sqihp.webp" alt="פינת טבע מעוצבת לבית ולעסק"></a><div class="product-card-actions"><button type="button" class="card-favorite-btn" data-product-id="ad879379-7a6b-4c2d-af50-a9192371ca80" onclick="event.preventDefault(); event.stopPropagation(); toggleCardFavorite(this, 'ad879379-7a6b-4c2d-af50-a9192371ca80')" title="שמור למועדפים" aria-pressed="false"><svg class="heart-outline" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3" fill="none"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0ZM10 17.2442C5.71583 14.1317 0.833333 9.185 0.833333 5.20833C0.833333 2.79583 2.79583 0.833333 5.20833 0.833333C7.49833 0.833333 9.58333 3.21667 9.58333 5.83333H10.4167C10.4167 3.21667 12.5017 0.833333 14.7917 0.833333C17.2042 0.833333 19.1667 2.79583 19.1667 5.20833C19.1667 9.185 14.2842 14.1317 10 17.2442Z" fill="currentColor"/></svg><svg class="heart-filled" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 18.3"><path d="M14.7917 0C12.705 0 10.8108 1.5425 10 3.62833C9.18917 1.54167 7.295 0 5.20833 0C2.33667 0 0 2.33667 0 5.20833C0 10.8417 8.12833 16.9333 9.7575 18.0967L10 18.27L10.2425 18.0967C11.8725 16.9333 20 10.8408 20 5.20833C20 2.33667 17.6633 0 14.7917 0Z" fill="#e74c3c"/></svg></button><button type="button" class="card-quickview-btn" data-card-quickview data-product-id="ad879379-7a6b-4c2d-af50-a9192371ca80" title="תצוגה מהירה" aria-label="תצוגה מהירה"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M0.833008 9.99967C0.833008 9.99967 4.16634 3.33301 9.99967 3.33301C15.833 3.33301 19.1663 9.99967 19.1663 9.99967C19.1663 9.99967 15.833 16.6663 9.99967 16.6663C4.16634 16.6663 0.833008 9.99967 0.833008 9.99967Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="product-card-size-overlay"><div class="zc-size-strip" data-card-sizes><div class="zc-size-track"><button type="button" class="zc-size" data-size="L">L</button><button type="button" class="zc-size" data-size="M">M</button><button type="button" class="zc-size" data-size="S">S</button></div></div></div></div><div class="product-card-body"><p class="zappy-editable"><a href="/product/pynt-tba-mavtsbt-lbyt-vlask-yiporg" class="product-card-body-link"></a></p><div class="card-content"><h3><a href="/product/pynt-tba-mavtsbt-lbyt-vlask-yiporg" class="product-card-body-link">פינת טבע מעוצבת לבית ולעסק</a></h3><p class="card-desc"><a href="/product/pynt-tba-mavtsbt-lbyt-vlask-yiporg" class="product-card-body-link">פינת טבע – Earth &amp; Silence פינת עיצוב מוכנה לבית ולעסק, המשלבת מדף עץ טבעי, הדפס אומנותי ממוסגר וכד קרמי בגימור טבעי. הקומפוזיציה נוצרה ליצירת מראה רגוע, אלגנטי ועל־זמני, בהשראת סמטאות ים־תיכוניות, חומרים טבעיים ואהבה לטבע ולעיצוב נקי. מה כוללת הפינה? ✔ מדף עץ טבעי בעובי 4 ס"מ, בגימור מלא, כולל איבזור לתלייה כמדף צף ✔ הדפס אומנותי ממוסגר מתוך הסדרה – Earth &amp; Silence ✔ כד קרמי דקורטיבי בגוון אבן טבעי ✔ הוראות העמדה וסטיילינג לקבלת המראה המלא מידות לבחירה: פינת טבע S מתאימה למבואת כניסה, נישות קטנות ומשרדים. מדף עץ: 80×25 ס"מ, עובי 4 ס"מ הדפס ממוסגר: 30×40 ס"מ כד קרמי: גובה 25 ס"מ פינת טבע M מתאימה לסלון, פינת אוכל וקליניקות. מדף עץ: 120×30 ס"מ, עובי 4 ס"מ הדפס ממוסגר: 50×70 ס"מ כד קרמי: גובה 35 ס"מ פינת טבע L פינת הצהרה מרשימה לחללים גדולים, לובאים ומשרדים. מדף עץ: 160×35 ס"מ, עובי 4 ס"מ הדפס ממוסגר: 70×100 ס"מ כד קרמי: גובה 45 ס"מ חומרים עץ טבעי מלא בגימור ידני להגנה ולשמירה על הטקסטורה הייחודית של העץ מסגרת אלומיניום שחורה עם פספרטו לבן כד קרמי בגימור טבעי בגוון אבן. כל פינה מגיעה כמוצר מוגמר ומוכן להתקנה – פתרון עיצוב שלם שמכניס טבע, חמימות ואומנות לכל בית או עסק. 🌿</a></p></div><p></p><div class="product-card-footer"><div class="price">החל מ ₪1800.00</div><button type="button" class="card-cart-btn" data-card-cart data-product-id="ad879379-7a6b-4c2d-af50-a9192371ca80" aria-label="הוסף לעגלה"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M19.5275 4.09583C19.13 3.61083 18.5425 3.33333 17.9158 3.33333H3.74167L3.52833 1.7975C3.38667 0.773333 2.5 0 1.465 0H0.416667C0.186667 0 0 0.186667 0 0.416667C0 0.646667 0.186667 0.833333 0.416667 0.833333H1.46583C2.08667 0.833333 2.61833 1.29667 2.70333 1.91167L4.1875 12.5992C4.44417 14.4425 6.04167 15.8333 7.90167 15.8333H16.25C16.48 15.8333 16.6667 15.6467 16.6667 15.4167C16.6667 15.1867 16.48 15 16.25 15H7.90167C6.46 15 5.22333 13.9258 5.01667 12.5H15.55C17.3317 12.5 18.8775 11.2325 19.2267 9.48583L19.9592 5.825C20.0817 5.21 19.9242 4.58 19.5267 4.09583H19.5275ZM19.1425 5.66167L18.41 9.3225C18.1383 10.6808 16.935 11.6667 15.55 11.6667H4.89917L3.8575 4.16667H17.9158C18.2917 4.16667 18.6442 4.33333 18.8825 4.62417C19.1208 4.915 19.215 5.29333 19.1425 5.66167ZM5.83333 16.6667C4.91417 16.6667 4.16667 17.4142 4.16667 18.3333C4.16667 19.2525 4.91417 20 5.83333 20C6.7525 20 7.5 19.2525 7.5 18.3333C7.5 17.4142 6.7525 16.6667 5.83333 16.6667ZM5.83333 19.1667C5.37333 19.1667 5 18.7925 5 18.3333C5 17.8742 5.37333 17.5 5.83333 17.5C6.29333 17.5 6.66667 17.8742 6.66667 18.3333C6.66667 18.7925 6.29333 19.1667 5.83333 19.1667ZM14.1667 16.6667C13.2475 16.6667 12.5 17.4142 12.5 18.3333C12.5 19.2525 13.2475 20 14.1667 20C15.0858 20 15.8333 19.2525 15.8333 18.3333C15.8333 17.4142 15.0858 16.6667 14.1667 16.6667ZM14.1667 19.1667C13.7067 19.1667 13.3333 18.7925 13.3333 18.3333C13.3333 17.8742 13.7067 17.5 14.1667 17.5C14.6267 17.5 15 17.8742 15 18.3333C15 18.7925 14.6267 19.1667 14.1667 19.1667Z" fill="currentColor"/></svg></button></div></div></div></div></div>
         <div class="view-all-products" style="text-align: center !important; display: flex !important; justify-content: center !important; align-items: flex-start !important; width: 100% !important;">
           <a href="/collections" class="btn btn-primary" style="color: rgb(255, 255, 255) !important; outline: none; border-color: rgb(185, 120, 92) !important; background-color: rgb(185, 120, 92) !important; background-image: none !important;" data-element-type="button" data-element-id="btn-1781430987807-exnzedzwx" data-native-element="true">צפה בכל המוצרים →</a>
         </div>
@@ -1125,7 +1484,7 @@
 
     <!-- Intro Block -->
     <div class="index-showcase-intro">
-      <h3 >גלריה של פינות מעוצבות</h3>
+      <h3 style>גלריה של פינות מעוצבות</h3>
       <p class="index-showcase-subtext" style="color: rgb(47, 41, 36) !important;">&nbsp;שפה ויזואלית שלמה בפני עצמה. לא פרטים בודדים, אלא עולמות שמתחברים, סיפור שמזמין להתבונן, להרגיש, להישאר.</p>
     </div>
 
@@ -1142,8 +1501,8 @@
           </div>
           <div class="index-showcase-card-body">
             
-            <h2 ><b>פינות טבע - סטים מוכנים</b></h2><h3><b>מתנות שמספרות סיפור</b></h3>
-            <p >לקולקציית המתנות</p></div>
+            <h2 style><b>פינות טבע - סטים מוכנים</b></h2><h3><b>מתנות שמספרות סיפור</b></h3>
+            <p style>לקולקציית המתנות</p></div>
         </article>
 
         <!-- Card 2 -->
@@ -1152,9 +1511,9 @@
             <a data-zappy-click-action="link" href="/category/nature-corners-ready-sets" style="text-decoration: none; color: inherit; display: contents;"><div data-zappy-zoom-wrapper="true" data-element-id="img-1780479063049-2yg32ce3s" data-element-type="image" data-zappy-zoom-wrapper-width="576px" data-zappy-zoom-wrapper-height="432px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="cursor: pointer; position: relative !important; overflow: hidden !important; width: 576px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 432px !important; display: block !important; padding-bottom: 0px !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-card-slot-fill="1" data-zappy-click-action="link"><img data-placeholder="index-showcase-image-2" data-context="Fine art photography series: intimate architectural fragments — a corner of a room with soft shadow, a window frame with diffused morning light, empty domestic space with emotional presence. Wabi-Sabi aesthetic, warm cream and linen tones, quiet and contemplative mood, suitable as large-scale wall art for homes and clinics" width="600" height="400" src="/assets/site-index-showcase-image-2-1782310579068-mrwp85.webp?v=1782310582060" alt="סדרת אור — צילום אמנותי של אור בחללים אינטימיים" data-element-type="image" data-element-id="img-1780479063049-2yg32ce3s" style="display: block !important; object-position: 50% 50% !important; object-fit: cover !important; margin: 0px !important; left: -1% !important; top: -4.4% !important; width: 102% !important; height: 108.8% !important; max-width: none !important; max-height: none !important; position: absolute !important;" data-zappy-zoom="1.02" data-zappy-original-width="576" data-zappy-original-height="432" data-zappy-object-position="50% 50%" data-zappy-click-action="link"></div></a>
           </div>
           <div class="index-showcase-card-body">
-            <h3 class="index-showcase-card-title" >פינות טבע לסלון וחלל אירוח</h3>
+            <h3 class="index-showcase-card-title" style>פינות טבע לסלון וחלל אירוח</h3>
             <p class="index-showcase-card-desc" style="color: rgb(47, 41, 36) !important;">ערכות עיצוב מוכנות המשלבות צילום אמנותי, עץ טבעי ופריטי עיצוב נבחרים ליצירת אווירה נעימה ומזמינה.</p>
-            <p >לפינות טבע לסלון</p></div>
+            <p style>לפינות טבע לסלון</p></div>
         </article>
 
       </div>
@@ -1194,7 +1553,7 @@
   <!-- Bottom torn-paper SVG divider transitioning to darker services section -->
   <div class="index-showcase-divider-wrapper">
     <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,90 L0,42 Q18,38 36,44 T72,40 Q90,36 108,43 T144,39 Q162,35 180,42 T216,38 Q234,44 252,40 T288,36 Q306,43 324,39 T360,42 Q378,38 396,44 T432,40 Q450,36 468,43 T504,39 Q522,35 540,42 T576,38 Q594,44 612,40 T648,36 Q666,43 684,39 T720,42 Q738,38 756,44 T792,40 Q810,36 828,43 T864,39 Q882,35 900,42 T936,38 Q954,44 972,40 T1008,36 Q1026,43 1044,39 T1080,42 Q1098,38 1116,44 T1152,40 Q1170,36 1188,43 T1224,39 Q1242,35 1260,42 T1296,38 Q1314,44 1332,40 T1368,36 Q1386,43 1404,39 T1440,42 L1440,90 Z" fill="var(--bg-dark)"></path>
+      <path d="M0,90 L0,42 Q18,38 36,44 T72,40 Q90,36 108,43 T144,39 Q162,35 180,42 T216,38 Q234,44 252,40 T288,36 Q306,43 324,39 T360,42 Q378,38 396,44 T432,40 Q450,36 468,43 T504,39 Q522,35 540,42 T576,38 Q594,44 612,40 T648,36 Q666,43 684,39 T720,42 Q738,38 756,44 T792,40 Q810,36 828,43 T864,39 Q882,35 900,42 T936,38 Q954,44 972,40 T1008,36 Q1026,43 1044,39 T1080,42 Q1098,38 1116,44 T1152,40 Q1170,36 1188,43 T1224,39 Q1242,35 1260,42 T1296,38 Q1314,44 1332,40 T1368,36 Q1386,43 1404,39 T1440,42 L1440,90 Z" fill="var(--bg-dark)"/>
     </svg>
   </div>
 
@@ -1208,29 +1567,29 @@
     <!-- Content Column (START = RIGHT in RTL) -->
     <div class="index-services-content">
       <p><small class="index-services-eyebrow">שירות מותאם אישית</small>
-      </p><h2 class="index-services-heading" >התאמת אישית לחלל שלך</h2>
-      <p class="index-services-intro" >כל חלל מספר סיפור אחר.<br>בין אם מדובר בבית פרטי, קליניקה, משרד, יחידת אירוח או סטודיו — אנו מסייעים ליצור חלל בעל אופי, נוכחות והרמוניה באמצעות שילוב מדויק של אמנות, חומרים טבעיים, תאורה ופריטי עיצוב.<br>המטרה אינה רק לבחור פריטים יפים, אלא ליצור מקום שנעים להיות בו.</p>
+      </p><h2 class="index-services-heading" style>התאמת אישית לחלל שלך</h2>
+      <p class="index-services-intro" style>כל חלל מספר סיפור אחר.<br>בין אם מדובר בבית פרטי, קליניקה, משרד, יחידת אירוח או סטודיו — אנו מסייעים ליצור חלל בעל אופי, נוכחות והרמוניה באמצעות שילוב מדויק של אמנות, חומרים טבעיים, תאורה ופריטי עיצוב.<br>המטרה אינה רק לבחור פריטים יפים, אלא ליצור מקום שנעים להיות בו.</p>
 
       <ol class="index-services-steps">
         <li class="index-services-step zappy-grid-item-nested-grid zappy-preserve-css-grid" data-grid-item-index="0" data-zappy-grid-align="start" data-original-gap="20px" style="align-items: stretch !important; display: grid;">
           <div class="index-services-step-number" data-grid-item-index="0">01</div>
           <div class="index-services-step-body" data-grid-item-index="1">
-            <h3 class="index-services-step-title" >שיחת היכרות&nbsp;</h3>
-            <p class="index-services-step-text" >נתחיל בשיחה קצרה על החלל, השימוש בו והאווירה שתרצו ליצור. נשמח לקבל תמונות, סרטון קצר או תכנית בסיסית כדי להבין את הפוטנציאל ואת הצרכים.</p>
+            <h3 class="index-services-step-title" style>שיחת היכרות&nbsp;</h3>
+            <p class="index-services-step-text" style>נתחיל בשיחה קצרה על החלל, השימוש בו והאווירה שתרצו ליצור. נשמח לקבל תמונות, סרטון קצר או תכנית בסיסית כדי להבין את הפוטנציאל ואת הצרכים.</p>
           </div>
         </li>
         <li class="index-services-step zappy-grid-item-nested-grid zappy-preserve-css-grid" data-grid-item-index="1" data-zappy-grid-align="start" data-original-gap="20px" style=" align-items: stretch !important;">
           <div class="index-services-step-number" data-grid-item-index="0">02</div>
           <div class="index-services-step-body" data-grid-item-index="1">
-            <h3 class="index-services-step-title" >בניית קונספט ועיצוב</h3>
-            <p class="index-services-step-text" >ניצור עבורכם כיוון עיצובי המשלב אמנות, צבע, חומר, תאורה ופריטים משלימים מתוך עולם התוכן של סטודיו 242.<br>במידת הצורך נכין גם הדמיה ויזואלית שתמחיש את התוצאה הצפויה.</p>
+            <h3 class="index-services-step-title" style>בניית קונספט ועיצוב</h3>
+            <p class="index-services-step-text" style>ניצור עבורכם כיוון עיצובי המשלב אמנות, צבע, חומר, תאורה ופריטים משלימים מתוך עולם התוכן של סטודיו 242.<br>במידת הצורך נכין גם הדמיה ויזואלית שתמחיש את התוצאה הצפויה.</p>
           </div>
         </li>
         <li class="index-services-step zappy-grid-item-nested-grid zappy-preserve-css-grid" data-grid-item-index="2" data-zappy-grid-align="start" data-original-gap="20px" style=" align-items: stretch !important;">
-          <div class="index-services-step-number" data-grid-item-index="0" >03</div>
+          <div class="index-services-step-number" data-grid-item-index="0" style>03</div>
           <div class="index-services-step-body" data-grid-item-index="1">
-            <h3 class="index-services-step-title" >ליווי, אספקה והעמדה</h3>
-            <p class="index-services-step-text" >לאחר אישור הקונספט נדאג לבחירת היצירות והפריטים, לאספקה, למיקום בחלל ולהעמדה הסופית.<br>בפרויקטים מסוימים ניתן לשלב גם צביעת קירות, התקנת מדפים, תליית יצירות ויצירת פינות מעוצבות מוכנות.</p>
+            <h3 class="index-services-step-title" style>ליווי, אספקה והעמדה</h3>
+            <p class="index-services-step-text" style>לאחר אישור הקונספט נדאג לבחירת היצירות והפריטים, לאספקה, למיקום בחלל ולהעמדה הסופית.<br>בפרויקטים מסוימים ניתן לשלב גם צביעת קירות, התקנת מדפים, תליית יצירות ויצירת פינות מעוצבות מוכנות.</p>
           </div>
         </li>
       </ol>
@@ -1245,14 +1604,14 @@
           <div data-zappy-zoom-wrapper="true" data-element-id="img-1780479063049-ju1xix5ej" data-element-type="image" data-zappy-zoom-wrapper-width="531px" data-zappy-zoom-wrapper-height="707px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 531px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 707px !important; display: block !important; padding-bottom: 0px !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-card-slot-fill="1"><img data-placeholder="index-services-image-1" data-context="A calm, beautifully lit interior space — a serene clinic or intimate café — featuring a large framed fine art photography print hanging on a warm white wall. The artwork depicts a quiet, misty landscape with wabi-sabi aesthetic. The room has soft natural light, minimal furniture, and a peaceful atmosphere. The photograph feels like it belongs in the space, not just decoration." width="600" height="780" src="/assets/site-index-services-image-1-1782638919763-qwk2wg.webp?v=1782638921963" alt="עבודת צילום אמנותית משולבת בחלל פנים שקט ומינימליסטי" data-element-type="image" data-element-id="img-1780479063049-ju1xix5ej" style="display: block; object-position: 50% 50% !important; object-fit: cover !important; margin: 0px !important; left: 0% !important; top: 0% !important; width: 100% !important; height: 100% !important; max-width: none !important; max-height: none !important; position: absolute !important;" data-zappy-zoom="1" data-zappy-original-width="531.03515625" data-zappy-original-height="707.3828125" data-zappy-object-position="50% 50%"></div>
         </div>
       </div>
-      <p class="index-services-image-caption" >עיצוב פינת המתנה בלובי — קליניקה פרטית, הוד השרון</p>
+      <p class="index-services-image-caption" style>עיצוב פינת המתנה בלובי — קליניקה פרטית, הוד השרון</p>
     </div>
   </div>
 
   <!-- Bottom arch divider -->
   <div class="index-services-divider-wrapper">
     <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,90 L0,55 Q360,0 720,20 Q1080,40 1440,10 L1440,90 Z" fill="#F7F1E8"></path>
+      <path d="M0,90 L0,55 Q360,0 720,20 Q1080,40 1440,10 L1440,90 Z" fill="#F7F1E8"/>
     </svg>
   </div>
 </section>
@@ -1272,8 +1631,8 @@
       <!-- START side: supporting paragraph text + image -->
       <div class="index-philosophy-start zappy-grid-item-no-stretch" data-grid-item-index="0">
         <div class="index-philosophy-text-block">
-          <p >אנחנו מאמינים שחלל אינו מורכב רק מקירות, רהיטים וחפצים.<br>הוא מורכב מתחושה.<br>מהאור שנכנס בבוקר, מהחומרים שסופגים את הזמן, מהפריטים שבחרנו להשאיר ומהשקט שנוצר ביניהם.<br>סטודיו 242 נולד מתוך אהבה לטבע, לאמנות ולחללים שיש בהם נוכחות רגועה. מתוך ההבנה שלעיתים די בפריט אחד נכון, בתמונה אחת או בחומר אחד אותנטי כדי לשנות את האופן שבו מקום מרגיש.</p>
-          <p >אנו אוספים ויוצרים פריטים שנבחרו בקפידה — אמנות צילום מקורית, חפצי עיצוב, קרמיקה, תאורה ואלמנטים טבעיים — כולם חלק מאותה שפה חזותית.<br>אנחנו לא מחפשים למלא חללים.<br>אנחנו מחפשים לחשוף את מה שכבר קיים בהם.<br>ליצור איזון בין טבע לאדריכלות, בין חומר לאור, בין אסתטיקה לחיים עצמם.<br>כל יצירה, כל אובייקט וכל פרויקט נבחרים מתוך אותה מחשבה:<br>ליצור מקומות שנעים לחיות בהם, לעבוד בהם ולהרגיש בהם בבית.</p>
+          <p style>אנחנו מאמינים שחלל אינו מורכב רק מקירות, רהיטים וחפצים.<br>הוא מורכב מתחושה.<br>מהאור שנכנס בבוקר, מהחומרים שסופגים את הזמן, מהפריטים שבחרנו להשאיר ומהשקט שנוצר ביניהם.<br>סטודיו 242 נולד מתוך אהבה לטבע, לאמנות ולחללים שיש בהם נוכחות רגועה. מתוך ההבנה שלעיתים די בפריט אחד נכון, בתמונה אחת או בחומר אחד אותנטי כדי לשנות את האופן שבו מקום מרגיש.</p>
+          <p style>אנו אוספים ויוצרים פריטים שנבחרו בקפידה — אמנות צילום מקורית, חפצי עיצוב, קרמיקה, תאורה ואלמנטים טבעיים — כולם חלק מאותה שפה חזותית.<br>אנחנו לא מחפשים למלא חללים.<br>אנחנו מחפשים לחשוף את מה שכבר קיים בהם.<br>ליצור איזון בין טבע לאדריכלות, בין חומר לאור, בין אסתטיקה לחיים עצמם.<br>כל יצירה, כל אובייקט וכל פרויקט נבחרים מתוך אותה מחשבה:<br>ליצור מקומות שנעים לחיות בהם, לעבוד בהם ולהרגיש בהם בבית.</p>
           <h3>העקרונות שלנו</h3>
         </div>
 
@@ -1290,8 +1649,8 @@
       <div class="index-philosophy-end" data-grid-item-index="1">
         <div class="index-philosophy-reflection">
           <h3 class="index-philosophy-subheading" style="color: rgb(47, 41, 36) !important;">אמנות שמרגישה<br>כאילו תמיד הייתה שם</h3>
-          <p class="index-philosophy-reflection-text" >חלל שמכיל יצירה או מלאכה מקורית מרגיש שלם. לא בגלל שהיא מושלמת — אלא בגלל שהיא נוכחת. <strong>התאמת פריטי אמנות לחלל</strong> היא מעשה של הקשבה: לחלל, לאור שלו, לאנשים שחיים בו.</p>
-          <p class="index-philosophy-reflection-text" >זו הסיבה שכל עבודה שאני יוצר מתחילה בשקט — לא בתוצאה.<br>בצילום סדרת עבודות חדשה המשלבת טקסטורות של בדים ומרקמי טקסטיל.&nbsp;</p>
+          <p class="index-philosophy-reflection-text" style>חלל שמכיל יצירה או מלאכה מקורית מרגיש שלם. לא בגלל שהיא מושלמת — אלא בגלל שהיא נוכחת. <strong>התאמת פריטי אמנות לחלל</strong> היא מעשה של הקשבה: לחלל, לאור שלו, לאנשים שחיים בו.</p>
+          <p class="index-philosophy-reflection-text" style>זו הסיבה שכל עבודה שאני יוצר מתחילה בשקט — לא בתוצאה.<br>בצילום סדרת עבודות חדשה המשלבת טקסטורות של בדים ומרקמי טקסטיל.&nbsp;</p>
         </div>
 
         <figure class="index-philosophy-figure-secondary">
@@ -1305,7 +1664,7 @@
   <!-- Bottom divider: soft olive-to-cream diagonal wash -->
   <div class="index-philosophy-divider-wrapper">
     <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,90 L0,28 Q180,8 360,22 T720,14 Q900,6 1080,20 T1440,10 L1440,90 Z" fill="var(--bg-dark)"></path>
+      <path d="M0,90 L0,28 Q180,8 360,22 T720,14 Q900,6 1080,20 T1440,10 L1440,90 Z" fill="var(--bg-dark)"/>
     </svg>
   </div>
 
@@ -1313,14 +1672,14 @@
 
 <section class="index-cta-section" data-layout-spec="בית-cta" dir="rtl" id="index-cta-section">
   <div class="index-cta-bg-image">
-    <img data-placeholder="index-cta-image-1" data-context="Close-up abstract texture of a rough plaster or concrete wall surface with soft shadows and subtle warm tones — espresso brown and cream — shot with minimal depth of field to create a quiet, tactile, atmospheric background for an Israeli fine art photography brand. Wabi-sabi aesthetic, very low contrast, blurred edges, no focal subject." width="1400" height="700" src="/assets/site-index-cta-image-1.webp" alt="מרקם קיר אמנותי — רקע אווירתי" data-element-type="image" data-element-id="img-1781520291556-ln5gth856" >
+    <img data-placeholder="index-cta-image-1" data-context="Close-up abstract texture of a rough plaster or concrete wall surface with soft shadows and subtle warm tones — espresso brown and cream — shot with minimal depth of field to create a quiet, tactile, atmospheric background for an Israeli fine art photography brand. Wabi-sabi aesthetic, very low contrast, blurred edges, no focal subject." width="1400" height="700" src="/assets/site-index-cta-image-1.webp" alt="מרקם קיר אמנותי — רקע אווירתי" data-element-type="image" data-element-id="img-1781520291556-ln5gth856" style>
   </div>
   <div class="index-cta-overlay" aria-hidden="true"></div>
   <div class="index-cta-container">
     <div class="index-cta-panel">
       <div class="index-cta-accent-line" aria-hidden="true"></div>
       <h2 class="index-cta-heading">כל חלל מחכה לרגש הנכון</h2>
-      <p class="index-cta-body" >בין אם אתם מחפשים עבודה שתשנה את האווירה בביתכם, או מעצבים חלל שיזמין תחושה — נשמח לשמוע. עיצוב אמנותי לבית הוא לא רק עיצוב; הוא שיחה שקטה בין מה שרואים לבין מה שמרגישים.</p>
+      <p class="index-cta-body" style>בין אם אתם מחפשים עבודה שתשנה את האווירה בביתכם, או מעצבים חלל שיזמין תחושה — נשמח לשמוע. עיצוב אמנותי לבית הוא לא רק עיצוב; הוא שיחה שקטה בין מה שרואים לבין מה שמרגישים.</p>
       <div class="index-cta-buttons">
         <a href="/contact" class="index-cta-btn-primary" style="color: rgb(0, 0, 0) !important;" data-element-type="button" data-element-id="btn-1781520291545-bazpkqc7q" data-native-element="true">בואו נדבר</a>
         <a href="/collections" class="index-cta-btn-secondary" data-element-type="button" data-element-id="btn-1781520291545-qx47p63my" data-native-element="true">הקולקציות</a>
@@ -1339,7 +1698,7 @@
         <div class="footer-logo-wrap">
           <img src="/assets/business-logo.webp" alt="סטודיו 242 - אומנות ועיצוב הבית" class="logo" data-element-type="image" data-element-id="img-1780550649378-61r5gtysh" data-zappy-footer-image="true">
         </div>
-        <p class="footer-tagline" >יוצרים פינות שמכניסות שקט, עומק ונוכחות לחלל.<br><br>בכל מרחב, בכל אור.</p>
+        <p class="footer-tagline" style>יוצרים פינות שמכניסות שקט, עומק ונוכחות לחלל.<br><br>בכל מרחב, בכל אור.</p>
         <div class="footer-social">
           <a href="https://facebook.com/studio242" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="https://instagram.com/ofir.msika" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -1350,13 +1709,13 @@
       <!-- Column 2: Quick Links -->
       <div class="footer-col">
         <h4 class="footer-heading">ניווט מהיר</h4>
-        <ul class="footer-nav" ><li><a href="/the-studio" >הסטודיו</a></li><li><a href="/about">אודות</a></li><li><a href="/contact">צור קשר</a></li></ul>
+        <ul class="footer-nav" style><li><a href="/the-studio" style>הסטודיו</a></li><li><a href="/about">אודות</a></li><li><a href="/contact">צור קשר</a></li></ul>
       </div>
 
       <!-- Column 3: Contact -->
       <div class="footer-col">
         <h4 class="footer-heading">יצירת קשר</h4>
-        <ul class="footer-contact" ><li>
+        <ul class="footer-contact" style><li>
             <span class="contact-icon"><i class="fas fa-envelope" data-element-type="icon" data-element-id="icon-1780550649374-u6jgtpz1u" data-icon-type="fontawesome" style="cursor: pointer;"></i></span>
             <span class="contact-text"><a href="mailto:ofirmsika@gmail.com">ofirmsika@gmail.com</a></span>
           </li><li>
@@ -1369,7 +1728,7 @@
       <!-- Column 4: Studio Note -->
       <div class="footer-col footer-studio">
         <h4 class="footer-heading">הסטודיו</h4>
-        <p class="footer-studio-text" >אומנות, צמחייה וחומרים טבעיים משתלבים לכדי חלל שלם.<br>צרו קשר ונחשוב יחד על הפינה שלכם.</p>
+        <p class="footer-studio-text" style>אומנות, צמחייה וחומרים טבעיים משתלבים לכדי חלל שלם.<br>צרו קשר ונחשוב יחד על הפינה שלכם.</p>
         <p><a href="/contact" class="footer-cta">קבעו פגישה</a>
       </p></div>
 
@@ -1380,8 +1739,8 @@
 
     <!-- Bottom Bar -->
     <div class="footer-bottom">
-      <p class="footer-copy" >© 2020 סטודיו 242 - אומנות ועיצוב הבית. כל הזכויות שמורות.</p>
-      <div class="footer-legal" >
+      <p class="footer-copy" style>© 2020 סטודיו 242 - אומנות ועיצוב הבית. כל הזכויות שמורות.</p>
+      <div class="footer-legal" style>
         <a href="/privacy">מדיניות פרטיות</a>
         <span class="footer-legal-sep"></span>
         <a href="/terms">תנאי שימוש</a><span class="separator">|</span>
@@ -1402,10 +1761,10 @@
   
   <div data-integration="accessibility:toolbar"></div>
 
-<div class="zappy-qv-overlay" id="zappy-qv-overlay" hidden=""></div>
-<div class="zappy-qv-modal" id="zappy-qv-modal" role="dialog" aria-modal="true" aria-label="תצוגה מהירה" hidden="">
+<div class="zappy-qv-overlay" id="zappy-qv-overlay" hidden></div>
+<div class="zappy-qv-modal" id="zappy-qv-modal" role="dialog" aria-modal="true" aria-label="תצוגה מהירה" hidden>
   <button type="button" class="zappy-qv-close" id="zappy-qv-close" aria-label="סגור">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
   </button>
   <div class="zappy-qv-content" id="zappy-qv-content"></div>
 </div>
