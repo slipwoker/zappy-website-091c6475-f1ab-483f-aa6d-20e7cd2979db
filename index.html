@@ -2065,7 +2065,7 @@
       <div class="index-philosophy-start zappy-grid-item-no-stretch" data-grid-item-index="0">
         <div class="index-philosophy-text-block">
           <p >אנחנו מאמינים שחלל אינו מורכב רק מקירות, רהיטים וחפצים.<br><br>הוא מורכב מתחושה.<br><br>מהאור שנכנס בבוקר, מהחומרים שסופגים את הזמן, מהפריטים שבחרנו להשאיר ומהשקט שנוצר ביניהם.<br><br>סטודיו 242 נולד מתוך אהבה לטבע, לאמנות ולחללים שיש בהם נוכחות רגועה. מתוך ההבנה שלעיתים די בפריט אחד נכון, בתמונה אחת או בחומר אחד אותנטי כדי לשנות את האופן שבו מקום מרגיש.</p>
-          <p >אנו אוספים ויוצרים פריטים שנבחרו בקפידה — אמנות צילום מקורית, חפצי עיצוב, קרמיקה, תאורה ואלמנטים טבעיים — כולם חלק מאותה שפה חזותית.<br><br>אנחנו לא מחפשים למלא חללים.<br><br>אנחנו מחפשים לחשוף את מה שכבר קיים בהם.<br><br>ליצור איזון בין טבע לאדריכלות, בין חומר לאור, בין אסתטיקה לחיים עצמם.<br><br>כל יצירה, כל אובייקט וכל פרויקט נבחרים מתוך אותה מחשבה:<br><br>ליצור מקומות שנעים לחיות בהם, לעבוד בהם ולהרגיש בהם בבית.</p>
+          <p >אנו אוספים ויוצרים פריטים שנבחרו בקפידה — אמנות צילום מקורית, חפצי עיצוב, קרמיקה, תאורה ואלמנטים טבעיים — כולם חלק מאותה שפה חזותית.<br><br>אנחנו לא מתחילים מתוכנית אדריכלית. אנחנו מתחילים מהתחושה שאתם רוצים להרגיש בחלל.<br><br>אנחנו לא מחפשים למלא חללים.<br><br>אנחנו מחפשים לחשוף את מה שכבר קיים בהם.<br><br>ליצור איזון בין טבע לאדריכלות, בין חומר לאור, בין אסתטיקה לחיים עצמם.<br><br>כל יצירה, כל אובייקט וכל פרויקט נבחרים מתוך אותה מחשבה:<br><br>ליצור מקומות שנעים לחיות בהם, לעבוד בהם ולהרגיש בהם בבית.</p>
           
         </div>
 
@@ -2409,9 +2409,60 @@
     <script>
     (function(){
       var _lastW=0;
+      function normalizeAttachedImageCarousel(c){
+        if(!c||!c.matches||!c.matches('.zappy-img-carousel[data-zappy-hero-carousel]'))return false;
+        var tracks=c.querySelectorAll('.zappy-carousel-track');
+        tracks.forEach(function(track){Array.from(track.children).forEach(function(ch){c.appendChild(ch);});});
+        var wrappers=c.querySelectorAll('.zappy-carousel-container-wrapper');wrappers.forEach(function(w){w.remove();});
+        var oldBtns=c.querySelectorAll('.zappy-carousel-btn');oldBtns.forEach(function(b){b.remove();});
+        var oldDots=c.querySelectorAll('.zappy-carousel-dots');oldDots.forEach(function(d){d.remove();});
+        c.classList.remove('zappy-carousel-mode','zappy-carousel-active','zappy-carousel-js-init','zappy-carousel-container');
+        c.removeAttribute('data-zappy-display-mode');
+        var slides=Array.from(c.querySelectorAll(':scope > .zappy-img-carousel-slide'));
+        if(!slides.length)slides=Array.from(c.querySelectorAll('.zappy-img-carousel-slide'));
+        if(!slides.some(function(s){return s.classList.contains('is-active');})&&slides[0])slides[0].classList.add('is-active');
+        slides.forEach(function(slide){
+          if(slide.parentElement!==c)c.appendChild(slide);
+          slide.classList.remove('zappy-carousel-item');
+          slide.removeAttribute('data-index');
+          slide.style.removeProperty('flex');
+          slide.style.removeProperty('width');
+          slide.style.removeProperty('min-width');
+          slide.style.removeProperty('max-width');
+          slide.style.removeProperty('transform');
+          slide.style.removeProperty('transition');
+        });
+        c.style.setProperty('position','relative','important');
+        c.style.setProperty('overflow','hidden','important');
+        function syncAttachedSlides(){
+          Array.from(c.querySelectorAll(':scope > .zappy-img-carousel-slide')).forEach(function(slide){
+            var active=slide.classList.contains('is-active');
+            slide.style.setProperty('position',active?'relative':'absolute','important');
+            slide.style.setProperty('inset','0','important');
+            slide.style.setProperty('width','100%','important');
+            slide.style.setProperty('min-width','0','important');
+            slide.style.setProperty('max-width','none','important');
+            slide.style.setProperty('height',active?'auto':'100%','important');
+            slide.style.setProperty('opacity',active?'1':'0','important');
+            slide.style.setProperty('z-index',active?'1':'0','important');
+            var img=slide.querySelector('img');
+            if(img){img.style.setProperty('width','100%','important');img.style.setProperty('height','auto','important');img.style.setProperty('display','block','important');}
+          });
+        }
+        syncAttachedSlides();
+        if(!c.__zappyAttachedFadeObserver&&window.MutationObserver){
+          var obs=new MutationObserver(syncAttachedSlides);
+          Array.from(c.querySelectorAll(':scope > .zappy-img-carousel-slide')).forEach(function(slide){obs.observe(slide,{attributes:true,attributeFilter:['class']});});
+          c.__zappyAttachedFadeObserver=obs;
+        }
+        if(!c.__zappyAttachedFadeGuard){c.__zappyAttachedFadeGuard=setInterval(syncAttachedSlides,250);}
+        return true;
+      }
       function initViewCarousels(){
+        document.querySelectorAll('.zappy-img-carousel[data-zappy-hero-carousel]').forEach(normalizeAttachedImageCarousel);
         var containers=document.querySelectorAll('.zappy-carousel-mode, [data-zappy-display-mode="carousel"]');
         containers.forEach(function(c){
+          if(normalizeAttachedImageCarousel(c))return;
           var existingTrack=c.querySelector('.zappy-carousel-track');
           var items=[];
           if(existingTrack){
