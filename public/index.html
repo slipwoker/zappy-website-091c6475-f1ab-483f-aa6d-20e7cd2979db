@@ -705,6 +705,236 @@
             })();
           </script>
         
+<style data-zappy-section-v2-css="true">
+/* V2 Regenerated Section CSS */
+.index-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.index-hero-section .hero-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.index-hero-section .hero-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.index-hero-section .hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(47, 41, 36, 0.55) 0%,
+    rgba(47, 41, 36, 0.35) 40%,
+    rgba(47, 41, 36, 0.08) 70%,
+    rgba(47, 41, 36, 0.02) 100%
+  );
+  pointer-events: none;
+}
+
+.index-hero-section .hero-overlay-group {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 48px 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.index-hero-section .hero-text-card {
+  max-width: 580px;
+  background: rgba(247, 242, 234, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(221, 210, 196, 0.6);
+  border-radius: 2px;
+  padding: 56px 48px;
+  box-shadow: 0 20px 50px rgba(47, 41, 36, 0.18), 0 8px 24px rgba(47, 41, 36, 0.08);
+  text-align: right;
+  animation: heroCardFadeIn 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes heroCardFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.index-hero-section .hero-headline {
+  font-family: 'Cormorant Garamond', 'Canela', serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: 0.005em;
+  color: #5C4A3A;
+  margin: 0 0 24px 0;
+  text-align: right;
+}
+
+.index-hero-section .hero-subtitle {
+  font-family: 'Cormorant Garamond', 'Canela', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #7A6652;
+  margin: 0 0 20px 0;
+  text-align: right;
+}
+
+.index-hero-section .hero-body {
+  font-family: 'Inter', 'Neue Haas Grotesk Text', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #4C4238;
+  margin: 0 0 36px 0;
+  text-align: right;
+}
+
+.index-hero-section .hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.index-hero-section .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Inter', 'Neue Haas Grotesk Text', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  padding: 14px 32px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+}
+
+.index-hero-section .btn-primary {
+  background-color: #8D5B3F;
+  color: #F8F3EB;
+  box-shadow: 0 4px 12px rgba(141, 91, 63, 0.25);
+}
+
+.index-hero-section .btn-primary:hover {
+  background-color: #7A4E36;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(141, 91, 63, 0.35);
+}
+
+.index-hero-section .btn-whatsapp {
+  background-color: #25D366;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.index-hero-section .btn-whatsapp:hover {
+  background-color: #20BD5A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+
+.index-hero-section .whatsapp-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .index-hero-section {
+    min-height: 100vh;
+    align-items: flex-end;
+  }
+
+  .index-hero-section .hero-overlay-group {
+    padding: 100px 16px 32px;
+    justify-content: center;
+  }
+
+  .index-hero-section .hero-text-card {
+    max-width: 100%;
+    width: 100%;
+    padding: 36px 24px;
+    border-radius: 2px;
+    background: rgba(247, 242, 234, 0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .index-hero-section .hero-headline {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .index-hero-section .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+  }
+
+  .index-hero-section .hero-body {
+    font-size: 1rem;
+    margin-bottom: 28px;
+  }
+
+  .index-hero-section .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .index-hero-section .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 24px;
+    font-size: 0.9rem;
+  }
+}
+/* ZAPPY_POSTGEN_GUARD_HERO_FONT_CAP:index-hero */
+.hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 48px !important; line-height: 1.2 !important; }
+@media (max-width: 1024px) {
+  .hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 36px !important; }
+}
+@media (max-width: 768px) {
+  .hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 28px !important; }
+}
+
+</style>
+
     <style id="zappy-announcement-bar-styles">
     /* Announcement Bar Styles */
     .zappy-announcement-bar {
@@ -1273,40 +1503,28 @@
 </script>
   
   <main>
-    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim" id="index-hero-section" style="position: relative; overflow: hidden; background-position: 54% 69% !important; background-size: cover !important;" data-zappy-bg-color="" data-zappy-bg-overlay-color="#1e160f" data-zappy-bg-overlay-opacity="41" data-zappy-bg-video-type="" data-zappy-bg-video-url="" data-element-id="zappy-hero-bg-index-hero-section" data-element-type="background-image" data-zappy-bg-position="54% 69%" data-zappy-bg-zoom="1">
-  <!-- Background Image -->
-  <div class="index-hero-bg">
-    <img data-hero-bg="true" data-placeholder="index-hero-image-1" data-context="A serene, cinematic interior scene featuring a warm living room or intimate professional space with a large photographic artwork hung on a textured plaster wall. Natural daylight streams in softly from the side, casting gentle shadows. The color palette is warm neutrals — cream, linen, sand, and espresso. The space feels curated, unhurried, and deeply livable. Wabi-sabi aesthetic: imperfect textures, quiet beauty, no clutter. The large artwork on the wall is abstract or nature-based photography in muted tones. Shot from a slight angle to show depth and spatial harmony." width="1400" height="900" src="/assets/business-general-hero-upload-1781679988459-coc357.webp?v=1781679990979" alt="חלל פנים שקט עם יצירת אמנות צילומית גדולה על קיר מרקמי בתאורה טבעית חמה" data-hero-background="true" data-element-type="image" data-element-id="img-1780479063049-g1o5lls7l" style="object-fit: cover; object-position: 54% 69%; width: 100%; height: 100%;">
+    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim" data-zappy-section="true" id="index-hero-section">
+  <div class="hero-bg-wrapper">
+    <div class="hero-bg-image" style="background-image: url('assets/business-general-hero-upload-1781679988459-coc357.webp?v=1781679990979'); background-size: cover; background-position: center;"></div>
+    <div class="hero-scrim" aria-hidden="true"></div>
   </div>
 
-  <!-- Scrim Overlay -->
-  <div class="index-hero-scrim" aria-hidden="true" style="display: none" data-zappy-original-bg="hidden"></div>
-
-  <!-- Frosted Overlay Card -->
-  <div class="zappy-hero-overlay" style="position:absolute;inset:0;z-index:1;background:rgba(30, 22, 15, 0.41);pointer-events:none;"></div><div class="index-hero-content-wrapper" style="position: relative; z-index: 2">
-    <div class="index-hero-card">
-      <!-- Eyebrow Label -->
-      <p ><span class="index-hero-eyebrow" style="color: rgb(47, 41, 36) !important;">שדרוג והלבשת חללים - עיצוב בהתאמה אישית</span>
-
+  <div class="hero-overlay-group">
+    <div class="hero-text-card">
+      <h1 class="hero-headline" style="color: #FFFFFF !important">עיצוב קירות אמנותי שמשנה את כל החלל</h1>
+      <h3 class="hero-subtitle" style="color: #FFFFFF !important">שדרוג והלבשת חללים - עיצוב בהתאמה אישית</h3>
+      <p class="hero-body" style="color: #FFFFFF !important">שלחו לנו תמונה של הקיר בבית או בעסק וקבלו הדמיה ראשונית ללא עלות וללא התחייבות.</p>
       
-      </p><!-- H1 -->
-
-      <!-- Subtitle -->
-      <h3 class="index-hero-subtitle" ></h3><h1 style="text-align: center;"></h1><h1 >עיצוב קירות אמנותי שמשנה את כל החלל</h1><p >שלחו לנו תמונה של הקיר בבית או בעסק וקבלו הדמיה&nbsp;ראשונית ללא עלות וללא התחייבות.&nbsp;</p>
-
-      <!-- CTA Buttons -->
-      <div class="index-hero-ctas">
-        <a href="/collections" class="index-hero-btn-primary" data-element-type="button" data-element-id="btn-1780479063047-gaywod3z5" data-native-element="true" style="outline: none;">לקולקציות</a>
-        <a href="/contact" class="index-hero-btn-secondary btn btn-primary" data-element-type="button" data-element-id="btn-1780479063047-6fu4l1j22" data-native-element="true" style="outline: none; border-color: var(--primary-color, var(--primary, #8B0000)) !important; color: rgb(255, 255, 255) !important; background-color: var(--primary-color, var(--primary, #8B0000)) !important; background-image: none !important;">אשמח לקבל הדמייה&nbsp;</a>
+      <div class="hero-cta-group">
+        <a href="/collections" class="btn btn-primary" style="color: #FFFFFF !important">לקולקציות</a>
+        <a href="/contact" class="btn btn-whatsapp" style="color: #FFFFFF !important">
+          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" data-element-type="icon" data-icon-type="svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+          </svg>
+          אשמח לקבל הדמייה
+        </a>
       </div>
     </div>
-  </div>
-
-  <!-- Bottom Divider -->
-  <div class="index-hero-divider-wrapper" style="position: relative; z-index: 2">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1400 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,90 L0,52 Q80,44 160,50 T320,46 Q400,52 480,44 T640,48 Q720,44 800,50 T960,46 Q1040,52 1120,44 T1280,48 Q1340,52 1400,46 L1400,90 Z" fill="#fafaf8"></path>
-    </svg>
   </div>
 </section>
 
