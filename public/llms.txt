@@ -17,37 +17,37 @@ https://studio-242.com/242studio
 https://studio-242.com/collections
 עיינו בקולקציות הצילום האמנותי של אופיר מסיקה — עיצוב קירות עם תמונות אמנות שמעוררות רגש, שקט ונוכחות עמוקה בכל סביבת מגורים או עבודה.
 
-### מוצרים
+### Products
 https://studio-242.com/products
-המוצרים שלנו - אופיר מסיקה - סטודיו 242
+המוצרים שלנו - סטודיו 242 - אומנות ועיצוב הבית
 
-### עגלת קניות
+### Cart
 https://studio-242.com/cart
 עגלת הקניות שלך
 
-### תשלום
+### Checkout
 https://studio-242.com/checkout
 תשלום
 
-### התחברות
+### Login
 https://studio-242.com/login
 התחברות לקוחות
 
-### החשבון שלי
+### Account
 https://studio-242.com/account
 החשבון שלי
 
-### ההזמנה התקבלה!
+### Order Success
 https://studio-242.com/order-success
 תודה על ההזמנה
 
-### פרטי המוצר
+### Product Detail
 https://studio-242.com/product/:slug
-פרטי המוצר - אופיר מסיקה - סטודיו 242
+פרטי המוצר - סטודיו 242 - אומנות ועיצוב הבית
 
-### מוצרים
+### Category
 https://studio-242.com/category/:slug
-מוצרים - אופיר מסיקה - סטודיו 242
+מוצרים - סטודיו 242 - אומנות ועיצוב הבית
 
 ### האמן מאחורי הדממה והאור — אופיר מסיקה
 https://studio-242.com/about
