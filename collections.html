@@ -798,7 +798,7 @@
       <div class="search-results" id="mobile-search-results"></div>
     </div>
   
-<script>window.ZAPPY_WEBSITE_ID = "091c6475-f1ab-483f-aa6d-20e7cd2979db";window.ZAPPY_API_BASE = "https://api.zappy5.com";</script>
+<script>window.ZAPPY_WEBSITE_ID = "091c6475-f1ab-483f-aa6d-20e7cd2979db";window.ZAPPY_API_BASE = (window.location.pathname.includes('/preview') ? "https://api.zappy5.com" : "https://api.zappy5.com");</script>
   <nav class="navbar" dir="rtl">
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
     <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -1277,8 +1277,8 @@
   <div class="collections-intro-container">
     <div class="collections-intro-text-block">
       <p><span class="collections-intro-label" style="color: rgb(47, 41, 36) !important;">הקולקציות</span>
-      </p><h1 class="collections-intro-heading" >קולקציות וסדרות מעוצבות לבית ולעסק</h1>
-      <p class="collections-intro-body" >טבע, אמנות ועיצוב נפגשים ליצירת חללים בעלי אופי, רוגע ונוכחות.</p>
+      </p><h1 class="collections-intro-heading" style="">קולקציות וסדרות מעוצבות לבית ולעסק</h1>
+      <p class="collections-intro-body" style="">טבע, אמנות ועיצוב נפגשים ליצירת חללים בעלי אופי, רוגע ונוכחות.</p>
       <p class="collections-intro-direction" style="color: rgb(47, 41, 36) !important;">כל קולקציה ב-Studio 242 נולדה מתוך החיבור בין צילום אמנותי, חומרים טבעיים והלבשת חלל מדויקת. בין אם אתם מחפשים פינת עוגן לסלון, קיר מעוצב לעסק, מארז מתנה ייחודי או סדרת הדפסים – כל פריט נבחר ונוצר כדי להוסיף תחושת טבע, איזון ואווירה לחלל שלכם.</p>
     </div>
   </div>
@@ -1307,7 +1307,7 @@
   <div class="collections-portfolio-container">
     <div class="collections-portfolio-header">
       <p class="collections-portfolio-eyebrow" style="color: rgb(47, 41, 36) !important;">עבודות נבחרות</p>
-      <h2 class="collections-portfolio-title" >הדפסים, כלים ופינות מעוצבות</h2>
+      <h2 class="collections-portfolio-title" style="">הדפסים, כלים ופינות מעוצבות</h2>
       <p class="collections-portfolio-subtitle" style="color: rgb(47, 41, 36) !important;">כל סט ופינה הוא עולם שלם — נרטיב חזותי שנולד מהקשבה לאור, לחומר ולשקט. הן נוצרו כדי להשתלב בחלל ולהעניק לו נשמה.</p>
     </div>
 
@@ -1320,9 +1320,9 @@
           <div class="collections-series-overlay"></div>
         </figure>
         <div class="collections-series-body">
-          <h2 class="collections-series-name" >צילום אומנותי - סדרות</h2>
-          <p class="collections-series-description" >רגעים מהטבע שהופכים לאווירה בחלל.<br><br>קולקציות הצילום וההדפס האומנותי של Studio 242 מביאות אל הבית והעסק את השקט, האור והטקסטורות של הטבע. כל סדרה נבנית בקפידה ומשלבת צבעוניות רכה, קומפוזיציה מדויקת ונוכחות עיצובית שנועדה להשתלב בהרמוניה עם החלל.</p>
-          <p ><a href="/category/artistic-photography-fine-art" class="collections-series-link btn btn-ghost" style="outline: none; color: var(--primary-color, var(--primary, #8B0000)) !important; border-color: transparent !important; background-color: transparent !important; background-image: none !important;" data-native-element="true" data-element-id="btn-1781432102349-e0xngrear" data-element-type="button" data-text-color="var(--primary-color, var(--primary, #8B0000))">לסדרות צילום אומנותי<span class="collections-series-link-arrow" style="color: var(--primary-color, var(--primary, #8B0000)) !important;">←</span></a>
+          <h2 class="collections-series-name" style="">צילום אומנותי - סדרות</h2>
+          <p class="collections-series-description" style="">רגעים מהטבע שהופכים לאווירה בחלל.<br><br>קולקציות הצילום וההדפס האומנותי של Studio 242 מביאות אל הבית והעסק את השקט, האור והטקסטורות של הטבע. כל סדרה נבנית בקפידה ומשלבת צבעוניות רכה, קומפוזיציה מדויקת ונוכחות עיצובית שנועדה להשתלב בהרמוניה עם החלל.</p>
+          <p style=""><a href="/category/artistic-photography-fine-art" class="collections-series-link btn btn-ghost" style="outline: none; color: var(--primary-color, var(--primary, #8B0000)) !important; border-color: transparent !important; background-color: transparent !important; background-image: none !important;" data-native-element="true" data-element-id="btn-1781432102349-e0xngrear" data-element-type="button" data-text-color="var(--primary-color, var(--primary, #8B0000))">לסדרות צילום אומנותי<span class="collections-series-link-arrow" style="color: var(--primary-color, var(--primary, #8B0000)) !important;">←</span></a>
         </p></div>
       </article>
 
@@ -1332,13 +1332,13 @@
       <!-- Series 3 - Short card -->
       <article class="collections-series-card collections-series-card--tall" data-grid-item-index="1" style="grid-area: auto !important;">
         <figure class="collections-series-figure">
-          <a data-zappy-click-action="link" href="/category/handmade-pottery-and-oak-shelves" style="text-decoration: none; color: inherit; display: contents;"><div data-zappy-zoom-wrapper="true" data-element-id="img-1780477954104-necf9byml-dup-1781687782065-j2zw0r" data-element-type="image" data-zappy-zoom-wrapper-width="576px" data-zappy-zoom-wrapper-height="453px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="cursor: pointer; position: relative !important; overflow: hidden !important; width: 576px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 453px !important; display: block !important; padding-bottom: 0px !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-click-action="link"><img data-placeholder="collections-portfolio-image-1" data-context="Fine art photography series: misty Japanese-inspired landscape with still water reflecting bare trees, soft morning fog, wabi-sabi aesthetic, muted earth tones, pale grays and warm creams, contemplative and serene atmosphere, gallery-quality print suitable for interior design" width="600" height="750" src="/assets/site-collections-service-image-1-1782644692264-blr24a.webp?v=1782644694905" alt="סדרת צילום אמנותי — שקט ומים" data-element-type="image" data-element-id="img-1780477954104-necf9byml-dup-1781687782065-j2zw0r" style="cursor: pointer; object-position: 50% 50% !important; display: block !important; object-fit: cover !important; margin: 0px !important; left: 0% !important; top: 0% !important; width: 100% !important; height: 100% !important; max-width: none !important; max-height: none !important; position: absolute !important;" data-zappy-zoom="1" data-zappy-original-width="576" data-zappy-original-height="453" data-zappy-object-position="50% 50%" data-zappy-click-action="link"></div></a>
+          <a data-zappy-click-action="link" href="/category/designed-walls-ready-sets" style="text-decoration: none; color: inherit; display: contents;"><div data-zappy-zoom-wrapper="true" data-element-id="img-1780477954104-necf9byml-dup-1781687782065-j2zw0r" data-element-type="image" data-zappy-zoom-wrapper-width="576px" data-zappy-zoom-wrapper-height="453px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="cursor: pointer; position: relative !important; overflow: hidden !important; width: 576px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 453px !important; display: block !important; padding-bottom: 0px !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-click-action="link"><img data-placeholder="collections-portfolio-image-1" data-context="Fine art photography series: misty Japanese-inspired landscape with still water reflecting bare trees, soft morning fog, wabi-sabi aesthetic, muted earth tones, pale grays and warm creams, contemplative and serene atmosphere, gallery-quality print suitable for interior design" width="600" height="750" src="/assets/site-collections-service-image-1-1782644692264-blr24a.webp?v=1782644694905" alt="סדרת צילום אמנותי — שקט ומים" data-element-type="image" data-element-id="img-1780477954104-necf9byml-dup-1781687782065-j2zw0r" style="cursor: pointer; display: block; object-position: 50% 50% !important; object-fit: cover !important; margin-top: 0px !important; margin-bottom: 0px !important; left: 0% !important; top: 0% !important; width: 100% !important; height: 100% !important; max-width: none !important; max-height: none !important; position: absolute !important;" data-zappy-zoom="1" data-zappy-original-width="576" data-zappy-original-height="453" data-zappy-object-position="50% 50%" data-zappy-click-action="link"></div></a>
           <div class="collections-series-overlay"></div>
         </figure>
         <div class="collections-series-body">
-          <h2 class="collections-series-name" >קירות מעוצבים -סטים</h2>
-          <p class="collections-series-description" ><b>פתרונות עיצוב שלמים בפשטות טבעית.</b><br><br>פינות מעוצבות המשלבות הדפסים, מדפי עץ, צמחייה, כלי קרמיקה ואביזרים משלימים ליצירת מוקדי עניין נעימים ומאוזנים. פתרון מושלם לסלון, מבואת כניסה, קליניקה, משרד או פינת&nbsp;</p>
-          <p ><a href="/category/designed-walls-ready-sets" class="collections-series-link btn btn-ghost" style="outline: none; color: var(--primary-color, var(--primary, #8B0000)) !important; border-color: transparent !important; background-color: transparent !important; background-image: none !important;" data-native-element="true" data-element-id="btn-1781432102349-e0xngrear-dup-1781687782065-j2zw0r" data-element-type="button" data-text-color="var(--primary-color, var(--primary, #8B0000))">לפינות טבע מעוצבות<span class="collections-series-link-arrow" style="color: var(--primary-color, var(--primary, #8B0000)) !important;">←</span></a>
+          <h2 class="collections-series-name" style="cursor: text;">קירות מעוצבים -סטים</h2>
+          <p class="collections-series-description" style="cursor: text;"><b>פתרונות עיצוב שלמים בפשטות טבעית.</b><br><br>פינות מעוצבות המשלבות הדפסים, מדפי עץ, צמחייה, כלי קרמיקה ואביזרים משלימים ליצירת מוקדי עניין נעימים ומאוזנים. פתרון מושלם לסלון, מבואת כניסה, קליניקה, משרד או פינת&nbsp;</p>
+          <p style="cursor: text;"><a href="/category/designed-walls-ready-sets" class="collections-series-link btn btn-ghost" style="outline: none; color: var(--primary-color, var(--primary, #8B0000)) !important; border-color: transparent !important; background-color: transparent !important; background-image: none !important;" data-native-element="true" data-element-id="btn-1781432102349-e0xngrear-dup-1781687782065-j2zw0r" data-element-type="button" data-text-color="var(--primary-color, var(--primary, #8B0000))">לפינות טבע מעוצבות<span class="collections-series-link-arrow" style="color: var(--primary-color, var(--primary, #8B0000)) !important;">←</span></a>
         </p></div>
       </article><article class="collections-series-card collections-series-card--tall" data-grid-item-index="2" style="grid-area: auto !important;">
         <figure class="collections-series-figure">
@@ -1346,30 +1346,30 @@
           <div class="collections-series-overlay"></div>
         </figure>
         <div class="collections-series-body">
-          <h2 class="collections-series-name" >מארזי מתנות מהגליל</h2>
-          <p class="collections-series-description" ><b>מתנות שנועדו להישאר.</b><br><br>קולקציה של מארזים המשלבים צילום אמנותי, צמחייה חיה, נרות ריחניים וחומרי גלם טבעיים.<br><br>דרך פשוטה להעניק מתנה שנשארת, צומחת ומוסיפה יופי ומשמעות לחלל .&nbsp;</p>
-          <p style="text-align: center;"><span class="collections-series-link-arrow" style="outline: none; color: rgb(47, 41, 36) !important; border-color: transparent !important; background-color: transparent !important; background-image: none !important;"><a href="/category/nature-gift-packaging" style="color: rgb(47, 41, 36); cursor: pointer;">למתנות ומארזים</a>&nbsp;&nbsp;</span></p></div>
+          <h2 class="collections-series-name" style="cursor: text;">מארזי מתנות מהגליל</h2>
+          <p class="collections-series-description" style="cursor: text;"><b>מתנות שנועדו להישאר.</b><br><br>קולקציה של מארזים המשלבים צילום אמנותי, צמחייה חיה, נרות ריחניים וחומרי גלם טבעיים.<br><br>דרך פשוטה להעניק מתנה שנשארת, צומחת ומוסיפה יופי ומשמעות לחלל .&nbsp;</p>
+          <p style="cursor: text; text-align: center; outline: none;"><span class="collections-series-link-arrow" style="outline: none; color: rgb(47, 41, 36) !important; border-color: transparent !important; background-color: transparent !important; background-image: none !important;"><a href="/category/nature-gift-packaging" style="color: rgb(47, 41, 36); cursor: pointer;">למתנות ומארזים</a>&nbsp;&nbsp;</span></p></div>
       </article><article class="collections-series-card collections-series-card--short" data-grid-item-index="3">
         <figure class="collections-series-figure">
           <a data-zappy-click-action="link" href="/category/complementary-design-items" style="text-decoration: none; color: inherit; display: contents;"><div data-zappy-zoom-wrapper="true" data-element-id="img-1780477954104-ew0wbddsp" data-element-type="image" data-zappy-zoom-wrapper-width="576px" data-zappy-zoom-wrapper-height="324px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="cursor: pointer; position: relative !important; overflow: hidden !important; width: 576px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 324px !important; display: block !important; padding-bottom: 0px !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-click-action="link"><img data-placeholder="collections-portfolio-image-3" data-context="Fine art photography series: minimalist interior scenes with soft natural window light, empty chairs, a single plant, a cup, quiet domestic moments, warm neutral palette of cream and linen, deeply calm and introspective, gallery artwork for living spaces" width="600" height="480" src="/assets/site-collections-service-image-3-1782142556488-lyxner.webp?v=1782142559029" alt="סדרת צילום אמנותי — בית ואור" data-element-type="image" data-element-id="img-1780477954104-ew0wbddsp" style="display: block !important; object-position: 50% 33% !important; object-fit: cover !important; margin: 0px !important; left: 0% !important; top: 0% !important; width: 100% !important; height: 100% !important; max-width: none !important; max-height: none !important; position: absolute !important;" data-zappy-zoom="1" data-zappy-original-width="576" data-zappy-original-height="324" data-zappy-object-position="50% 33%" data-zappy-click-action="link"></div></a>
           <div class="collections-series-overlay"></div>
         </figure>
         <div class="collections-series-body">
-          <h2 class="collections-series-name" >פריטי עיצוב נבחרים</h2>
-          <p class="collections-series-description" ><b>פריטים נבחרים שמכניסים אופי, חומר וטבע לחלל</b>.<br><br>קולקציה של כדים, עציצים, מדפי עץ, ספסלים ופריטי סטיילינג שנבחרו בקפידה ליצירת שכבות של חום, איזון ונוכחות. כל פריט עומד בפני עצמו, אך יחד הם מאפשרים לבנות חלל בעל שפה טבעית, רגועה ועל-זמנית.</p>
+          <h2 class="collections-series-name" style="">פריטי עיצוב נבחרים</h2>
+          <p class="collections-series-description" style=""><b>פריטים נבחרים שמכניסים אופי, חומר וטבע לחלל</b>.<br><br>קולקציה של כדים, עציצים, מדפי עץ, ספסלים ופריטי סטיילינג שנבחרו בקפידה ליצירת שכבות של חום, איזון ונוכחות. כל פריט עומד בפני עצמו, אך יחד הם מאפשרים לבנות חלל בעל שפה טבעית, רגועה ועל-זמנית.</p>
           <p><a href="/category/complementary-design-items" class="collections-series-link btn btn-ghost" style="outline: none; color: var(--primary-color, var(--primary, #8B0000)) !important; border-color: transparent !important; background-color: transparent !important; background-image: none !important;" data-native-element="true" data-element-id="btn-1781432044946-b7y33bq8b" data-element-type="button">לכל הפריטים<span class="collections-series-link-arrow" style="color: rgb(47, 41, 36) !important;">←</span></a>
         </p></div>
       </article>
 
       <!-- Series 4 - Tall card -->
-      <article class="collections-series-card collections-series-card--tall" data-grid-item-index="4" >
+      <article class="collections-series-card collections-series-card--tall" data-grid-item-index="4" style="">
         <figure class="collections-series-figure">
           <a data-zappy-click-action="link" href="/category/designed-anchor-wall" style="text-decoration: none; color: inherit; display: contents;"><div data-zappy-zoom-wrapper="true" data-element-id="img-1780477954104-uwg47jwd1" data-element-type="image" data-zappy-zoom-wrapper-width="545px" data-zappy-zoom-wrapper-height="425px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="cursor: pointer; position: relative !important; overflow: hidden !important; width: 545px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 425px !important; display: block !important; padding-bottom: 0px !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-click-action="link"><img data-placeholder="collections-portfolio-image-4" data-context="Fine art photography series: vast open desert or salt flat landscape at golden hour, lone figure or minimal element in the distance, immense negative space, warm amber and dusty rose tones, sense of solitude and wonder, emotional and expansive, suitable for large format gallery print" width="600" height="750" src="/assets/site-collections-service-image-4-1782141991883-2pzywk.webp?v=1782141994222" alt="סדרת צילום אמנותי — מרחב ושתיקה" data-element-type="image" data-element-id="img-1780477954104-uwg47jwd1" style="object-position: 50% 33% !important; display: block !important; margin: 0px !important; left: -1% !important; top: -24.5522% !important; width: 102% !important; height: 174.401% !important; max-width: none !important; max-height: none !important; object-fit: cover !important; position: absolute !important;" data-zappy-zoom="1.02" data-zappy-original-width="544.5" data-zappy-original-height="425" data-zappy-object-position="50% 33%" data-zappy-click-action="link"></div></a>
           <div class="collections-series-overlay"></div>
         </figure>
         <div class="collections-series-body">
-          <h2 class="collections-series-name" >קיר עוגן עוצמתי</h2>
-          <p class="collections-series-description" >&nbsp;קיר עוגן ירוק הוא נקודת מוקד עיצובית שמכניסה לחלל נוכחות חיה, טבעית ומשמעותית. הוא נבנה כשכבה מרכזית בתוך הבית או העסק, ומייצר תחושת עומק, רעננות ואיזון בין חומריות לטבע.<br><br>באמצעות שילוב של אלמנטים בוטניים, טקסטורות טבעיות וקומפוזיציה מדויקת, הקיר הופך מאובייקט רקע לנוכחות מרחבית שמגדירה את האווירה כולה.<br><br>זהו פתרון עיצובי שמחבר בין אסתטיקה לפונקציה רגשית - ומעניק לחלל נקודת עוגן שקטה, חיה ומשמעותית.&nbsp;&nbsp;</p>
+          <h2 class="collections-series-name" style="">קיר עוגן עוצמתי</h2>
+          <p class="collections-series-description" style="">&nbsp;קיר עוגן ירוק הוא נקודת מוקד עיצובית שמכניסה לחלל נוכחות חיה, טבעית ומשמעותית. הוא נבנה כשכבה מרכזית בתוך הבית או העסק, ומייצר תחושת עומק, רעננות ואיזון בין חומריות לטבע.<br><br>באמצעות שילוב של אלמנטים בוטניים, טקסטורות טבעיות וקומפוזיציה מדויקת, הקיר הופך מאובייקט רקע לנוכחות מרחבית שמגדירה את האווירה כולה.<br><br>זהו פתרון עיצובי שמחבר בין אסתטיקה לפונקציה רגשית - ומעניק לחלל נקודת עוגן שקטה, חיה ומשמעותית.&nbsp;&nbsp;</p>
           <p><a href="/category/custom-anchor-wall" class="collections-series-link btn btn-ghost" style="outline: none; color: var(--primary-color, var(--primary, #8B0000)) !important; border-color: transparent !important; background-color: transparent !important; background-image: none !important;" data-native-element="true" data-element-id="btn-1781432252301-1ry3mix0s" data-element-type="button">לקירות עוגן אומנותיים</a>
         </p></div>
       </article>
@@ -1392,7 +1392,7 @@
     <div class="collections-inquiry-inner">
       <p class="collections-inquiry-label" style="color: rgb(47, 41, 36) !important;">ייעוץ אישי</p>
       <h2 class="collections-inquiry-heading" style="color: rgb(47, 41, 36) !important;">לא בטוחים מה יתאים לחלל שלכם?</h2>
-      <p class="collections-inquiry-body" >נשמח ללוות אתכם בבחירת יצירות, פריטי עיצוב ושילובים שייצרו בבית או בעסק שלכם תחושה טבעית, מאוזנת ומדויקת.</p>
+      <p class="collections-inquiry-body" style="">נשמח ללוות אתכם בבחירת יצירות, פריטי עיצוב ושילובים שייצרו בבית או בעסק שלכם תחושה טבעית, מאוזנת ומדויקת.</p>
       <p><a href="/contact" class="collections-inquiry-btn btn btn-primary" data-element-type="button" data-element-id="btn-1781431428989-ekim6k9tk" data-native-element="true" style="outline: none; border-color: rgb(185, 120, 92) !important; color: rgb(255, 255, 255) !important; background-color: rgb(185, 120, 92) !important; background-image: none !important;">שאלו על סדרה מתאימה לחלל שלכם</a>
     </p></div>
   </div>
@@ -1408,7 +1408,7 @@
         <div class="footer-logo-wrap">
           <img src="/assets/business-logo-copy.webp" alt="סטודיו 242 - אומנות ועיצוב הבית" class="logo" data-element-type="image" data-element-id="img-1780550649378-61r5gtysh" data-zappy-footer-image="true">
         </div>
-        <p class="footer-tagline" >יוצרים פינות שמכניסות שקט, עומק ונוכחות לחלל.<br><br><br><br><br><br><br><br>בכל מרחב, בכל אור.</p>
+        <p class="footer-tagline" style="">יוצרים פינות שמכניסות שקט, עומק ונוכחות לחלל.<br><br><br><br><br><br><br><br>בכל מרחב, בכל אור.</p>
         <div class="footer-social">
           <a href="https://facebook.com/studio242" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="https://instagram.com/ofir.msika" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -1419,13 +1419,13 @@
       <!-- Column 2: Quick Links -->
       <div class="footer-col">
         <h4 class="footer-heading">ניווט מהיר</h4>
-        <ul class="footer-nav" ><li><a href="/about">אודות</a></li><li><a href="/contact">צור קשר</a></li></ul>
+        <ul class="footer-nav" style=""><li><a href="/about">אודות</a></li><li><a href="/contact">צור קשר</a></li></ul>
       </div>
 
       <!-- Column 3: Contact -->
       <div class="footer-col">
         <h4 class="footer-heading">יצירת קשר</h4>
-        <ul class="footer-contact" ><li>
+        <ul class="footer-contact" style=""><li>
             <span class="contact-icon"><i class="fas fa-envelope" data-element-type="icon" data-element-id="icon-1780550649374-u6jgtpz1u" data-icon-type="fontawesome" style="cursor: pointer;"></i></span>
             <span class="contact-text"><a href="mailto:ofirmsika@gmail.com">ofirmsika@gmail.com</a></span>
           </li><li>
@@ -1438,7 +1438,7 @@
       <!-- Column 4: Studio Note -->
       <div class="footer-col footer-studio">
         <h4 class="footer-heading">הסטודיו</h4>
-        <p class="footer-studio-text" >אומנות, צמחייה וחומרים טבעיים משתלבים לכדי חלל שלם.<br><br><br><br>צרו קשר ונחשוב יחד על הפינה שלכם.</p>
+        <p class="footer-studio-text" style="">אומנות, צמחייה וחומרים טבעיים משתלבים לכדי חלל שלם.<br><br><br><br>צרו קשר ונחשוב יחד על הפינה שלכם.</p>
         <p><a href="/contact" class="footer-cta">קבעו פגישה</a>
       </p></div>
 
@@ -1449,8 +1449,8 @@
 
     <!-- Bottom Bar -->
     <div class="footer-bottom">
-      <p class="footer-copy" >© 2020 סטודיו 242 - אומנות ועיצוב הבית. כל הזכויות שמורות.</p>
-      <div class="footer-legal" >
+      <p class="footer-copy" style="">© 2020 סטודיו 242 - אומנות ועיצוב הבית. כל הזכויות שמורות.</p>
+      <div class="footer-legal" style="">
         <a href="/privacy">מדיניות פרטיות</a>
         <span class="footer-legal-sep"></span>
         <a href="/terms">תנאי שימוש</a><span class="separator">|</span>
