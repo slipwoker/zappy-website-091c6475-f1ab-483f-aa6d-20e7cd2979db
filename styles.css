@@ -23001,6 +23001,42 @@ html body #ai-section-1782892903422-mldyhjh .step-card .step-image { height: 200
 html body #ai-section-1782892903422-mldyhjh .solution-steps { width: 100% !important; }
 html body #ai-section-1782892903422-mldyhjh .solution-steps .zappy-carousel-item { width: auto !important; }
 
+
+#ai-section-1782892903422-mldyhjh .step-cta-mini {
+  margin-top: 16px;
+  text-align: center;
+}
+
+#ai-section-1782892903422-mldyhjh .step-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #25D366;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
+
+#ai-section-1782892903422-mldyhjh .step-whatsapp-btn:hover {
+  background-color: #20BD5A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+}
+
+#ai-section-1782892903422-mldyhjh .step-whatsapp-btn svg {
+  flex-shrink: 0;
+}
+/* zappy-self-heal */
+#ai-section-1782892903422-mldyhjh .step-whatsapp-btn { display: inline-flex !important; }
+
+/* zappy-self-heal */
+html body #ai-section-1782892903422-mldyhjh .step-whatsapp-btn { display: inline-flex !important; }
+
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
