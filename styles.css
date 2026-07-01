@@ -22853,9 +22853,11 @@ main,
 }
 
 #ai-section-1782892903422-mldyhjh .zappy-carousel-item {
-  display: block !important;
-  width: auto !important;
-  flex: none !important;
+  display: flex !important;
+  width: 100% !important;
+  flex: 0 0 auto !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
 }
 /* zappy-self-heal */
 #ai-section-1782892903422-mldyhjh .step-card .step-desc { line-height: 1.7 !important; }
