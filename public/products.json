@@ -1,6 +1,6 @@
 {
   "@context": "https://schema.org",
-  "generated_at": "2026-07-01T10:05:45.438Z",
+  "generated_at": "2026-07-01T10:10:46.483Z",
   "base_url": "https://studio-242.com",
   "currency": "ILS",
   "count": 16,
@@ -374,7 +374,7 @@
     },
     {
       "id": "bdb99b98-512d-4841-bd9a-026ad3adbb31",
-      "slug": "sdrt-admh-vshkt-earth-silence-oavdiu",
+      "slug": "sdrt-admh-vshkt-earth-silence-k2bbpf",
       "name": "סדרת אדמה ושקט | Earth & Silence",
       "name_translations": {},
       "description": "<p><strong>טריפטיך אומנותי המורכב משלושה הדפסים מקוריים בהשראת אור, טבע וחומר.</strong></p><p>סדרה בגווני אדמה חמימים, שנועדה להכניס לחלל תחושת רוגע, עומק ונוכחות שקטה. משחקי האור והצל, הטקסטורות הטבעיות והקומפוזיציה המינימליסטית יוצרים יצירת אמנות על־זמנית המתאימה לבית ולעסק.</p><p>הסדרה מתאימה לסלון, פינת אוכל, חדר שינה, משרד, קליניקה וחללי אירוח, ומשתלבת באופן טבעי בעיצוב מודרני, יפני, סקנדינבי וים־תיכוני.</p><p>מה כוללת הסדרה?</p><p>✔ 3 הדפסים אומנותיים מקוריים – <strong>סדרת \"אדמה ושקט\"</strong></p><p>✔ מסגרות שחורות איכותיות עם פספרטו לבן</p><p>✔ מוכנה לתלייה כסט תלת־חלקי</p><p>מידות לבחירה</p><p>Medium</p><ul><li>גודל כל תמונה: <strong>50×70 ס\"מ</strong></li><li>גודל אידיאלי לקיר ברוחב: <strong>180–250 ס\"מ</strong></li><li>מתאים לסלון, פינת אוכל ומשרדים.</li></ul><p>Large</p><ul><li>גודל כל תמונה: <strong>70×100 ס\"מ</strong></li><li>גודל אידיאלי לקיר ברוחב: <strong>250–350 ס\"מ</strong></li><li>מתאים לחללים גדולים, לובאים, קליניקות וחללי אירוח.</li></ul><p>חומרים</p><ul><li>הדפס Fine Art איכותי על נייר אומנותי מובחר</li><li>מסגרת שחורה בגימור מט</li><li>פספרטו לבן המדגיש את עומק היצירה ואת משחקי האור והצל</li></ul><p>סגנון</p><p>מינימליסטי | טבעי | יפני־סקנדינבי | על־זמני</p><p><strong>\"אדמה ושקט\" היא סדרת אמנות שנועדה להאט את הקצב, להכניס חמימות טבעית לחלל וליצור מוקד עיצובי מרשים, שקט ומלא נוכחות.</strong></p>",
@@ -386,17 +386,16 @@
       "sale_price": null,
       "currency": "ILS",
       "images": [
-        "https://studio-242.com/assets/product-1782726944938-jaylr5.webp",
-        "https://studio-242.com/assets/product-enhanced-1782726973848-ui2f32.webp",
-        "https://studio-242.com/assets/product-1782727001363-3j6u4e.webp"
+        "https://studio-242.com/assets/product-1782727001363-3j6u4e.webp",
+        "https://studio-242.com/assets/product-enhanced-1782726973848-ui2f32.webp"
       ],
       "in_stock": true,
       "stock_status": "in_stock",
-      "url": "https://studio-242.com/product/sdrt-admh-vshkt-earth-silence-oavdiu",
+      "url": "https://studio-242.com/product/sdrt-admh-vshkt-earth-silence-k2bbpf",
       "categories": [
         "צילום אומנותי - פיין ארט"
       ],
-      "updated_at": "2026-06-30T13:22:34.272Z"
+      "updated_at": "2026-07-01T10:10:31.270Z"
     },
     {
       "id": "ad879379-7a6b-4c2d-af50-a9192371ca80",
