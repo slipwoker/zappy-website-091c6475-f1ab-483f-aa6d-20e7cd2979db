@@ -23410,6 +23410,263 @@ html body #ai-section-1782892903422-mldyhjh .cta-btn-whatsapp svg { height: 22px
     left: 12px;
   }
 }
+
+/* AI-generated section */
+/* ===== Gift Section - Main Container ===== */
+.gift-section {
+  background: #FBF7F2;
+  padding: 80px 24px;
+  direction: rtl;
+  font-family: system-ui, sans-serif;
+}
+
+.gift-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===== Gift Card ===== */
+.gift-card {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(47, 41, 36, 0.08), 0 1px 4px rgba(47, 41, 36, 0.04);
+  border: 1px solid rgba(179, 136, 90, 0.18);
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.gift-card:hover {
+  box-shadow: 0 12px 40px rgba(47, 41, 36, 0.12), 0 2px 8px rgba(47, 41, 36, 0.06);
+  transform: translateY(-2px);
+}
+
+/* ===== Image Wrapper ===== */
+.gift-card__image-wrapper {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #F5EDE4 0%, #EDE1D5 100%);
+}
+
+.gift-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.gift-card:hover .gift-card__image {
+  transform: scale(1.04);
+}
+
+/* ===== Content Area ===== */
+.gift-card__content {
+  padding: 32px 28px 36px;
+  text-align: center;
+}
+
+/* ===== Badge ===== */
+.gift-card__badge {
+  display: inline-block;
+  background: linear-gradient(180deg, #B3885A 0%, #8D5B3F 100%);
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 18px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+/* ===== Title ===== */
+.gift-card__title {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #2F2924;
+  margin: 0 0 14px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+}
+
+/* ===== Description ===== */
+.gift-card__description {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #5C4F44;
+  margin: 0 0 24px;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== Features List ===== */
+.gift-card__features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 28px;
+  margin-bottom: 28px;
+}
+
+.gift-card__feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #4A3F36;
+  font-weight: 500;
+}
+
+.gift-card__feature-icon {
+  width: 18px;
+  height: 18px;
+  color: #B3885A;
+  flex-shrink: 0;
+}
+
+/* ===== CTA Button ===== */
+.gift-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #8D5B3F;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 12px 28px;
+  border: 2px solid #8D5B3F;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+
+.gift-card__cta:hover {
+  background: linear-gradient(180deg, #B3885A 0%, #8D5B3F 100%);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 4px 16px rgba(141, 91, 63, 0.25);
+  transform: translateY(-1px);
+}
+
+.gift-card__cta:focus-visible {
+  outline: 3px solid #B3885A;
+  outline-offset: 3px;
+}
+
+.gift-card__cta-arrow {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.gift-card__cta:hover .gift-card__cta-arrow {
+  transform: translateX(-4px);
+}
+
+/* ===== Responsive - Tablet ===== */
+@media (min-width: 680px) {
+  .gift-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .gift-card__image-wrapper {
+    width: 45%;
+    height: auto;
+    min-height: 380px;
+  }
+
+  .gift-card__content {
+    width: 55%;
+    padding: 40px 36px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .gift-card__badge {
+    align-self: flex-start;
+  }
+
+  .gift-card__description {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .gift-card__features {
+    justify-content: flex-start;
+  }
+
+  .gift-card__cta {
+    align-self: flex-start;
+  }
+}
+
+/* ===== Responsive - Desktop ===== */
+@media (min-width: 900px) {
+  .gift-section {
+    padding: 100px 32px;
+  }
+
+  .gift-card__image-wrapper {
+    width: 42%;
+    min-height: 420px;
+  }
+
+  .gift-card__content {
+    padding: 48px 44px;
+  }
+
+  .gift-card__title {
+    font-size: 2.4rem;
+  }
+
+  .gift-card__description {
+    font-size: 1.1rem;
+  }
+}
+
+/* ===== Responsive - Small Mobile ===== */
+@media (max-width: 480px) {
+  .gift-section {
+    padding: 48px 16px;
+  }
+
+  .gift-card__image-wrapper {
+    height: 200px;
+  }
+
+  .gift-card__content {
+    padding: 24px 20px 28px;
+  }
+
+  .gift-card__title {
+    font-size: 1.7rem;
+  }
+
+  .gift-card__description {
+    font-size: 0.95rem;
+  }
+
+  .gift-card__features {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .gift-card__cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
