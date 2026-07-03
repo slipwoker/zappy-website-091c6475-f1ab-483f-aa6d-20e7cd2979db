@@ -23081,6 +23081,10 @@ html body #ai-section-1782892903422-mldyhjh .cta-banner-secondary .cta-text { ma
 html body #ai-section-1782892903422-mldyhjh .cta-btn-whatsapp svg { width: 22px !important; }
 html body #ai-section-1782892903422-mldyhjh .cta-btn-whatsapp svg { height: 22px !important; }
 
+
+#ai-section-1782892903422-mldyhjh .cta-banner .zappy-carousel-btn {
+  display: none !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
