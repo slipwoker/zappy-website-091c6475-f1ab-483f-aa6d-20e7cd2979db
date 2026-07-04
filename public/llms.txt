@@ -13,13 +13,9 @@ https://studio-242.com
 ### Page
 https://studio-242.com/242studio
 
-### SHOP
-https://studio-242.com/shop
-עיינו בקולקציות הצילום האמנותי של אופיר מסיקה — עיצוב קירות עם תמונות אמנות שמעוררות רגש, שקט ונוכחות עמוקה בכל סביבת מגורים או עבודה.
-
 ### Products
 https://studio-242.com/products
-המוצרים שלנו - סטודיו 242 - אומנות ועיצוב הבית
+המוצרים שלנו - סטודיו 242 - מערכות עיצוב לבית
 
 ### Cart
 https://studio-242.com/cart
@@ -43,11 +39,11 @@ https://studio-242.com/order-success
 
 ### Product Detail
 https://studio-242.com/product/:slug
-פרטי המוצר - סטודיו 242 - אומנות ועיצוב הבית
+פרטי המוצר - סטודיו 242 - מערכות עיצוב לבית
 
 ### Category
 https://studio-242.com/category/:slug
-מוצרים - סטודיו 242 - אומנות ועיצוב הבית
+מוצרים - סטודיו 242 - מערכות עיצוב לבית
 
 ### אודות סטודיו 242 — סטודיו 242 - מערכות עיצוב לבית
 https://studio-242.com/about
