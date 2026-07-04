@@ -81,7 +81,7 @@ Information about WCAG compliance and accessibility features.
 https://studio-242.com/product/dining-wall-set-st-kyr-lpynt-avkl-x8vu1r
 - Price: 3950.00 ILS
 - Availability: In stock
-- Category: סטים מוכנים לקיר מעוצב
+- Category: מערכות עיצוב מוכנות
 - Description: סט עיצוב לקיר פינת האוכל המשלב מדף עץ טבעי, יצירת אמנות ממוסגרת ותכנון קומפוזיציה מדויק ליצירת חלל חם, אלגנטי ומזמין. הפתרון המושלם להפוך את קיר פינת האוכל למוקד עיצובי שמעשיר את חוויית האירוח והישיבה סביב השולחן
 - Image: https://studio-242.com/assets/product-1783076582108-61p7nk.webp
 
@@ -89,7 +89,7 @@ https://studio-242.com/product/dining-wall-set-st-kyr-lpynt-avkl-x8vu1r
 https://studio-242.com/product/wall-set-st-kyr-mavzn-fp5jic
 - Price: 2290.00 ILS
 - Availability: In stock
-- Category: סטים מוכנים לקיר מעוצב
+- Category: מערכות עיצוב מוכנות
 - Description: Wall Set | סט קיר מאוזן תיאור קצר סט עיצוב לקיר המשלב שני מדפי עץ טבעי, יצירת אמנות ממוסגרת בהתאמה אישית ותכנון קומפוזיציה מדויק ליצירת קיר חם, מאוזן ועל־זמני. פתרון מושלם לשדרוג הסלון, פינת הישיבה או כל קיר מרכזי בבית – ללא צורך בפרויקט עיצוב שלם.
 - Image: https://studio-242.com/assets/product-1783073430169-qymm3.webp
 
@@ -97,7 +97,7 @@ https://studio-242.com/product/wall-set-st-kyr-mavzn-fp5jic
 https://studio-242.com/product/st-kyr-mrkzy-tv-balance-wsy6ho
 - Price: 6950.00 ILS
 - Availability: In stock
-- Category: סטים מוכנים לקיר מעוצב
+- Category: מערכות עיצוב מוכנות
 - Description: סט קיר טלוויזיה המשלב נגרות עץ טבעי, יצירת אמנות ותכנון מוקפד ליצירת קיר מאוזן, נקי ועל-זמני. הסט כולל יחידת עץ מינימליסטית, יצירת אמנות לבחירה ותכנון קומפוזיציה מלא. ניתן לשדרג לקונסולה בהתאמה אישית עם מגירות, אחסון ופתרונות נגרות לפי החלל.
 - Image: https://studio-242.com/assets/product-1783072785171-bkx4w8.webp
 
@@ -145,7 +145,7 @@ https://studio-242.com/product/kyr-avgn-yrvk-spsl-ats-alvn-mdpy-ats-amnvt-bvtnyt
 https://studio-242.com/product/entry-wall-set-st-knysh-spsl-ats-vbtvn-kd-mynrly-vhdps-avmnvty-mmvsgr-studio-i4zq0u
 - Price: 4750.00 ILS
 - Availability: In stock
-- Category: סטים מוכנים לקיר מעוצב
+- Category: מערכות עיצוב מוכנות
 - Description: קומפוזיציה עיצובית שלמה המשלבת ספסל עץ אלון ורגלי בטון, כד מינרלי עם עץ זית והדפס אומנותי ממוסגר, ליצירת פינה שקטה, טבעית ועל-זמנית. הפינה נועדה להכניס לחלל תחושת רוגע, חיבור לאדמה ואסתטיקה טבעית בסגנון Wabi-Sabi ו-Biophilic Design.
 - Image: https://studio-242.com/assets/product-1782122958021-2pspl9.webp
 
@@ -225,7 +225,7 @@ https://studio-242.com/product/sdrt-admh-vshkt-earth-silence-k2bbpf
 https://studio-242.com/product/pynt-tba-mavtsbt-lbyt-vlask-yiporg
 - Price: 1800.00 ILS
 - Availability: In stock
-- Category: סטים מוכנים לקיר מעוצב
+- Category: מערכות עיצוב מוכנות
 - Description: פינת טבע – Earth & Silence קומפוזיציה מעוצבת הכוללת הדפס אומנותי בסגנון ים־תיכוני, מסגרת בהירה וכד קרמי בגימור טבעי, ליצירת פינת עיצוב שקטה, חמימה ועל־זמנית. הפינה מתאימה לסלון, פינת אוכל, משרד, קליניקה, חדר אירוח וחללי קבלה, ומשלבת בין אומנות, טקסטורות טבעיות ואסתטיקה מינימליסטית המשתלבת בקלות בכל סגנון עיצוב.
 - Image: https://studio-242.com/assets/product-1781619825498-5sqihp.webp
 
