@@ -1,4 +1,4 @@
-# סטודיו 242 - אומנות ועיצוב הבית — Generative Engine Optimization Map
+# סטודיו 242 - מערכות עיצוב לבית — Generative Engine Optimization Map
 
 > A minimalist, emotionally-driven art and photography brand rooted in the philosophy of Wabi-Sabi — finding beauty in imperfection, stillness, and simplicity. The artist creates photography-based artworks designed to integrate harmoniously into living and working spaces, evoking feeling rather than serving as mere decoration. The brand exudes a quiet, slow, non-commercial presence — like a serene gallery experience — and bridges the worlds of fine art, interior design, and emotional well-being. The visual identity is built around large, powerful images, generous white space, and an atmosphere of calm intentionality.
 
@@ -233,7 +233,7 @@ https://studio-242.com/product/pynt-tba-mavtsbt-lbyt-vlask-yiporg
 
 # Business Context (for LLM understanding)
 
-## About סטודיו 242 - אומנות ועיצוב הבית
+## About סטודיו 242 - מערכות עיצוב לבית
 A minimalist, emotionally-driven art and photography brand rooted in the philosophy of Wabi-Sabi — finding beauty in imperfection, stillness, and simplicity. The artist creates photography-based artworks designed to integrate harmoniously into living and working spaces, evoking feeling rather than serving as mere decoration. The brand exudes a quiet, slow, non-commercial presence — like a serene gallery experience — and bridges the worlds of fine art, interior design, and emotional well-being. The visual identity is built around large, powerful images, generous white space, and an atmosphere of calm intentionality.
 
 ## Target Audience
