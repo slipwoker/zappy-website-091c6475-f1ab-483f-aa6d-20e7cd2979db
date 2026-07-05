@@ -19204,6 +19204,10 @@ main,
   visibility: visible !important;
   opacity: 1 !important;
 }
+
+.zappy-catalog-menu {
+  display: none !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
