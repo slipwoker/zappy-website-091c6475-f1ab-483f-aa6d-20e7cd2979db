@@ -19212,6 +19212,10 @@ main,
 .index-hero-section img, .index-services-section img, .index-showcase-section img, .index-philosophy-section img, .index-cta-section img, .testimonials-section img, .gift-section img, .anchor-wall-section img, .studio-problems-solutions img, .values-section img, .site-footer img {
   content-visibility: auto;
 }
+
+#zappy-catalog-menu {
+  display: none !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
