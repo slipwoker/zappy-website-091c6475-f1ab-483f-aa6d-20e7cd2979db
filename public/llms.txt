@@ -71,7 +71,15 @@ Information about WCAG compliance and accessibility features.
 
 ## Products
 
-**Total active products: 21**
+**Total active products: 22**
+
+### Harmony | מערכת עיצוב לקיר הטלוויזיה
+https://studio-242.com/product/harmony-markt-aytsvb-lkyr-htlvvyzyh-0gf21i
+- Price: 11950.00 ILS
+- Availability: In stock
+- Category: מערכות עיצוב מוכנות
+- Description: Harmony היא מערכת עיצוב שלמה שהופכת את קיר הטלוויזיה למוקד אדריכלי רגוע ומדויק. שילוב של עץ טבעי, אמנות מקורית, תאורה נסתרת וחומרים טבעיים יוצר חלל שמרגיש שלם, חם ועל-זמני – בלי צורך בשיפוץ
+- Image: https://studio-242.com/assets/product-1783256563310-onkeof.webp
 
 ### מערכת עיצוב לכניסה | Natural Entry 140
 https://studio-242.com/product/markt-aytsvb-lknysh-natural-entry-140-4l5n09
