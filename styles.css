@@ -19216,6 +19216,261 @@ main,
 #zappy-catalog-menu {
   display: none !important;
 }
+
+/* AI-generated section */
+.ct-pathway-section {
+  background-color: #F7F2EA;
+  padding: 80px 24px;
+  font-family: system-ui, sans-serif;
+  direction: rtl;
+}
+
+.ct-pathway-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ct-pathway-heading {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--primary, #2F2924);
+  margin-bottom: 56px;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+/* Cards wrapper */
+.ct-pathway-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+/* Individual card */
+.ct-pathway-card {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  max-width: 100%;
+  padding: 40px 36px 48px;
+  border-radius: 4px;
+  text-decoration: none;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  min-height: 320px;
+}
+
+.ct-pathway-card:hover,
+.ct-pathway-card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.08);
+  outline: none;
+}
+
+.ct-pathway-card:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 4px;
+}
+
+/* Dark card variant */
+.ct-pathway-card--dark {
+  background-color: #2F2924;
+  color: #F7F2EA;
+}
+
+.ct-pathway-card--dark .ct-pathway-card-icon {
+  color: #C9A87C;
+}
+
+.ct-pathway-card--dark .ct-pathway-card-title {
+  color: #FFFFFF;
+}
+
+.ct-pathway-card--dark .ct-pathway-card-subtext {
+  color: rgba(247, 242, 234, 0.8);
+}
+
+.ct-pathway-card--dark .ct-pathway-card-arrow {
+  color: #C9A87C;
+}
+
+/* Accent card variant */
+.ct-pathway-card--accent {
+  background-color: #B9785C;
+  color: #FFFFFF;
+}
+
+.ct-pathway-card--accent .ct-pathway-card-icon {
+  color: #FFD8C4;
+}
+
+.ct-pathway-card--accent .ct-pathway-card-title {
+  color: #FFFFFF;
+}
+
+.ct-pathway-card--accent .ct-pathway-card-subtext {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.ct-pathway-card--accent .ct-pathway-card-arrow {
+  color: #FFD8C4;
+}
+
+/* Card icon */
+.ct-pathway-card-icon {
+  margin-bottom: 28px;
+  line-height: 0;
+}
+
+.ct-pathway-card-icon svg {
+  display: block;
+}
+
+/* Card title */
+.ct-pathway-card-title {
+  font-size: 1.65rem;
+  font-weight: 700;
+  margin: 0 0 14px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+/* Card subtext */
+.ct-pathway-card-subtext {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 0 32px;
+  flex-grow: 1;
+}
+
+/* Card arrow */
+.ct-pathway-card-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.3s ease;
+  line-height: 0;
+}
+
+.ct-pathway-card:hover .ct-pathway-card-arrow,
+.ct-pathway-card:focus-visible .ct-pathway-card-arrow {
+  transform: translateX(-6px);
+}
+
+/* Separator */
+.ct-pathway-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.ct-pathway-separator-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  color: #2F2924;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(47, 41, 36, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .ct-pathway-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .ct-pathway-card {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .ct-pathway-separator {
+    padding: 8px 0;
+  }
+
+  .ct-pathway-separator-text {
+    width: 44px;
+    height: 44px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ct-pathway-section {
+    padding: 60px 16px;
+  }
+
+  .ct-pathway-heading {
+    font-size: 1.85rem;
+    margin-bottom: 40px;
+  }
+
+  .ct-pathway-card {
+    padding: 32px 28px 40px;
+    min-height: 280px;
+  }
+
+  .ct-pathway-card-title {
+    font-size: 1.45rem;
+  }
+
+  .ct-pathway-card-subtext {
+    font-size: 1rem;
+  }
+
+  .ct-pathway-separator-text {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ct-pathway-heading {
+    font-size: 1.6rem;
+    margin-bottom: 32px;
+  }
+
+  .ct-pathway-card {
+    padding: 28px 22px 36px;
+    min-height: auto;
+  }
+
+  .ct-pathway-card-title {
+    font-size: 1.3rem;
+  }
+
+  .ct-pathway-card-subtext {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+
+  .ct-pathway-card-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .ct-pathway-card-arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
