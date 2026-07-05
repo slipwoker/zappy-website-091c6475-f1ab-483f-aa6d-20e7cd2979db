@@ -19199,6 +19199,11 @@ main,
 }
 
 /* ==END ZAPPY V2 E-COMMERCE THEME CSS== */
+
+.navbar #zappy-nav-category-links {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
