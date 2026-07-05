@@ -11696,6 +11696,30 @@ async function loadRelatedProducts(currentProduct, t) {
 }
 /* ==ZAPPY E-COMMERCE JS END== */
 
+/* ZAPPY_CUSTOM_JS_START:673a6dc3119e */
+(function () {
+  function __zappyCustomInit() {
+    try {
+// Lazy-load all images that don't have loading attribute yet
+// Runs immediately so the browser can start lazy-loading
+(function() {
+  var imgs = document.querySelectorAll('img:not([loading])');
+  for (var i = 0; i < imgs.length; i++) {
+    imgs[i].setAttribute('loading', 'lazy');
+  }
+})();
+    } catch (e) {
+      if (typeof console !== 'undefined' && console.warn) { console.warn('[zappy-custom-js]', e); }
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', __zappyCustomInit);
+  } else {
+    __zappyCustomInit();
+  }
+})();
+/* ZAPPY_CUSTOM_JS_END:673a6dc3119e */
+
 
 /* ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
 (function(){
