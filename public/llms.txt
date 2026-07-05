@@ -71,7 +71,15 @@ Information about WCAG compliance and accessibility features.
 
 ## Products
 
-**Total active products: 20**
+**Total active products: 21**
+
+### מערכת עיצוב לכניסה | Natural Entry 140
+https://studio-242.com/product/markt-aytsvb-lknysh-natural-entry-140-4l5n09
+- Price: 6900.00 ILS
+- Availability: In stock
+- Category: מערכות עיצוב מוכנות
+- Description: מערכת עיצוב שלמה לכניסה לבית, המשלבת קונסולה מעץ מלא וברזל, סט מדפי עץ עם תאורה נסתרת, גוף תאורה מבמבוק וראטן, עבודת אמנות מקורית בהתאמה אישית וכלי חרס טבעיים. פתרון עיצוב הרמוני ומוכן להתקנה, בהתאמה לחלל שלכם.
+- Image: https://studio-242.com/assets/product-1783242284323-kmcpuj.webp
 
 ### קונסולת עץ מלא, ברזל שחור מעוצב ונוכחות מרשימה
 https://studio-242.com/product/kvnsvlt-ats-mla-brzl-shchvr-mavtsb-vnvkchvt-mrshymh-n3s4ta
