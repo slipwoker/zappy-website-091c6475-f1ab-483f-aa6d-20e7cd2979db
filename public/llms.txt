@@ -72,7 +72,7 @@ Information about WCAG compliance and accessibility features.
 
 ## Products
 
-**Total active products: 23**
+**Total active products: 22**
 
 ### קיר עוגן HARMONY
 https://studio-242.com/product/kyr-avgn-harmony-kq5blk
@@ -225,14 +225,6 @@ https://studio-242.com/product/spsl-ats-mla-tbay-live-edge-15032-sm-spsl-mavtsb-
 - Category: פריטי עיצוב משלימים
 - Description: ספסל עץ מלא בעיצוב טבעי וייחודי, המשלב גידים עשירים, קצה אורגני (Live Edge) ורגלי ברזל מינימליסטיות. פריט רב-שימושי המכניס חמימות, חומריות טבעית ונוכחות שקטה לחלל, ומתאים לכניסה לבית, לסלון, לחדר שינה, לפינות טבע, לובאים ועסקים מעוצבים.
 - Image: https://studio-242.com/assets/product-1781687337132-u24cq4b.webp
-
-### כד חרס מעוצב ראסטיק Rustic White Vase | גובה כ 30 ס"מ
-https://studio-242.com/product/kd-chrs-mavtsb-rastyk-rustic-white-vase-gvbh-k-30-sm-f98ies
-- Price: 349.00 ILS
-- Availability: In stock
-- Category: פריטי עיצוב משלימים
-- Description: כד חרס דקורטיבי בגימור מיושן בגווני אבן-לבן, עם מרקם טבעי וסרט יוטה עדין. פריט עיצובי בעל נוכחות שקטה המתאים למדפים, קונסולות, ספריות ופינות סטיילינג בסגנון טבעי, Wabi-Sabi ובוהו מודרני.
-- Image: https://studio-242.com/assets/product-1781686463911-7o94wl.webp
 
 ### קיר עוגן מעוצב בהתאמה אישית
 https://studio-242.com/product/kyr-avgn-mavtsb-bhtamh-ayshyt-2sewz8
