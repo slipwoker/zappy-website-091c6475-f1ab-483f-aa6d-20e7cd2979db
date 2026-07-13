@@ -7,6 +7,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://studio-242.com/studio</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://studio-242.com/projects</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -67,21 +73,15 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://studio-242.com/contact</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://studio-242.com/hospitality-concept-design</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://studio-242.com/studio</loc>
+    <loc>https://studio-242.com/contact</loc>
     <lastmod>2026-07-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
