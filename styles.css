@@ -25270,6 +25270,33 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', sans-serif; font-wei
     font-size: 1rem;
   }
 }
+
+.hero-studio .hero-studio__bg-image[src*="svg"], .studio-worlds-section .world-card-image[src*="svg"], .studio-inspiration .inspiration-item img[src*="svg"], .studio242-story .story-portrait[src*="svg"] {
+  background-color: #C8BFB2 !important;
+}
+
+.studio-worlds-section .world-card-overlay {
+  background: linear-gradient(to top, rgba(58, 50, 44, 0.5) 0%, rgba(58, 50, 44, 0) 60%) !important;
+}
+
+.hero-studio .hero-studio__overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(58, 50, 44, 0.45) 0%,
+    rgba(58, 50, 44, 0.25) 40%,
+    rgba(58, 50, 44, 0.05) 70%,
+    rgba(58, 50, 44, 0.01) 100%
+  ) !important;
+}
+
+.studio-noticeboard {
+  background-color: var(--surface-color, var(--surface, #F5F1EC)) !important;
+}
+
+.studio-noticeboard .notice-card {
+  background-color: var(--background-color, var(--background, var(--bg-light, #FAF8F5))) !important;
+  border-color: var(--secondary-color, var(--secondary, #E8E0D5)) !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
