@@ -1,10 +1,36 @@
 {
   "@context": "https://schema.org",
-  "generated_at": "2026-07-14T14:25:34.587Z",
+  "generated_at": "2026-07-14T15:46:19.572Z",
   "base_url": "https://studio-242.com",
   "currency": "ILS",
-  "count": 21,
+  "count": 22,
   "products": [
+    {
+      "id": "7106f5cf-bbc7-4bbc-964c-cdea7a8bf386",
+      "slug": "kdy-admh-terra-0uvsj6",
+      "name": "כדי אדמה | TERRA",
+      "name_translations": {},
+      "description": "<p>קולקציית הכדים של Studio 242 נוצרה מתוך אהבה לחומר, לטבע ולאסתטיקה של Wabi-Sabi. כל כד עובר תהליך גימור ידני רב־שלבי, המשלב טכניקת צביעה ייחודית היוצרת מראה מינרלי עמוק, המדמה אבן טבעית שהתיישנה עם השנים.</p><p>הגוון הרך, הטקסטורה העדינה והאופי הייחודי של כל פריט הופכים את הכד לאלמנט פיסולי המשתלב בהרמוניה בסלון, בכניסה לבית, על קונסולה, מדף או שולחן. ניתן לשלב ענפי זית, ענפים יבשים או להשאירו כפריט עיצוב בפני עצמו.</p><p>זמין בשני גדלים:</p><p>24 ס\"מ – אידיאלי למדפים, קונסולות ופינות עיצוב.</p><p>30 ס\"מ – פריט דומיננטי יותר, המעניק לחלל נוכחות ועומק.</p><p>כל כד מיוצר בגימור ידני, ולכן ייתכנו הבדלים קלים בגוון ובמרקם – חלק בלתי נפרד מהייחוד והאותנטיות של כל יצירה.</p>",
+      "short_description": "כדי נוי בעבודת יד בגימור מינרלי ייחודי, בהשראת אבן טבעית וכלי חרס עתיקים. כל פריט מעניק לחלל נוכחות שקטה, חמימה ועל־זמנית.",
+      "sku": null,
+      "brand": null,
+      "price": 0,
+      "base_price": 0,
+      "sale_price": null,
+      "currency": "ILS",
+      "images": [
+        "https://studio-242.com/assets/product-1784043780011-2ukrp.webp",
+        "https://studio-242.com/assets/product-1784043788357-yjvaob.webp",
+        "https://studio-242.com/assets/product-1784043796264-up00e.webp",
+        "https://studio-242.com/assets/product-1784043804238-vewjm5.webp",
+        "https://studio-242.com/assets/product-1784043812573-f3g71.webp"
+      ],
+      "in_stock": true,
+      "stock_status": "in_stock",
+      "url": "https://studio-242.com/product/kdy-admh-terra-0uvsj6",
+      "categories": [],
+      "updated_at": "2026-07-14T15:45:53.677Z"
+    },
     {
       "id": "c3197e21-2b77-4080-a1bc-371dc67e094f",
       "slug": "kyr-avgn-harmony-e6ubcb",
